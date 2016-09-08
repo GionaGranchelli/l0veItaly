@@ -6,10 +6,10 @@
                 <a href="#"><img src="img/product/5.jpg" alt="" /></a>
             </div>
             <div class="single-product-content">
-                <h1 class="product_title">{{model.manufacturer.name}}</h1>	
+                <h1 class="product_title">{{model.manufacturer.name}}</h1>
 
                 <div class="short-description">
-                    <p>{{{model.manufacturer.short_description}}}</p>						
+                    <p>{{{model.manufacturer.short_description}}}</p>
                 </div>
 
             </div>
@@ -27,25 +27,25 @@
         <div class="single-shop-list" >
             <div class="shop-inner">
                 <div class="shop-img">
-                    <a href="#"><img src="img/product/4.jpg" alt="" /></a>
+                    <a href="#"><img src="http://loveitaly.altervista.org/api/images/products/{{attributes.id}}/{{attributes.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" /></a>
                 </div>
                 <div class="shop-content">
-                    <h3><a href="#">{{products}}</a> {{products.name}}</h3>
+                    <h3><a href="#">{{products}}</a> {{attributes.name}}</h3>
                     <div class="pro-rating-s">
                         <a href="#"><i class="fa fa-star"></i></a>
                         <a href="#"><i class="fa fa-star"></i></a>
                         <a href="#"><i class="fa fa-star"></i></a>
                         <a href="#"><i class="fa fa-star"></i></a>
                         <a href="#"><i class="fa fa-star"></i></a>
-                    </div>							
+                    </div>
                     <div class="price-box">
                         <span class="new-price">£90.00</span>
                         <span class="old-price">£120.00</span>
-                    </div>	
+                    </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                </div>					
+                </div>
             </div>
         </div>
-        {{/each}}	
+        {{/each}}
     </div>
 </div>
