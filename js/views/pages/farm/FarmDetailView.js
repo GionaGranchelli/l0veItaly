@@ -37,16 +37,11 @@ define(function(require) {
         this.collection.on('sync', this.render, this);
     },
     render: function() {
-<<<<<<< HEAD
-        console.log("COLLECTION" + this.collection.toJSON());
-      $(this.el).html(this.template({
-          model : this.model.toJSON(),
-          Products : [this.collection.toJSON()]
-=======
+
      $(this.el).html(this.template({
           model : this.model.toJSON(),
           Products : this.collection.models
->>>>>>> 81232458136556e76b4d162170fcf09fce3d150c
+
       }
       ));
 //      $(this.el).html(this.template({Products : }));
