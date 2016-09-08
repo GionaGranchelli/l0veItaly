@@ -37,7 +37,7 @@ define(function(require) {
         this.collection.on('sync', this.render, this);
     },
     render: function() {
-
+console.log(this.collection.models);
      $(this.el).html(this.template({
           model : this.model.toJSON(),
           Products : this.collection.models
