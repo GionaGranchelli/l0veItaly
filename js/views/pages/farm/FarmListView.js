@@ -3,15 +3,16 @@ define(function(require) {
   var Backbone = require("backbone");
 //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
-
+  var Farms = require('collections/Farms');
   var FarmListView = Utils.Page.extend({
 
     constructorName: "FarmListView",
-
+    collection: Farms,
 
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.farmlist;
+      this.collection.on('sync', this.render, this);
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
       //   $('#content').on("swipe", function(data){
@@ -28,12 +29,11 @@ define(function(require) {
 
     events: {
       "tap #goToMap": "goToMap",
-      "tap .farmitem" : "goToFarmDetail"
+      "tap #farmItem" : "goToFarmDetail"
     },
 
     render: function() {
-      $(this.el).html(this.template());
-//      this.model.toJSON()
+      $(this.el).html(this.template({Farms : this.collection.toJSON()}));
       return this;
     },
 
@@ -42,11 +42,12 @@ define(function(require) {
         trigger: true
       });
     },
-    goToFarmDetail: function(e){
-        Backbone.history.navigate("gotofarmdetail", {
+    goToFarmDetail: function(ev){
+        
+      
+      Backbone.history.navigate("gotofarmdetail/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });
-      
     }
   });
 

@@ -1,43 +1,28 @@
 
-<div class="pages">
-    <!-- Page, data-page contains page name-->
-    <div data-page="shop-list" class="page">
-        <!-- Scrollable page content-->
-        <div class="page-content">
-            <div class="content-block">
                 <div class="content-block-inner">
                     <div class="shop-area">
+                        {{#each Category}}
+                            {{#ifCond id_parent '==' 2 }}
+                                {{#ifCond id '<' 31 }}
+                                
+                                <div class="single-shop-list" id="goToCategory" data-id="{{id}}">
+                                    <div class="shop-inner">
+                                        
+                                            <div class="shop-img">
+                                                <img src="http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                                            </div>
+                                            <div class="shop-content">
+                                                <h3>{{name}}</h3>
 
-                        <div class="single-shop-list">
-                            <div class="shop-inner">
-                                <a href="#">
-                                    <div class="shop-img">
-                                        <img src="img/product/3.jpg" alt="" />
+                                            </div>	
+                                       
                                     </div>
-                                    <div class="shop-content">
-                                        <h3>Convallis quam sit</h3>
+                                </div>
+                                
+                                {{/ifCond}}
 
-                                    </div>	
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-shop-list">
-                            <div class="shop-inner">
-                                <a href="#">
-                                    <div class="shop-img">
-                                        <img src="img/product/3.jpg" alt="" />
-                                    </div>
-                                    <div class="shop-content">
-                                        <h3>Convallis quam sit</h3>
-
-                                    </div>	
-                                </a>
-                            </div>
-                        </div>
+                            {{/ifCond}}
+                        {{/each}}
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </div>
-</div>

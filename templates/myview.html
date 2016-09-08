@@ -13,7 +13,7 @@
 <div class="i-8">{{ key }}</div>
 
 -->
-	
+
 <!-- menu end -->
 <div class="login-screen">
     <div class="view">
@@ -96,395 +96,396 @@
 </div>
 <!-- resister popup start-->
 <!-- Views -->
-<div class="views">
-    <!-- Your main view, should have "view-main" class -->
+<!--<div class="views">
+     Your main view, should have "view-main" class 
     <div class="view view-main">
-        <!-- Top Navbar-->
+         Top Navbar
         
-        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+         Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes
         <div class="pages navbar-through toolbar-through">
 
-            <!-- Page, "data-page" contains page name -->
+             Page, "data-page" contains page name 
             <div data-page="index" class="page">
-                <!-- Scrollable page content -->
-                <div class="page-content">	
-                    <!-- Link to another page -->
-                    <div class="list-block">
-                        <!-- slider area start-->
-                        <div class="slider-area">
-                            <div class="ks-slider-custom">
-                                <div data-pagination=".swiper-pagination" data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" data-pagination-clickable="true" class="swiper-container swiper-init">
-                                    <div class="swiper-pagination"></div>
-                                    <div class="swiper-wrapper">
-                                        <div style="background-image:url(img/slider/1.png)" class="swiper-slide">
-                                            <div class="slide-text">
-                                                <p>New product 2015</p>
-                                                <h2>BIG SALE</h2>
-                                                <a href="#">shop now</a>
-                                            </div>
-                                        </div>
-                                        <div style="background-image:url(img/slider/2.jpg)" class="swiper-slide">
-                                            <div class="slide-text">
-                                                <p>New product 2015</p>
-                                                <h2>BIG SALE</h2>
-                                                <a href="#">shop now</a>
-                                            </div>
-                                        </div>
-                                        <div style="background-image:url(img/slider/3.jpg)" class="swiper-slide">
-                                            <div class="slide-text">
-                                                <p>New product 2015</p>
-                                                <h2>BIG SALE</h2>
-                                                <a href="#">shop now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                 Scrollable page content 
+-->
+<div class="page-content">
+    <!-- Link to another page -->
+    <div class="list-block">
+        <!-- slider area start-->
+        <div class="slider-area">
+            <div class="ks-slider-custom">
+                <div data-pagination=".swiper-pagination" data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" data-pagination-clickable="true" class="swiper-container swiper-init">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                        <div style="background-image:url(img/slider/1.png)" class="swiper-slide">
+                            <div class="slide-text">
+                                <p>New product 2015</p>
+                                <h2>BIG SALE</h2>
+                                <a href="#">shop now</a>
                             </div>
                         </div>
-                        <!-- slider area start-->
-                        <!-- shop discover area start-->
-                        <div class="features-product">
-                            <div class="section-heading">
-                                <h3>PRODOTTI</h3>
-                            </div>	
-                            <div class="clear"></div>
-                            <div class="row">
-                                {{#each Prodotti}}
-                                <div class="shopbox">
-                                    <a href="shop.html">
-                                        <img src="img/discover/1.jpg" alt="" />
-                                        <h3>{{name}}</h3>
-                                    </a>	
-                                </div>
-                                  {{/each}}
-                               
+                        <div style="background-image:url(img/slider/2.jpg)" class="swiper-slide">
+                            <div class="slide-text">
+                                <p>New product 2015</p>
+                                <h2>BIG SALE</h2>
+                                <a href="#">shop now</a>
                             </div>
                         </div>
-                        <!-- shop discover area start-->
-<!--                        <div class="features-product">
-                            <div class="section-heading">
-                                <h3>FEATURED PRODUCTS</h3>
-                            </div>	
-                            <div class="clear"></div>
-                            <div class="ks-slider-custom">
-                                <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container2 swiper-init">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/1.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>					        	
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/10.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>					        	
-                                        </div> 
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/2.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>			        	
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>						
-                        </div>-->
-<!--                        <div class="features-product">
-                            <div class="section-heading">
-                                <h3>New Products</h3>
-                            </div>	
-                            <div class="clear"></div>
-                            <div class="ks-slider-custom">
-                                <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container3 swiper-init">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/4.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>					        	
-                                        </div> 
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/3.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>				        	
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="single-project">
-                                                <div class="product-img">
-                                                    <a href="#"><img src="img/product/11.jpg" alt="" /></a>
-                                                    <span>new</span>
-                                                    <div class="actions">
-                                                        <div class="action-buttons">
-                                                            <div class="add-to-cart">
-                                                                <a href="#">Add to cart</a>
-                                                            </div>
-                                                            <div class="add-to-links">
-                                                                <div class="add-to-wishlist">
-                                                                    <a href="#"><i class="fa fa-star"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="compare-button">
-                                                                    <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                </div>									
-                                                            </div>
-                                                            <div class="quickviewbtn">
-                                                                <a href="#"><i class="fa fa-search-plus"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                    </div>									
-                                                    <div class="price-box">
-                                                        <span class="new-price">£90.00</span>
-                                                        <span class="old-price">£120.00</span>
-                                                    </div>										
-                                                </div>									
-                                            </div>				        	
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>		
-                        </div>-->
-                        <div class="banner-area">
-                            <a href="#"><img src="img/banner/banner5.jpg" alt="" /></a>
-                        </div>
-                        <div class="corporate-area">
-                            <div class="row">
-                                <div class="col-100 tablet-33">
-                                    <div class="single-corporate">
-                                        <div class="corporate-icon">
-                                            <i class="fa fa-truck"></i>
-                                        </div>
-                                        <div class="corporate-text">
-                                            <h4>FREE SHIPPING &amp; RETURN</h4>
-                                            <p>Free shipping on all orders over $99.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-100 tablet-33">
-                                    <div class="single-corporate">
-                                        <div class="corporate-icon">
-                                            <i class="fa fa-usd"></i>
-                                        </div>
-                                        <div class="corporate-text">
-                                            <h4>MONEY BACK GUARANTEE</h4>
-                                            <p>100% money back guarantee.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-100 tablet-33">
-                                    <div class="single-corporate">
-                                        <div class="corporate-icon">
-                                            <i class="fa fa-life-bouy"></i>
-                                        </div>
-                                        <div class="corporate-text">
-                                            <h4>ONLINE SUPPORT 24/7</h4>
-                                            <p>Lorem ipsum dolor sit amet</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>					
-                            <div class="footer-icon">
-                                <p>Copyright 2015. All rights reserved.</p>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <div style="background-image:url(img/slider/3.jpg)" class="swiper-slide">
+                            <div class="slide-text">
+                                <p>New product 2015</p>
+                                <h2>BIG SALE</h2>
+                                <a href="#">shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Bottom Toolbar-->
+        <!-- slider area start-->
+        <!-- shop discover area start-->
+        <div class="features-product">
+            <div class="section-heading">
+                <h3>PRODOTTI</h3>
+            </div>	
+            <div class="clear"></div>
+            <div class="row">
+                {{#each Prodotti}}
+                <div class="shopbox">
+                    <a href="shop.html">
+                        <img src="http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                        <h3>{{name}}</h3>
+                    </a>	
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+        <!-- shop discover area start-->
+        <!--                        <div class="features-product">
+                                    <div class="section-heading">
+                                        <h3>FEATURED PRODUCTS</h3>
+                                    </div>	
+                                    <div class="clear"></div>
+                                    <div class="ks-slider-custom">
+                                        <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container2 swiper-init">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/1.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>					        	
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/10.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>					        	
+                                                </div> 
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/2.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>			        	
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>						
+                                </div>-->
+        <!--                        <div class="features-product">
+                                    <div class="section-heading">
+                                        <h3>New Products</h3>
+                                    </div>	
+                                    <div class="clear"></div>
+                                    <div class="ks-slider-custom">
+                                        <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container3 swiper-init">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/4.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>					        	
+                                                </div> 
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/3.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>				        	
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="single-project">
+                                                        <div class="product-img">
+                                                            <a href="#"><img src="img/product/11.jpg" alt="" /></a>
+                                                            <span>new</span>
+                                                            <div class="actions">
+                                                                <div class="action-buttons">
+                                                                    <div class="add-to-cart">
+                                                                        <a href="#">Add to cart</a>
+                                                                    </div>
+                                                                    <div class="add-to-links">
+                                                                        <div class="add-to-wishlist">
+                                                                            <a href="#"><i class="fa fa-star"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="compare-button">
+                                                                            <a href="#"><i class="fa fa-exchange"></i></a>
+                                                                        </div>									
+                                                                    </div>
+                                                                    <div class="quickviewbtn">
+                                                                        <a href="#"><i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+                                                            <div class="pro-rating">
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                            </div>									
+                                                            <div class="price-box">
+                                                                <span class="new-price">£90.00</span>
+                                                                <span class="old-price">£120.00</span>
+                                                            </div>										
+                                                        </div>									
+                                                    </div>				        	
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>		
+                                </div>-->
+        <div class="banner-area">
+            <a href="#"><img src="img/banner/banner5.jpg" alt="" /></a>
+        </div>
+        <div class="corporate-area">
+            <div class="row">
+                <div class="col-100 tablet-33">
+                    <div class="single-corporate">
+                        <div class="corporate-icon">
+                            <i class="fa fa-truck"></i>
+                        </div>
+                        <div class="corporate-text">
+                            <h4>FREE SHIPPING &amp; RETURN</h4>
+                            <p>Free shipping on all orders over $99.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-100 tablet-33">
+                    <div class="single-corporate">
+                        <div class="corporate-icon">
+                            <i class="fa fa-usd"></i>
+                        </div>
+                        <div class="corporate-text">
+                            <h4>MONEY BACK GUARANTEE</h4>
+                            <p>100% money back guarantee.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-100 tablet-33">
+                    <div class="single-corporate">
+                        <div class="corporate-icon">
+                            <i class="fa fa-life-bouy"></i>
+                        </div>
+                        <div class="corporate-text">
+                            <h4>ONLINE SUPPORT 24/7</h4>
+                            <p>Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>					
+            <div class="footer-icon">
+                <p>Copyright 2015. All rights reserved.</p>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+        </div>
     </div>
-</div>
+</div><!--                
+            </div>
+        </div>
+         Bottom Toolbar
+    </div>
+</div>-->
 <!-- Path to Framework7 Library JS-->
 <!--<script type="text/javascript" src="lib/template/jquery-1.11.3.min.js"></script>-->
 <!--<script type="text/javascript" src="lib/template/framework7.min.js"></script>-->

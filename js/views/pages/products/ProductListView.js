@@ -4,15 +4,18 @@ define(function(require) {
 //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   var ProductDetailView = require('views/pages/products/ProductDetailView');
-
+  var Products = require("collections/Products");
+  
   var ProductListView = Utils.Page.extend({
 
     constructorName: "ProductListView",
-
+    collection: Products,
 
     initialize: function() {
+        
       // load the precompiled template
       this.template = Utils.templates.productlist;
+      this.collection.on('sync', this.render, this);
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
       //   $('#content').on("swipe", function(data){
@@ -33,7 +36,7 @@ define(function(require) {
     },
 
     render: function() {
-      $(this.el).html(this.template());
+      $(this.el).html(this.template({Prodotti: this.collection.toJSON()}));
 //      this.model.toJSON()
       return this;
     },
@@ -43,8 +46,9 @@ define(function(require) {
         trigger: true
       });
     },
-    goToProductDetail: function(e){
-        Backbone.history.navigate("gotoproductdetail", {
+    goToProductDetail: function(ev){
+        
+        Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });
       

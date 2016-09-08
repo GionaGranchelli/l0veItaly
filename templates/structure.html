@@ -1,18 +1,54 @@
-<header class="bar bar-nav">
-      <div class="navbar">
-            <div class="navbar-inner">
-                <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="left">
-                    <!-- left link contains only icon - additional "icon-only" class-->
-                    <a href="#" class="link icon-only open-panel"><img src="img/menu.png" alt="" /></a>
-                </div>
-                <div class="center sliding"><img src="img/logo.png" alt=""></div>
-                <div class="right">
-                    <!-- Right link contains only icon - additional "icon-only" class-->
-                    <a href="#" data-popover=".popover-links" class="link open-popover clickopen"><img src="img/menu2.png" alt="" /></a>
-                </div>			
-            </div>
-        </div>
+
+<nav id="menu">
+    <img src="img/logo.png">
+    <ul class="mobile-menu">
+
+        <li class="active"><span id="nav1"> <a >Home</a></span></li>
+
+        <li> <span id="nav3"><a >Prodotti</a></span></li>
+        <li> <span id="nav4"><a >Categorie</a></span></li>
+        <li> <span id="nav5"><a >Farm</a></span></li>
+        <li> <span id="nav6"><a >Chi Siamo</a></span></li>
+        <li> <span id="nav7"><a >Login</a></span></li>
+        <!--<li> <span id="nav8"><a >Settings</a></span></li>-->
+
+    </ul>
+    <!--  
+    
+        <div class="social-bar">
+            <a href="https://www.facebook.com/pages/Expo-2015-Abruzzo/774707812605255">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/Expo2015Abruzzo">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/expo2015abruzzo/">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a >
+                <i class="fa fa-google-plus"></i>
+            </a>
+    
+        </div>-->
+</nav>
+<main id="panel">
+
+    <header class="bar bar-nav" id="menu-superiore">
+        <!-- <div style="-webkit-filter: blur(10px); position: absolute; width: 100%; height: 44px; left:0"></div> -->
+        <!--<a class="icon icon-bars pull-left toggle-button" href="#menu"></a>-->
+
+        <!--<a class="icon icon-left-nav pull-left" data-transition="slide-out" id="back-button"></a>-->
+
+
+        <a id="toggle-button" class="icon icon-bars pull-left"></a>
+
+        <img id="logo_principale" src="img/logo.png">
+
+
+        <a class="icon icon-search pull-right" id="settingsModal" ></a>
+        <!-- Right link contains only icon - additional "icon-only" class-->
+        <a href="#" data-popover=".popover-links" class="link open-popover clickopen"><img src="img/menu2.png" alt="" /></a>
+
         <div class="popover popover-links">
             <div class="popover-angle"></div>
             <div class="popover-inner">
@@ -26,8 +62,34 @@
                 </div>
             </div>
         </div>
-</header>
+
+    </header>
+
+    <div id="content" class="content"></div>
+</main>
+
+
+
+
+
+
+
 <!--
+<header class="bar bar-nav">
+    <div class="navbar">
+        <div class="navbar-inner">
+             We need cool sliding animation on title element, so we have additional "sliding" class 
+            <div class="left">
+                 left link contains only icon - additional "icon-only" class
+                <a href="#" class="link icon-only open-panel"><img src="" alt="" /></a>
+            </div>
+            <div class="center sliding"><img src="img/logo.png" alt=""></div>
+
+        </div>
+    </div>
+
+</header>
+
  Status bar overlay for full screen mode (PhoneGap) 
 <div class="statusbar-overlay"></div>
  Left panel with reveal effect
@@ -131,21 +193,21 @@
     </div>
 </div>-->
 
-<nav class="bar bar-tab">
-  <a class="tab-item active" id="nav1">
-    Nav1
-  </a>
-  <a class="tab-item" id="nav2">
-    Nav2
-  </a>
+<!--<nav class="bar bar-tab">
+    <a class="tab-item active" id="nav1">
+        Nav1
+    </a>
+    <a class="tab-item" id="nav2">
+        Nav2
+    </a>
     <a class="tab-item" id="nav3">
         Lista Prodotti
     </a>
 </nav>
 
-<!-- <nav id="navigation">
+ <nav id="navigation">
     <div id="nav1" class="i-4">nav 1</div>
     <div id="nav2" class="i-8">nav 2</div>
-</nav> -->
+</nav> 
 <div id="content" class="content">
-</div>
+</div>-->

@@ -3,10 +3,26 @@ define(function (require) {
     var Backbone = require("backbone");
     var Product = require("models/Product");
     var Products = Backbone.Collection.extend({
-        initialize: function (option) {
+        initialize: function (option, category, farm) {
+            
+            
+            console.log('option' + option);
+            console.log('category' + category);
+            console.log('typeof category' + typeof category);
+            console.log('farm' + farm);
+            
             if (typeof option === "number") {
-                console.log("option");
                 this.url += '&limit=' + option;
+            }
+            if (category !== undefined ) {
+                if (typeof category !== "string") {
+                    console.log("Products filtered by Category");
+                    this.url += '&filter[id_category_default]=[' + category + ']';
+                }
+            }
+            if (farm !== undefined) {
+                console.log("Products filtered by Farm");
+                this.url += '&filter[id_manufacturer]=[' + farm + ']';
             }
         },
         model: Product,

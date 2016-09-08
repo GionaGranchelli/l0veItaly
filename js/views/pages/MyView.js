@@ -16,17 +16,7 @@ define(function (require) {
         initialize: function () {
             // load the precompiled template
             this.template = Utils.templates.myview;
-//            this.collection.fetch({success: function(){
-//            this.render;
-//            }});
-//            this.collection.fetch({success: function (){
-//                    this.render;
-//                    
-//                    
-//            }});
             this.collection.on('sync', this.render, this);
-            
-            
             // here we can register to inTheDOM or removing events
             // this.listenTo(this, "inTheDOM", function() {
             //   $('#content').on("swipe", function(data){
@@ -34,8 +24,6 @@ define(function (require) {
             //   });
             // });
             // this.listenTo(this, "removing", functionName);
-
-            // by convention, all the inner views of a view must be stored in this.subViews
         },
         id: "myview",
         className: "i-g page",
@@ -44,7 +32,7 @@ define(function (require) {
         },
         render: function () {
 
-            $(this.el).html(this.template(this.model.toJSON()));
+            $(this.el).html(this.template({Prodotti: this.collection.toJSON()}));
             return this;
         },
         goToMap: function (e) {
