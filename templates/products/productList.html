@@ -1,0 +1,34 @@
+
+        <div class="content-block-inner">
+            <div class="shop-area">
+                {{#each Prodotti}} 
+                <div class="single-shop-list" id="goToProductDetail" data-id="{{id}}">
+                    <div class="shop-inner">
+                        <div class="shop-img">
+
+                            <img src="http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                        </div>
+                        <div class="shop-content">
+                            <h3><a href="#">{{name}}</a></h3>
+
+                            <!--                                    <div class="pro-rating-s">
+                                                                    <a href="#"><i class="fa fa-star"></i></a>
+                                                                    <a href="#"><i class="fa fa-star"></i></a>
+                                                                    <a href="#"><i class="fa fa-star"></i></a>
+                                                                    <a href="#"><i class="fa fa-star"></i></a>
+                                                                    <a href="#"><i class="fa fa-star"></i></a>
+                                                                </div>							-->
+                            <div class="price-box">
+                                <span class="new-price">{{price}}</span>
+                                <!--<span class="old-price">£120.00</span>-->
+                            </div>	
+                            <p>{{{description_short}}}</p>
+                        </div>					
+                    </div>
+                </div>
+
+                {{/each}}
+
+
+            </div>
+        </div>

@@ -1,0 +1,18 @@
+
+        <div class="content-block-inner">
+            <div class="shop-area">
+                {{#each Farms}}
+                <div class="single-shop-list" id="farmItem" data-id="{{id}}">
+                    <div class="shop-inner">
+                        <div class="shop-img">
+                            <img src="img/product/4.jpg" alt="" />
+                        </div>
+                        <div class="shop-content">
+                            <h3>{{name}}</h3>
+                            <p>{{description_short}}</p>
+                        </div>					
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>

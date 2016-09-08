@@ -1,0 +1,1103 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: MOBO HTML Mobile Template
+    Template URI: http://bootexperts.com
+    Description: This is Mobile Template
+    Author: BootExperts
+    Author URI: http://bootexperts.com
+    Version: 1.0
+
+
+
+-----------------------------------------------------------------------------------
+    
+    CSS INDEX
+    ===================
+	
+    1. Theme Default CSS (body, link color, section etc)
+    2. left sidebar css
+  	3. right side bar css
+  	4. home css
+	  5. creative-area css
+    6. features-area css
+    7. all product css
+    8. our client css
+    9. portfolio-area
+    10. footer css
+    11. shop page css
+    12. product details css
+    13. sopping cart css
+    14. Check out page css
+    15. about page css
+    16. dashboard page css
+    17. register login  page css
+    18. contact us page css
+    19. gallary page css
+    20. layout and notification  page css
+
+	
+
+
+
+	
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+html, body {}
+.floatleft {float:left}
+.floatright {float:right}
+.alignleft {float:left;margin-right:15px;margin-bottom: 15px}
+.alignright {float:right;margin-left:15px;margin-bottom: 15px}
+.aligncenter {display:block;margin:0 auto 15px}
+a:focus {outline:0px solid}
+img {max-width:100%;height:auto}
+.fix {overflow:hidden}
+p {margin:0 0 15px;font-weight: 300;}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;font-family: 'Roboto Slab', serif;color:#444;font-weight: 500;
+}
+a {transition: all 0.3s ease 0s;text-decoration:none;color:#2BCDC1}
+a:hover {
+  color: #2BCDC1;
+  text-decoration: none;
+}
+a:active, a:hover {
+  outline: 0 none;
+}
+ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+a.closebutton {
+  color: #ffffff;
+  float: right;
+  font-size: 25px;
+  padding: 5px 10px;
+}
+.clear{clear:both}
+input[type=text]:focus,input[type=email]:focus,input[type=number]:focus,input[type=password]:focus,.contact-form textarea:focus,.register-content .inputbox > input:focus{border:1px solid #2BCDC1;}
+body{font-family: 'Open Sans', sans-serif;}
+.warper {
+  padding: 25px 5px;
+}
+
+/*-----------------------
+2. left sidebar css
+--------------------------*/
+.menubg{background: rgba(0, 0, 0, 0) url("img/menu-bg.png") no-repeat scroll center center / cover ;color:#fff;}
+.menu-hoverlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  min-height: 100%;
+  padding: 0 10px;
+}
+.logo-box {
+  text-align: center;
+}
+.logo-box > h3 {
+  margin: 0;
+  padding-bottom: 30px;
+  padding-top: 50px;
+}
+.item-link.close-panel > img {
+  display: block;
+  margin: auto auto 5px;
+}
+.left-menu {
+  overflow: hidden;
+}
+.left-menu a {
+  color: #ffffff;
+  padding: 10px;
+}
+.mainmenu{}
+.menu i {
+  font-size: 50px;
+}
+.menu a {
+  color: #fff;
+    padding: 20px 6px;
+    display: block;
+}
+.menu {
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.38);
+  text-align: center;
+}
+
+/*-----------------------
+3. right side bar css
+--------------------------*/
+.panel .list-block .list-group ul li .item-primary:hover{background:#8D96A1}
+.panel .list-block .list-group ul li .item-primary {
+  background: #66707c none repeat scroll 0 0;
+  color: #ffffff;
+}
+.list-group.mt-20 {
+  margin-top: 20px;
+}
+.panel .list-block ul {
+  background: inherit;
+}
+.list-block > h3 {
+  padding-left: 15px;
+}
+.rightbar .list-block input[type="text"], .rightbar .list-block input[type="email"],.rightbar .list-block textarea {
+  color: #ccc;
+}
+/*------------------------
+4. home css
+--------------------------*/
+.content-block-inner {
+  background: #ffffff none repeat scroll 0 0;
+  color: #222;
+  margin-left: -15px;
+  padding: 10px 15px;
+  position: relative;
+  width: 100%;
+}
+.navbar-inner{
+  background: #fff none repeat scroll 0 0;
+  border-bottom: 1px solid #ccc;
+  color: #111;
+  padding: 30px 8px;
+}
+
+ .toolbar-inner {
+  border-bottom: 1px solid #ccc;
+  color: #111;
+  padding: 30px 8px;
+}
+.center.sliding > h4 {
+  margin-bottom: 0;
+}
+.navbar-inner h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 13px;
+}
+.navbar::after {
+ opacity:0;
+}
+.navbar {
+  margin-bottom:0px;
+  border:none;
+}
+.navbar-fixed .page-content, .navbar-through .page-content {
+  padding-top: 0px;
+}
+.back.link i{font-size:25px;}
+.single-slider {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+.swiper-slide.swiper-slide img{
+  width: 100%;
+}
+.ks-slider-custom {
+  height: auto;
+}
+.slider-area .swiper-slide::after {
+  background: #000000 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  opacity: 0.55;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.swiper-slide.swiper-slide{ line-height: 0;}
+.slide-text {
+  bottom: 50%;
+  color: #fff;
+  left: 0;
+  line-height: 22px;
+  margin-bottom: -34px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.slide-text h2 {
+  color: #46cec8;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 26px;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+.slide-text h2 span {
+  color: #fff;
+}
+.page {
+  background: #fff none repeat scroll 0 0;
+  top:0px;
+  padding-top: 60px;
+}
+/*------------------------
+5. creative-area css
+--------------------------*/
+.creative-area {
+  background: #2bcdc1 none repeat scroll 0 0;
+}
+.section-title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.creative-area .section-title h1 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  padding: 0 5px;
+}
+.creative-area .section-title p, .creative-desc p {
+  color: #ffffff;
+  margin: 0;
+}
+
+/*------------------------------
+6. features-area css
+--------------------------------*/
+.features-area {
+  background: #f1f1f1 none repeat scroll 0 0;
+}
+.features-area .col-100.tablet-33:last-child .single-features{margin: 0}
+.single-features {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.features-icon i {
+  color: #ffffff;
+  font-size: 60px;
+  margin-bottom: 5px;
+}
+.features-info-text h3 {
+  color: #222;
+  font-size: 20px;
+  font-weight: 400;
+}
+.features-info-text p {
+  color: #333;
+  margin: 0;
+}
+/*------------------------
+7. all product css
+--------------------------*/
+.all-product-area .content-block {
+  margin-bottom: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.all-product-area.warper {
+  padding-bottom: 0;
+}
+.buttons-row a.active {
+  background: #2BCDC1 none repeat scroll 0 0;
+  color: #fff;
+}
+.buttons-row {
+  display: block;
+  margin-bottom: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+.buttons-row a {
+  border: 1px solid #ccc;
+  color: #124550;
+  display: inline-block;
+  padding: 4px 10px;
+  text-align: center;
+}
+.single-product {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.single-product:last-child{margin: 0;}
+.pro-img {
+  text-align: center;
+  position: relative;
+}
+.pro-content{}
+.pro-content > h3 {
+  font-size: 19px;
+  font-weight: 400;
+  margin: 0;
+}
+.pro-content h3 a {
+  color: #444;
+}
+.pro-content > p {
+  color: #444;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0;
+}
+.pro-content > h4 {
+  background: #2BCDC1 none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 3px 10px;
+}
+.pro-rating-s > a {
+  color: #ffae00;
+}
+.pro-rating-s > p {
+  color: #888888;
+  font-size: 11px;
+  margin: 0;
+}
+.add-cate{margin-top: 20px;}
+.add-cate li {
+  
+  display: inline;
+  font-size: 12px;
+  margin-right: 4px;
+}
+.add-cate a {
+  color: #fff;
+   padding: 5px 9px;
+   background: #2BCDC1 none repeat scroll 0 0;
+}
+/*------------------------
+8. our client css
+--------------------------*/
+.client-img {
+  margin-bottom: 15px;
+}
+.client-img a {
+  border: 1px solid #ddd;
+  display: block;
+  opacity: 0.5;
+  padding: 20px;
+}
+.client-area {
+  padding: 20px 10px 0;
+}
+
+/*------------------------
+10. footer css
+--------------------------*/
+.footer-area {
+  text-align: center;
+}
+.footer-icons ul li {
+  text-align: center;
+}
+.footer-icons ul li a {
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 35px 0;
+}
+.footer-icons ul li:nth-child(1) a{background: #3B5998}
+.footer-icons ul li:nth-child(2) a{background:#00A0D1;}
+.footer-icons ul li:nth-child(3) a{background:#DD4B39;}
+.footer-icons > p {
+  margin: 0;
+  padding-top: 25px;
+}
+/*------------------------
+11. shop page css
+--------------------------*/
+.content-block {
+  margin: 0;
+}
+.pro-img a span {
+  background: #2bcdc1 none repeat scroll 0 0;
+  color: #fff;
+  left: 0;
+  padding: 0 6px;
+  position: absolute;
+  top: 0;
+}
+.pro-img img {
+  width: 100%;
+}
+.pagination {
+  border-top: 1px solid #ddd;
+  padding-bottom: 6px;
+  padding-top: 15px;
+}
+.pagination ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.pagination ul li {
+  display: inline-block;
+}
+.pagination ul li.active a{color:#444}
+.pagination ul li a {
+  color: #EC4445;
+  font-size: 19px;
+  padding: 0 5px;
+}
+.pagination ul li a:hover{color:#444}
+
+/*------------------------
+12. product details css
+--------------------------*/
+.content-box {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.product-text {
+  color: #27312e;
+  padding-bottom: 20px;
+}
+.product-text > h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+.product-text > span {
+  color: #2BCDC1;
+  display: inline-block;
+  font-family: Raleway;
+  font-size: 15px;
+  padding: 2px 0;
+}
+.product-text input {
+  height: 28px;
+    border: 1px solid #ccc;
+  height: 32px;
+  text-align: center;
+  width: 82px;
+}
+.swiper-container2.swiper-init.swiper-container-horizontal {
+  position: relative;
+}
+.content-box .swiper-pagination-bullet-active {
+  background: #ec4445 none repeat scroll 0 0;
+  opacity: 1;
+}
+.content-block-inner::after {
+  height: 0;
+}
+.single-shop-list .shop-img {
+  float: left;
+  width: 50%;
+}
+.single-shop-list .shop-img a img {
+  width: 100%;
+}
+.single-shop-list {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.pro-rating-s i {
+  color: #ec4445;
+}
+.single-shop-list .shop-content {
+  overflow: hidden;
+  padding-left: 12px;
+}
+.pro-rating-s {
+  margin: 4px 0;
+}
+.single-product-img img {
+  max-width: 100%;
+}
+h1.product_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 0;
+  text-transform: uppercase;
+}
+
+.short-description > p {
+  color: #555;
+}
+
+.related-product {
+  margin-top: 45px;
+}
+.related-product .shop-inner {
+  overflow: hidden;
+  padding: 0;
+}
+.shop-content > h3 {
+  margin-bottom: 5px;
+}
+.shop-img {
+  margin-bottom: 20px;
+}
+.mybutton {
+  background: #2bcdc1 none repeat scroll 0 0;
+  border: medium none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 9px 10px;
+}
+/*------------------------
+13. sopping cart css
+--------------------------*/
+.swipeout-actions-right a i{font-size: 30px;}
+.product-attributes {
+}
+.product-quantity {
+  margin-bottom: 7px;
+}
+.product-attributes label {
+  float: left;
+  padding-right: 10px;
+  text-align: right;
+  width: 57px;
+}
+.cartpage .list-block .item-inner {
+  padding-right: 4px;
+}
+.product-size > a {
+  border: 1px solid #cccccc;
+  color: inherit;
+  display: inline-block;
+  padding: 0 7px;
+}
+.product-quantity > input {
+  height: 28px !important;
+  width: 84px !important;
+}
+.product-size select {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 1px solid #dddddd;
+  height: 24px;
+  padding-left: 2px;
+  width: 66px;
+}
+.product-color {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.product-price {
+  margin-top: 6px;
+}
+.product-color a {
+  background: #00aced none repeat scroll 0 0;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 23px;
+  margin: 0 3px;
+  overflow: hidden;
+  width: 23px;
+}
+.product-color a.red {
+  background: red none repeat scroll 0 0;
+}
+.product-color a.yellow {
+  background: yellow;
+}
+.product-price > span {
+  color: #ec4445;
+}
+.image-area {
+    float: left;
+}
+.product-name {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+.product-name a {
+  color: #222;
+}
+.product-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.single-related-product {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.price-box {
+  margin-bottom: 5px;
+}
+.cartpage-image {
+  float: left;
+}
+.list-block .item-content {
+  padding-left: 5px;
+}
+.cartpage-pro-dec {
+  float: left;
+  padding-left: 15px;
+}
+.cart-heading-1 > h2 {
+  background: #cccccc none repeat scroll 0 0;
+  color: #555;
+  font-weight: normal;
+  text-align: left;
+}
+.cart-heading-1 > h2 i {
+  background: #2bcdc1 none repeat scroll 0 0;
+  color: #fff;
+  padding: 12px;
+}
+
+.cartpage-image img {
+  width: 100px;
+}
+
+.modal-title {
+  display: none;
+}
+.cartpage-button {
+  margin-top: 20px;
+}
+.cartpage-button ul li button {
+  background: #2BCDC1 none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  cursor: pointer;
+  padding: 7px;
+}
+.cartpage-button li {
+  display: inline;
+}
+.inputtype {
+  border: 1px solid #ccc;
+  float: left;
+  height: 23px;
+  margin-right: 5px;
+  padding: 5px;
+  width: 225px;
+}
+.cartbox {
+  margin-top: 20px;
+  color: #555;
+  border: 1px solid #ccc;
+}
+.cart-heading > h2 {
+  background: #ccc none repeat scroll 0 0;
+  color: #555;
+  font-weight: normal;
+  padding: 5px 10px;
+}
+.cart-contenttext,{
+  padding: 10px;
+}
+.inputbox label {
+  display: block;
+  padding-bottom: 5px;
+}
+.inputbox {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.carttotal > p {
+  text-align: right;
+}
+.sub-t-p {
+  margin-left: 15px;
+}
+.grand-t {
+  font-size: 17px;
+}
+.cart-contenttext {
+  padding: 0 15px;
+}
+/*------------------------
+14. Check out page css
+--------------------------*/
+.cart-contenttext ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.cart-contenttext ul li:last-child{border:none;}
+.cart-contenttext ul li span {
+  color: #ccc;
+  padding: 0 5px;
+}
+.accordion-item .item-title{color: #555;}
+.accordion-item .item-title span{background: #2BCDC1;padding:5px;color: #fff;}
+
+.accorodinbox > h2 {
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+}
+.check-contenttext {
+  padding: 0 15px;
+}
+.list-block .item-inner::after {
+  height: 0px;
+
+}
+.method-input-box p label {
+  color: #111;
+  font-weight: 500;
+}
+.accorodinbox > h4 i {
+  font-size: 11px;
+}
+.list-block input[type="time"], .list-block input[type="number"], .list-block input[type="search"], .list-block input[type="text"], .list-block input[type="password"], .list-block input[type="email"], .list-block input[type="tel"], .list-block input[type="url"], .list-block input[type="date"], .list-block input[type="datetime-local"], .list-block select, .list-block textarea {
+  -moz-appearance: none;
+    border: 1px solid #ddd;
+  height: 34px;
+  padding:0 5px;
+  color: #555;
+}
+.accorodinbox {
+  padding: 20px 10px;
+}
+.inputbox > a{
+  color: #555;
+}
+.inputbox > a i {
+  color: #2BCDC1;
+}
+table{border-spacing: 0;border-collapse: collapse;border-left: 1px solid #ccc;width: 100%;}
+table tr td, table tr th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  padding: 4px;
+}
+tfoot tr td{border:none;text-align: right;}
+
+tfoot{border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;}
+.accordion-item-expanded .item-content {
+  align-items: center;
+  background: #2BCDC1 none repeat scroll 0 0;
+}
+.accordion-item-expanded .item-title{color: #fff;}
+/*------------------------
+15. about page css
+--------------------------*/
+.aboutpage img {
+  padding: 7px 0;
+  width: 100%;
+}
+.about-text-top > h3,.about-text-bottom > h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.short-title h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.short-title > h3 i {
+  background: #2bcdc1 none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 22px;
+  height: 29px;
+  line-height: 28px;
+  margin-right: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 30px;
+}
+.about-accordin .list-block .item-inner::after {
+  background-color: #c8c7cc;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 0;
+  left: 0;
+  position: absolute;
+  right: auto;
+  top: auto;
+  transform-origin: 50% 100% 0;
+  width: 100%;
+  z-index: 15;
+}
+.list-block li {
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  position: relative;
+}
+.accordin-title > h3 {
+  background: #2bcdc1 none repeat scroll 0 0;
+  color: #ffffff;
+  padding: 20px 5px;
+  text-align: center;
+}
+.short-title img {
+  margin-right: 5px;
+}
+.about-accordin .content-block > p {
+  padding-top: 15px;
+}
+/*-----------------------
+16. dashboard page css
+--------------------------*/
+.single-revenue {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 20px;
+}
+.revenue-icon {
+  float: right;
+}
+.revenue-icon i {
+  background: #34d3eb none repeat scroll 0 0;
+  color: #ffffff;
+  font-size: 32px;
+  height: 80px;
+  line-height: 78px;
+  text-align: center;
+  width: 80px;
+}
+.revenue-icon.sales i {
+  background: #81c868 none repeat scroll 0 0;
+}
+.revenue-icon.conversion i {
+  background: #7266ba none repeat scroll 0 0;
+}
+.revenue-icon.visits i {
+  background: #fb6d9d none repeat scroll 0 0;
+}
+
+.revenue-title {
+  float: left;
+  margin-top: 13px;
+}
+.revenue-title h4 {
+  color: #797979 !important;
+  font-size: 24px;
+  margin: 0;
+}
+.revenue-title p {
+  color: #98a6ad;
+  font-size: 16px;
+  margin: 0;
+}
+.col-100.tablet-50:nth-child(2).single-revenue i{color:#fb6d9d;border:1px solid #fb6d9d;background:rgba(251, 109, 157, 0.2)}
+.col-100.tablet-50:nth-child(3).single-revenue i{color:#7266ba;border:1px solid #7266ba;background:rgba(2114, 102, 186, 0.2)}
+
+.dashboard-area .single-revenue:nth-child(3) i{color:#7266ba;border:1px solid #7266ba;background:rgba(114, 102, 186, 0.2)}
+.dashboard-area .single-revenue:nth-child(4) i{color:#81c868;border:1px solid #81c868;background:rgba(129, 200, 104, 0.2)}
+.total-revenue {
+  border: 1px solid #dddddd;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.t-revenue-title{}
+.t-revenue-title h2 {
+  color: #797979 !important;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.total-sale {
+  text-align: center;
+}
+.total-sale h4 {
+  color: #98a6ad;
+}
+.t-revenue-title h2,.sale-title  {
+  color: #797979 !important;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.total-sale-list {}
+.total-sale-list ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.total-sale-list li{display: inline-block;
+padding: 0;
+width: 31.5%;}
+.total-sale-list li h4{color: #505458;}
+.total-sale-list li h5{color:#98a6ad}
+h2.tran-title{}
+.sale-list{}
+.sale-list ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.sale-list ul li {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.sale-list ul li i {
+  color: #81c868;
+  font-size: 18px;
+  position: absolute;
+  top: 1px;
+  width: 20px;
+}
+.sale-list ul li span.sale-text{display: inline-block;
+overflow: hidden;
+padding-left: 25px;
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 115px;}
+.sale-list ul li span.sale-date{}
+.sale-list ul li span.sale-price {
+  float: right;
+  margin-left: 30px;
+  color: #81c868;
+}
+.last-sale .list-block {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+/*-----------------------
+17. register login  page css
+--------------------------*/
+.login-screen .view .page {
+  padding: 0;
+  top: 0;
+}
+.register-content {
+  padding: 10px;
+}
+.registerbody {
+  background: rgba(0, 0, 0, 0) url("img/login-bg.png") no-repeat scroll center center / cover ;
+  color: #ffffff;
+  height: 100%;
+}
+.register-content .inputbox > input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 34px;
+  margin-top: 5px;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+}
+.inputbox > span {
+  color: #fff;
+}
+.inputbox {
+  padding: 11px 0;
+}
+.register-content h3 {
+  color: #fff;
+  font-size: 82px;
+  font-weight: bolder;
+  padding: 15px 0;
+  text-align: center;
+}
+.register-content > p {
+  color: #fff;
+  text-align: center;
+}
+.register-content a {
+  color: #fff;
+}
+.register-content a i {
+  color: #fff;
+  font-size: 25px;
+}
+.register-content .inputbox > a {
+  color: #fff;
+  float: right;
+  margin-bottom: 10px;
+}
+.button.button-big {
+  background: #2bcdc1 none repeat scroll 0 0;
+  border: medium none;
+  color: #ffffff;
+}
+
+/*------------------------
+18. contact us page css
+--------------------------*/
+.contact-form input {
+  border: 1px solid #ddd;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 0 2%;
+  width: 96%;
+}
+.contact-form textarea {
+  border: 1px solid #ddd;
+  padding: 8px 2% 2%;
+  width: 96%;
+}
+.contact-form iframe  {
+  width: 100%;
+}
+.button-big{width: 100%;}
+.contact-info {
+  margin-top: 20px;
+  text-align: center;
+}
+.contact-form p {text-align: center;}
+.contact-form > h4 {
+  color: #555555;
+  font-size: 19px;
+  font-weight: normal;
+  margin-top: 5px;
+  text-align: center;
+}
+/*------------------------
+19. gallary page css
+--------------------------*/
+.content-box.gallerybox .img-box::after {
+  background: #000000 none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: relative;
+  top: 0;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+display: none;
+
+}
+.photo-browser-dark .navbar a, .photo-browser-dark .toolbar a {
+  color: #444444;
+}
+.video-box {
+  margin-bottom: 10px;
+}
+.video-box iframe{width: 100%;}
+.video-gallery {
+  text-align: center;
+}
+.content-box.gallerybox {
+  text-align: center;
+}
+.tabbar a.link, .tabbar a.tab-link {
+  flex-direction: unset;
+}
+/*------------------------
+20. layout and notification  page css
+--------------------------*/
+.layoutpage div[class*="col-"] {
+  background: #ffffff none repeat scroll 0 0;
+  border: 1px solid #dddddd;
+  color: #000000;
+  margin-bottom: 15px;
+  padding: 5px;
+  text-align: center;
+}
+.notificationpage p a.button {
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  color: #ffffff;
+  height: 37px;
+}
+.notificationpage p:nth-child(1) a{background: #34D3EB}
+.notificationpage p:nth-child(2) a{background: #81C868}
+.notificationpage p:nth-child(3) a{background: #7266BA}
+.notificationpage p:nth-child(4) a{background: #FB6D9D}
+
+
+
+
+
+

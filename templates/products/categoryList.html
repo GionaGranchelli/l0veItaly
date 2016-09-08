@@ -1,0 +1,28 @@
+
+                <div class="content-block-inner">
+                    <div class="shop-area">
+                        {{#each Category}}
+                            {{#ifCond id_parent '==' 2 }}
+                                {{#ifCond id '<' 31 }}
+                                
+                                <div class="single-shop-list" id="goToCategory" data-id="{{id}}">
+                                    <div class="shop-inner">
+                                        
+                                            <div class="shop-img">
+                                                <img src="http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                                            </div>
+                                            <div class="shop-content">
+                                                <h3>{{name}}</h3>
+
+                                            </div>	
+                                       
+                                    </div>
+                                </div>
+                                
+                                {{/ifCond}}
+
+                            {{/ifCond}}
+                        {{/each}}
+                    </div>
+
+                </div>

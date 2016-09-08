@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>ECOM - HTML Mobile Template</title>
+	
+	<!-- font Raleway link -->  
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+	
+	<!-- all css here -->
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/swipebox.css">		        
+	<!-- font-awesome.min CSS -->      
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- style CSS -->          
+	<link rel="stylesheet" href="style.css">
+	<!-- style CSS -->          
+	<link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal menubg">
+    	<div class="menu-hoverlay">
+			<div class="line"></div>
+			<div class="logo-box">
+				<h3><img src="img/logo2.png" alt="" /></h3>
+			</div>
+			<div class="mainmenu">
+				<div class="row">
+					<div class="col-50">
+						<div class="menu">
+						<a href="dashboard.html" class="item-link close-panel">
+							<img src="img/menu/1.png" alt="">
+							DASHBOARD
+							</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="about.html">
+							<img src="img/menu/2.png" alt="">
+							ABOUT US</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="shop-list.html">
+							<img src="img/menu/3.png" alt="">
+							SHOPS</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="single-product.html">
+							<img src="img/menu/4.png" alt="">
+							PRODUCT</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="shopping-cart.html">
+							<img src="img/menu/5.png" alt="">
+							MY CART</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="checkout.html">
+							<img src="img/menu/6.png" alt="">
+							CHECKOUT</a>
+						</div>
+					</div>				
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="layout.html">
+							<img src="img/menu/7.png" alt="">
+							LAYOUT GRID</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="notification.html">
+							<img src="img/menu/8.png" alt="">
+							NOTIFICATIONS</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="image-gallery.html">
+							<img src="img/menu/9.png" alt="">
+							IMAGE GALLERY</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="video-gallery.html">
+							<img src="img/menu/10.png" alt="">
+							VIDEO GALLERY</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content external" href="tel:+88-01627-600206">
+							<img src="img/menu/11.png" alt="">
+							CALL US</a>
+						</div>
+					</div>
+					<div class="col-50">
+						<div class="menu">
+						<a class="item-link close-panel item-content" href="contact.html">
+							<img src="img/menu/12.png" alt="">
+							CONTACT</a>
+						</div>
+					</div>		
+				</div>
+			</div>
+			<!-- Menu end -->
+		</div>
+    </div>
+	<!-- login screen  start-->
+	<div class="login-screen">
+    <div class="view">
+      <div class="page">
+        <div class="page-content login-screen-content registerbody">
+			<div class="register-content">
+				<a href="#" class="close-login-screen floatright"><i class="fa fa-times"></i></a>
+				<h3><img src="img/logo2.png" alt=""></h3>
+				<form action="#">
+					<div class="inputbox">
+						<span>Username:</span><br>
+						<input type="text" name="name" id="name" placeholder="Username">
+					</div>
+					<div class="inputbox">
+						<span>Password:</span><br>
+						<input type="password" name="password" placeholder="***********">
+					</div>
+					<div class="inputbox">
+						<a data-popup=".popup-forgetpass" class="open-popup"   href="#">Forget Password?</a>
+					</div>
+					<div class="inputbox">
+						<button class="button button-big">Login</button>
+					</div>						
+				</form>	
+				<p>Don’t have an account?  <a data-popup=".popup-register" class="open-popup" href="#">Sign Up</a></p>
+			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- login screen  start-->
+	<!-- forget password  start-->
+ <div class="popup popup-forgetpass">
+	<div class="registerbody">
+		<a href="#" class="close-popup closebutton"><i class="fa fa-times"></i></a>
+		<div class="register-content">
+			<h3><img src="img/logo2.png" alt=""></h3>
+			<form action="#">
+				<div class="inputbox">
+					<span>Email:</span><br>
+					<input type="email" name="password" placeholder="email@gmail.com">
+				</div>
+				<div class="inputbox">
+					<button class="button button-big">Remember me</button>
+				</div>						
+			</form>	
+			<p>Don’t have an account?<a data-popup=".popup-register" class="open-popup" href="#"> Sign Up</a></p>
+		</div>
+	 </div>
+</div>
+  <!-- forget password  end-->
+  <!-- resister popup start-->
+<div class="popup popup-register">
+	<div class="registerbody">
+			<a href="#" class="close-popup closebutton"><i class="fa fa-times"></i></a>
+	     <div class="register-content">
+			<h3><img src="img/logo2.png" alt=""></h3>
+				<form action="#">
+				<div class="inputbox">
+					<span>Full Name:</span><br>
+					<input type="text" name="fulname" placeholder="Full Name">
+				</div>
+				<div class="inputbox">
+					<span>Username:</span><br>
+					<input type="text" name="username2" placeholder="Username">
+				</div>
+				<div class="inputbox">
+					<span>Email:</span><br>
+					<input type="email" name="email" placeholder="email@gmail.com">
+				</div>
+				<div class="inputbox">
+					<span>Password:</span><br>
+					<input type="password" name="password2" placeholder="***********">
+				</div>
+				<div class="inputbox">
+					<button class="button button-big">Sign Up</button>
+				</div>					
+			</form>
+		</div>
+	 </div>
+</div>
+  <!-- resister popup start-->	
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+		<div class="view view-main">
+			<!-- Top Navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+				  <!-- left link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"><img src="img/menu.png" alt=""></a>
+					</div>
+					<!-- We have home navbar without left link-->
+					<div class="center sliding"><img src="img/logo.png" alt="" /></div>
+					<div class="right">
+				  <!-- right link contains only icon - additional "icon-only" class--><a href="#" data-panel="right" class="link icon-only open-login-screen"><img src="img/menu2.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+			<div class="pages navbar-through toolbar-through">
+			  <!-- Page, data-page contains page name-->
+				<div data-page="index" class="page">
+				<!-- Scrollable page content-->
+					<div class="page-content">
+	 					<!-- slider area start-->
+	 					<div class="slider-area">
+							<div class="ks-slider-custom">
+								<div data-pagination=".swiper-pagination" data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" data-pagination-clickable="true" class="swiper-container swiper-init">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+							        		<img src="img/home/1.jpg" alt="">
+							        		<div class="slide-text">
+												<h2><span>The Awesome</span><br>Style !</h2>
+											</div>		        	
+							        	</div> 
+										<div class="swiper-slide">
+							        		<img src="img/home/2.jpg" alt="">
+							        		<div class="slide-text">
+												<h2><span>BEAUTIFUL </span><br>Color</h2>
+											</div>		        	
+							        	</div> 
+										<div class="swiper-slide">
+							        		<img src="img/home/3.jpg" alt="">
+							        		<div class="slide-text">
+												<h2><span>The Latest</span><br>Feature</h2>
+											</div>		        	
+							        	</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- slider area start-->	
+						<!-- all-product-area start-->
+						<div class="all-product-area warper">
+							 <div class="buttons-row">
+						      <!-- Link to 1st tab, active -->
+						      <a href="#tab1" class="tab-link active">NEWEST</a>
+						      <!-- Link to 2nd tab -->
+						      <a href="#tab2" class="tab-link ">FEATURED</a>
+						      <!-- Link to 3rd tab -->
+						      <a href="#tab3" class="tab-link">POPULAR</a>
+						    </div>
+						      <div class="tabs">
+							    <!-- Tab 1, active by default -->
+							    <div id="tab1" class="tab active">
+							      	<div class="content-block">
+								      	<div class="row">
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/1.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean sagittis</a></h3>
+																<p>MODEL: CC3005-85E</p>
+																<h4>$ 1100</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(25 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/2.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean tristiqu</a></h3>
+																<p>MODEL: STR-2018</p>
+																<h4>$ 2110</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(65 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/3.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aliquam lobortis</a></h3>
+																<p>MODEL: CC3005-858</p>
+																<h4>$ 1585</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(30 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/4.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Auctor gravida</a></h3>
+																<p>MODEL: STR-2458</p>
+																<h4>$ 1235</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(15 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      	</div>
+							      	</div>
+							    </div>
+							    <!-- Tab 2 -->
+							    <div id="tab2" class="tab">
+							      <div class="content-block">
+								      	<div class="row">
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/5.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Auctor gravida</a></h3>
+																<p>MODEL: STR-2458</p>
+																<h4>$ 1235</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(15 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->								      		
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/6.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aliquam lobortis</a></h3>
+																<p>MODEL: CC3005-858</p>
+																<h4>$ 1585</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(30 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->								      		
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/7.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean sagittis</a></h3>
+																<p>MODEL: CC3005-85E</p>
+																<h4>$ 1100</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(25 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/8.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean eu tristiqu</a></h3>
+																<p>MODEL: STR-2018</p>
+																<h4>$ 2110</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(65 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      	</div>
+							      </div>
+							    </div>
+							    <!-- Tab 3 -->
+							    <div id="tab3" class="tab">
+							      <div class="content-block">
+								      	<div class="row">
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/9.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aliquam lobortis</a></h3>
+																<p>MODEL: CC3005-858</p>
+																<h4>$ 1585</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(30 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->								      		
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      			<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/1.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean sagittis</a></h3>
+																<p>MODEL: CC3005-85E</p>
+																<h4>$ 1100</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(25 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/4.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Aenean eu tristiqu</a></h3>
+																<p>MODEL: STR-2018</p>
+																<h4>$ 2110</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(65 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      		<!-- single content  start-->
+								      		<div class="col-100 tablet-50">
+								      				<div class="single-product">
+													<div class="row">
+														<div class="col-50">
+															<div class="pro-img">
+																<a href="single-product.html">
+																	<img src="img/product/9.jpg" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="col-50">
+															<div class="pro-content">
+																<h3><a href="single-product.html">Auctor enim</a></h3>
+																<p>MODEL: STR-2458</p>
+																<h4>$ 1235</h4>
+																<div class="pro-rating-s">
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star"></i></a>
+																	<a href="#"><i class="fa fa-star-half-o"></i></a>
+																	<p>(15 Customer Rivew) </p>
+																</div>
+																<div class="add-cate">
+																	<ul>
+																		<li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+																		<li><a href="#"><i class="fa fa-retweet"></i></a></li>
+																		<li><a href="#"><i class="fa fa-heart"></i></a></li>
+																	</ul>
+																</div>								
+															</div>
+														</div>
+													</div>
+												</div>
+								      		</div>
+								      		<!-- single content  end-->
+								      	</div>
+							      </div>
+							    </div>
+							 </div>
+						</div>
+						<!-- all-product-area end-->
+						<!-- features area start-->
+						<div class="features-area warper">
+							<div class="row">
+								<!-- single-features start -->
+								<div class="col-100 tablet-33">
+									<div class="single-features">
+										<div class="features-icon">
+											<img src="img/shipping.png" alt="">
+										</div>
+										<div class="features-info-text">
+											<h3>FREE SHIPPING &amp; RETURN</h3>
+											<p>Free shipping on all orders over $99.</p>
+										</div>
+									</div>
+								</div>
+								<!-- single-features end -->
+								<!-- single-features start -->
+								<div class="col-100 tablet-33">
+									<div class="single-features">
+										<div class="features-icon">
+											<img src="img/dollar.png" alt="">
+										</div>
+										<div class="features-info-text">
+											<h3>MONEY BACK GUARANTEE</h3>
+											<p>100% money back guarantee.</p>
+										</div>
+									</div>
+								</div>
+								<!-- single-features end -->
+								<!-- single-features start -->
+								<div class="col-100 tablet-33">
+									<div class="single-features">
+										<div class="features-icon">
+											<img src="img/support.png" alt="">
+										</div>
+										<div class="features-info-text">
+											<h3>ONLINE SUPPORT 24/7</h3>
+											<p>Lorem ipsum dolor sit amet</p>
+										</div>
+									</div>
+								</div>
+								<!-- single-features end -->
+							</div>
+						</div>
+						<!-- features area end-->						
+						<!--our-client-area start-->
+						<div class="client-area">
+							<div class="section-title">
+								<h1>OUR <strong> BRANDS</strong></h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam</p>
+							</div>
+							<div class="client-all-content">
+								<div class="row">
+									<div class="col-50 tablet-25">
+										<div class="client-img">
+											<a href="#"><img src="img/clients/1.svg" alt=""></a>
+										</div>
+									</div>
+									<div class="col-50 tablet-25">
+										<div class="client-img">
+											<a href="#"><img src="img/clients/2.svg" alt=""></a>
+										</div>
+									</div>
+									<div class="col-50 tablet-25">
+										<div class="client-img">
+											<a href="#"><img src="img/clients/3.svg" alt=""></a>
+										</div>
+									</div>
+									<div class="col-50 tablet-25">
+										<div class="client-img">
+											<a href="#"><img src="img/clients/4.svg" alt=""></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--our-client-area end-->
+					<!-- footer  start-->				
+						<div class="footer-area warper">
+							<div class="footer-icons">
+								<ul>
+									<li><a href="#">Like On Facebook</a></li>
+									<li><a href="#">Follow on Twitter</a></li>
+									<li><a href="#"> Stay in Circle</a></li>
+								</ul>
+								<p>Copyright 2015. All rights reserved- ECOM</p>
+							</div>
+						</div>
+						<!-- footer  end-->		
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+	
+	<!-- Js -->
+	<!-- jquery-1.11.3.min js -->         
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<!-- Path to Framework7 Library JS --> 
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!--jquery.swipebox js --> 
+    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+	<!-- Path to your app js --> 
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
