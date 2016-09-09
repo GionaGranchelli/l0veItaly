@@ -28,7 +28,7 @@ define(function (require) {
     var FarmDetailView = require('views/pages/farm/FarmDetailView');
     var Farms = require('collections/Farms');
     var Farm = require('models/Farm');
-    
+
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -145,10 +145,8 @@ define(function (require) {
             this.changePage(page);
         },
         goToFarmDetail: function (key) {
-
             var model = new Farm({id: key});
             model.fetch();
-
             var collection = new Products(4, 'stringa', key);
             collection.fetch();
             var page = new FarmDetailView({
@@ -159,11 +157,9 @@ define(function (require) {
             this.changePage(page);
         },
         goToCategory: function (key) {
-
             //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
             var model = new Products(5, key);
             model.fetch();
-
              var page = new ProductListView({
                 collection: model
             });
