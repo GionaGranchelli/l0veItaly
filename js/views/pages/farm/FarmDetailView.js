@@ -31,13 +31,14 @@ define(function(require) {
     className: "i-g page",
 
     events: {
-      "tap #goToMap": "goToMap"
+      "tap #goToMap": "goToMap",
+      "tap #goToProductDetail" : "goToProductDetail",
     },
     beforeRender : function(){
         this.collection.on('sync', this.render, this);
     },
     render: function() {
-console.log(this.collection.models);
+
      $(this.el).html(this.template({
           model : this.model.toJSON(),
           Products : this.collection.models
@@ -52,7 +53,14 @@ console.log(this.collection.models);
       Backbone.history.navigate("map", {
         trigger: true
       });
-     
+
+    },
+    goToProductDetail: function(ev){
+
+      Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
+        trigger: true
+      });
+
     }
   });
 

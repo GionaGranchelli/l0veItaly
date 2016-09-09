@@ -1,21 +1,22 @@
 
 <div class="content-block-inner">
-    <div class="single-product-area">
-        <div class="single-product">
+    <div class="single-product-area-farm">
+        <div class="single-product-farm">
             <div class="single-product-img">
-                <a href="#"><img src="img/product/5.jpg" alt="" /></a>
+                <img src="http://www.loveitaly.net/img/cms/fine%20vendemmia%20pecorino_sito.jpg" alt="" />
             </div>
             <div class="single-product-content">
                 <h1 class="product_title">{{model.manufacturer.name}}</h1>
 
-                <div class="short-description">
-                    <p>{{{model.manufacturer.short_description}}}</p>
-                </div>
 
+
+            </div>
+            <div class="short-description">
+                <p>{{{model.manufacturer.meta_description}}}</p>
             </div>
         </div>
     </div>
-    <div class="related-product">
+    <div class="related-product-farm">
         <div class="rel-title">
             <h3>Prodotti</h3>
         </div>
@@ -25,24 +26,18 @@
                         <h3> name {{name}}</h3>-->
         <h3>{{#each Products}}</h3>
         <div class="single-shop-list" >
-            <div class="shop-inner">
+            <div class="shop-inner" id="goToProductDetail" data-id={{id}}>
                 <div class="shop-img">
-                    <a href="#"><img src="http://loveitaly.altervista.org/api/images/products/{{attributes.id}}/{{attributes.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" /></a>
+                    <img src="http://loveitaly.altervista.org/api/images/products/{{attributes.id}}/{{attributes.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
                 </div>
                 <div class="shop-content">
                     <h3><a href="#">{{products}}</a> {{attributes.name}}</h3>
-                    <div class="pro-rating-s">
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                    </div>
+
                     <div class="price-box">
-                        <span class="new-price">£90.00</span>
-                        <span class="old-price">£120.00</span>
+                        <span class="new-price">€{{attributes.price}}</span>
+
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <p>{{{attributes.description_short}}}</p>
                 </div>
             </div>
         </div>

@@ -29,6 +29,10 @@ define(function (require) {
     var Farms = require('collections/Farms');
     var Farm = require('models/Farm');
 
+    //Search
+    var Searchs = require('collections/Searchs');
+    // var Search = require('models/Search');
+    var SearchListView = require('views/pages/search/SearchListView');
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -43,7 +47,8 @@ define(function (require) {
             "gotocategorylist": "goToCategoryList",
             "gotocategory/:key" : "goToCategory",
             "gotofarmlist" : "goToFarmList",
-            "gotofarmdetail/:key": "goToFarmDetail"
+            "gotofarmdetail/:key": "goToFarmDetail",
+            "gotosearchresult/:query":"goToSearchResult"
         },
         firstView: "myview",
         initialize: function (options) {
@@ -70,12 +75,23 @@ define(function (require) {
                         return options.inverse(this);
                 }
             });
+            /**
+             * The {{#exists}} helper checks if a variable is defined.
+             */
+            Handlebars.registerHelper('exists', function(variable, options) {
+                if (typeof variable !== 'undefined') {
+                    return options.fn(this);
+                } else {
+                    return options.inverse(this);
+                }
+            });
         },
         myView: function () {
             // highlight the nav1 tab bar element as the current one
             this.structureView.setActiveTabBarElement("nav1");
             // create a model with an arbitrary attribute for testing the template engine
-            var model = new Products(4);
+            var model = new Products();
+            model.setLimit(4);
             model.fetch();
             // create the view
             var page = new MyView({
@@ -107,7 +123,8 @@ define(function (require) {
         },
         goToProductList: function (e) {
 
-            var model = new Products(4);
+            var model = new Products();
+            model.setLimit(4);
             model.fetch();
             // create the view
             var page = new ProductListView({
@@ -147,7 +164,8 @@ define(function (require) {
         goToFarmDetail: function (key) {
             var model = new Farm({id: key});
             model.fetch();
-            var collection = new Products(4, 'stringa', key);
+            var collection = new Products();
+            collection.setFarm(key);
             collection.fetch();
             var page = new FarmDetailView({
                 model : model,
@@ -158,13 +176,30 @@ define(function (require) {
         },
         goToCategory: function (key) {
             //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
-            var model = new Products(5, key);
+            var model = new Products();
+            model.setLimit(5);
+            model.setCategory(key);
             model.fetch();
              var page = new ProductListView({
                 collection: model
             });
             // show the view
             this.changePage(page);
+        },
+        goToSearchResult: function(query){
+          var model = new Categories();
+          model.fetch();
+          var collection = new Searchs();
+          console.log("Query" + query);
+          collection.setQuery(query);
+          collection.fetch();
+          console.log(collection);
+          var page = new SearchListView({
+            collection: collection,
+            category: model
+          });
+          this.changePage(page);
+
         }
 
     });

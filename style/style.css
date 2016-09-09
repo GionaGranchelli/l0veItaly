@@ -33,7 +33,7 @@ body {
     padding: 0;
     left: 0;
     /*top: 40px;*/
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .displaynone {
@@ -47,7 +47,7 @@ body {
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;
+    top: 5%;
     bottom: 0;
     overflow-y: hidden;
     overflow-x: hidden; }
@@ -71,7 +71,7 @@ body {
 /* END STRUCTURE */
 #map {
     height: 100%;
-    width: 100%; 
+    width: 100%;
 }
 
 .panel{
@@ -218,12 +218,12 @@ img {
 }
 
 /*header img {
-        
+
         width: 80px;
         margin: 8px  0 0 -24px;
 
 }*/
-header img {	
+header img {
     /*width: 85px;*/
     /*margin: 10px auto 0;*/
 }
@@ -267,4 +267,107 @@ img#logo_principale {
 }
 .page-content{
     width: 99%;
+}
+#barraRicerca{
+  margin-top: 10%;
+}
+/*#search{
+  width: 52%;
+}*/
+#pupazzo{
+  display: none;
+}
+.container-2 {
+    width: 139px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    float: right;
+    height: 45px;
+    margin-top: 4px;
+}
+.container-2 input#search {
+    width: 40px;
+    height: 40px;
+    background: #2b303b;
+    border: none;
+    font-size: 10pt;
+    float: right;
+    color: #262626;
+    padding-left: 35px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.container-2 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+
+.container-2 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;
+}
+
+.container-2 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
+}
+
+.container-2 input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+.container-2 .icon{
+position: absolute;
+    top: 6%;
+    margin-left: 17px;
+    margin-top: -9px;
+    z-index: 1;
+    color: #4f5b66;
+  }
+.container-2 input#search:focus, .container-2 input#search:active{
+  outline:none;
+  width: 170px;
+}
+
+.container-2:hover input#search{
+width: 170px;
+}
+
+.container-2:hover .icon{
+  color: #93a2ad;
+}
+.quantity select{
+  background: #e8e8e9 none repeat scroll 0 0;
+border: medium none;
+color: #000;
+float: left;
+font-size: 17px;
+height: 40px;
+line-height: 40px;
+margin-right: 40px;
+padding: 0 10px 0 0;
+text-align: center;
+width: 90px;
+}
+
+.single-product-img-farm{
+  width: 45%;
+    float: left;
+}
+.single-product-content-farm{
+  width: 50%;
+    float: left;
+}
+.short-description-farm{
+  width: 99%;
+float: left;
+}
+.related-product-farm{
+  float: left;
 }

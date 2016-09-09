@@ -3,19 +3,19 @@ define(function(require) {
   var Backbone = require("backbone");
   //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
-  var ProductDetailView = require('views/pages/products/ProductDetailView');
-  var Products = require("collections/Products");
+  // var ProductDetailView = require('views/pages/products/ProductDetailView');
+  var Seachs = require("collections/Searchs");
 
-  var ProductListView = Utils.Page.extend({
+  var SearcListView = Utils.Page.extend({
 
-    constructorName: "ProductListView",
-    collection: Products,
+    constructorName: "SearcListView",
+    collection: Seachs,
 
     initialize: function() {
-
+      console.log("Sono dentro la Search List");
       _.bindAll(this, 'render');
       // load the precompiled template
-      this.template = Utils.templates.productlist;
+      this.template = Utils.templates.searchlist;
       this.collection.on('sync', this.render, this);
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
@@ -28,7 +28,7 @@ define(function(require) {
       // by convention, all the inner views of a view must be stored in this.subViews
     },
 
-    id: "productlist",
+    id: "searchlist",
     className: "i-g page",
     iniziale: 4,
     limit: 8,
@@ -41,7 +41,12 @@ define(function(require) {
     },
 
     render: function() {
-      $(this.el).html(this.template({Prodotti: this.collection.toJSON()}));
+      console.log(this.collection);
+
+      $(this.el).html(this.template({
+          Products : this.collection.products,
+          Category : this.collection.category
+      }));
       //      this.model.toJSON()
       return this;
     },
@@ -71,31 +76,29 @@ define(function(require) {
     },
     checkScroll: function () {
       var scrollHeight = this.el.offsetHeight;
-                //  console.log("scrollHeight " + scrollHeight);
+      //  console.log("scrollHeight " + scrollHeight);
       var scrollTop = this.el.scrollHeight;// Altezza del contenuto di Page
-                //  console.log("scrollTop " + scrollTop);
+      //  console.log("scrollTop " + scrollTop);
       var offsetHeight = this.el.scrollTop;  // Delta spostamento dello spostamento
-                //  console.log("offsetHeight" + offsetHeight);
+      //  console.log("offsetHeight" + offsetHeight);
       return (scrollHeight - (scrollTop - offsetHeight));
     },
     doSearch : function(){
       var searchQuery = $('#search').val();
-      console.log(searchQuery);
+      console.log("doSearch " + searchQuery);
       Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
 
     },
     doSearchRapid : function(event){
-      console.log(event.keyCode);
-      if (event.keyCode === 13) {
-        console.log($('#search').val());
 
+      if (event.keyCode === 13) {
         var searchQuery = $('#search').val();
-        console.log(searchQuery);
+        console.log("doSearchRapid "+searchQuery);
         Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
       }
     }
   });
 
-          return ProductListView;
+          return SearcListView;
 
 });

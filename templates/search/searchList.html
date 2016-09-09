@@ -1,0 +1,82 @@
+<div class="content-block-inner" id="barraRicerca">
+  <form>
+    <div class="quantity">
+      <input type="text" id="search" />
+
+    </div>
+  </form>
+
+</div>
+{{#exists Products}}
+<h3>Prodotti</h3>
+<div class="content-block-inner">
+    <div class="shop-area">
+        {{#each Products}}
+        <div class="single-shop-list" id="goToProductDetail" data-id="{{id}}">
+            <div class="shop-inner">
+                <div class="shop-img">
+
+                    <img src="http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                </div>
+                <div class="shop-content">
+                    <h3>{{name}}</h3>
+
+                    <!--                                    <div class="pro-rating-s">
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                        </div>							-->
+                    <div class="price-box">
+                        <span class="new-price">{{price}}</span>
+                        <!--<span class="old-price">£120.00</span>-->
+                    </div>
+                    <p>{{{description_short}}}</p>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+
+    </div>
+</div>
+{{/exists}}
+{{#exists Category}}
+  <h3> Categorie </h3>
+<div class="content-block-inner">
+
+    <div class="shop-area">
+        {{#each Category}}
+        <div class="single-shop-list" id="goToCategory" data-id="{{id}}">
+            <div class="shop-inner">
+                <!-- <div class="shop-img">
+
+                    <img src="http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
+                </div> -->
+                <div class="shop-content">
+                    <h3><a href="#">{{name}}</a></h3>
+
+                    <!--                                    <div class="pro-rating-s">
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                        </div>							-->
+                    <!-- <div class="price-box">
+                        <span class="new-price">{{price}}</span>
+                        <!--<span class="old-price">£120.00</span>
+                    </div> -->
+                    <p>{{{meta_title}}}</p>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+
+    </div>
+</div>
+{{/exists}}

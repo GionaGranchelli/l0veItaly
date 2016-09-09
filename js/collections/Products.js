@@ -3,48 +3,45 @@ define(function (require) {
     var Backbone = require("backbone");
     var Product = require("models/Product");
     var Products = Backbone.Collection.extend({
-        initialize: function (option, category, farm) {
-            this.initiale = 0;
-            this.limite = option;
-            this.category = category;
-            this.farm = farm;
-
+        initialize: function () {
 
         },
+        initiale : 0,
+        finale : 0,
+        category: undefined,
         model: Product,
-        initiale: 0,
-        limite : 4,
-        category : undefined,
-        farm : undefined,
-        urlRoot: 'http://loveitaly.altervista.org/api/products/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H',
-        url : function(){
-          console.log('option-> ' + this.option);
-          console.log('typeof option-> ' + typeof this.option);
-          console.log('category->' + this.category);
-          console.log('typeof category-> ' + typeof this.category);
-          console.log('farm->' + this.farm);
-          console.log('initial ->' + this.initiale);
-          console.log('limit ->' + this.limite);
-          var base = this.urlRoot;
-          if (typeof this.limite === "number") {
-              if( this.initiale === 0 ){
-                  base += '&limit=' + encodeURIComponent(this.limite);
-              }else{
-                  base += '&limit=' +encodeURIComponent(this.initiale) + ',' + encodeURIComponent(this.limite);
-              }
+        url : 'http://loveitaly.altervista.org/api/products/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H',
+        setLimit : function(limite){
+          this.url += '&limit=' + encodeURIComponent(limite);
+          finale = limite;
+        },
+        setRange : function(initiale, limite){
+          this.url += '&limit=' +encodeURIComponent(initiale) + ',' + encodeURIComponent(limite);
+          this.initiale = initiale;
+          this.finale = limite;
+        },
+        setCategory : function(category){
 
+          this.url += '&filter[id_category_default]=[' + category + ']';
+          this.category = category;
+        },
+        setFarm : function(farm){
+          this.url += '&filter[id_manufacturer]=[' + farm + ']';
+        },
+        getLimit :function(){
+          return this.finale;
+        },
+        getInitial : function(){
+          return this.initiale;
+        },
+        setPagination : function( iniziale , finale){
+          this.url = 'http://loveitaly.altervista.org/api/products/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
+          this.url += '&limit=' +encodeURIComponent(iniziale) + ',' + encodeURIComponent(finale);
+          if(this.category === undefined){
+            console.log("category undefined");
+          }else {
+              this.setCategory(this.category);
           }
-          if (this.category !== undefined ) {
-              if (typeof category !== "string") {
-                  console.log("Products filtered by Category");
-                  base += '&filter[id_category_default]=[' + this.category + ']';
-              }
-          }
-          if (this.farm !== undefined) {
-              console.log("Products filtered by Farm");
-              base += '&filter[id_manufacturer]=[' + this.farm + ']';
-          }
-          return base;
         },
         parse: function (data) {
           console.log(this.base);

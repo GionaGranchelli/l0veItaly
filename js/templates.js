@@ -18,5 +18,6 @@ define({
     farmlist : "templates/farms/farmList.html",
     product : "templates/products/productDetail.html",
     productlist : "templates/products/productList.html",
-    productcategory : "templates/products/categoryList.html"
+    productcategory : "templates/products/categoryList.html",
+    searchlist : "templates/search/searchList.html"
 });

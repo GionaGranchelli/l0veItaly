@@ -9,7 +9,8 @@
         <li> <span id="nav4"><a >Categorie</a></span></li>
         <li> <span id="nav5"><a >Farm</a></span></li>
         <li> <span id="nav6"><a >Chi Siamo</a></span></li>
-        <li> <span ><a class="item-link close-panel item-content close-popup open-login-screen"">Login</a></span></li>
+        <li> <span ><a class="item-link close-panel item-content close-popup open-login-screen">Login</a></span></li>
+
         <!--<li> <span id="nav8"><a >Settings</a></span></li>-->
 
     </ul>
@@ -45,9 +46,15 @@
         <img id="logo_principale" src="img/logo.png">
 
 
-        <a class="icon icon-search pull-right" id="settingsModal" ></a>
+        <!-- <a class="icon icon-search pull-right item-link close-panel item-content close-popup open-search-screen" id="settingsModal" ></a> -->
+
+          <div class="container-2">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="search" id="search" placeholder="Search..." />
+          </div>
+        
         <!-- Right link contains only icon - additional "icon-only" class-->
-        <a href="#" data-popover=".popover-links" class="link open-popover clickopen"><img src="img/menu2.png" alt="" /></a>
+        <a id="pupazzo" href="#" data-popover=".popover-links" class="link open-popover clickopen"><img src="img/menu2.png" alt="" /></a>
 
         <div class="popover popover-links">
             <div class="popover-angle"></div>
@@ -68,9 +75,67 @@
     <div id="content" class="content"></div>
 </main>
 
+<div class="search-screen"  id="search-screen" >
+    <div class="view">
+        <div class="page">
+            <div class="page-content search-screen-content registerbody">
+                <div class="register-content">
+                    <a href="#" class="close-search-screen floatright"><i class="fa fa-times"></i></a>
+                    <h3><img src="img/logo2.png" alt=""></h3>
+                    <form action="#">
+                        <div class="inputbox">
+                            <span>Username:</span><br>
+                            <input type="text" name="name" id="name" placeholder="Username">
+                        </div>
+                        <div class="inputbox">
+                            <span>Password:</span><br>
+                            <input type="password" name="password" placeholder="***********">
+                        </div>
+                        <div class="inputbox">
+                            <a data-popup=".popup-forgetpass" class="open-popup"   href="#">Forget Password?</a>
+                        </div>
+                        <div class="inputbox">
+                            <button class="button button-big">Login</button>
+                        </div>
+                    </form>
+                    <p>Don’t have an account?  <a data-popup=".popup-register" class="open-popup" href="#">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- menu end -->
 
 
-
+<div class="login-screen">
+    <div class="view">
+        <div class="page">
+            <div class="page-content login-screen-content registerbody">
+                <div class="register-content">
+                    <a href="#" class="close-login-screen floatright"><i class="fa fa-times"></i></a>
+                    <h3><img src="img/logo.png" alt=""></h3>
+                    <form action="#">
+                        <div class="inputbox">
+                            <span>Username:</span><br>
+                            <input type="text" name="name" id="name" placeholder="Username">
+                        </div>
+                        <div class="inputbox">
+                            <span>Password:</span><br>
+                            <input type="password" name="password" placeholder="***********">
+                        </div>
+                        <div class="inputbox">
+                            <a data-popup=".popup-forgetpass" class="open-popup"   href="#">Forget Password?</a>
+                        </div>
+                        <div class="inputbox">
+                            <button class="button button-big">Login</button>
+                        </div>
+                    </form>
+                    <p>Don’t have an account?  <a data-popup=".popup-register" class="open-popup" href="#">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

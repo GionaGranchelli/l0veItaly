@@ -10,10 +10,10 @@
 
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
 	1. Theme Default CSS (body, link color, section etc)
   2. left side ber css
   3. home css
@@ -25,7 +25,7 @@
   9. shop page css
   10. blog page css
   11. dashboard css
-  12. portfolio css 
+  12. portfolio css
   13. sopping cart css
   14. Check out page css
   15. register login  page css
@@ -650,6 +650,8 @@ h2.product-name {
 }
 .single-product-img img {
   max-width: 100%;
+  /*New*/
+  border-radius: 90px;
 }
 h1.product_title {
   font-size: 18px;
@@ -1027,7 +1029,7 @@ h2.tran-title{}
 }
 .sale-list ul li:last-child {
   border-bottom:none;
-  
+
 }
 .sale-list ul li i {
   color: #81c868;
@@ -1055,7 +1057,7 @@ width: 115px;}
 }
 .revenue-sales{background:#4099FF }
 /*------------------------
-12. portfolio css 
+12. portfolio css
 --------------------------*/
 .portfolio-desc p{}
 .img-box img {
@@ -1306,7 +1308,7 @@ tfoot{border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;}
 .login-screen .view .page{top:0;}
 .register-content {
   padding: 10px;
- 
+
 }
 .popup-register .popup-overlay .modal-overlay-visible{
     top:40px;
@@ -1360,4 +1362,3 @@ tfoot{border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;}
   margin: 0;
   padding-top: 5px;
 }
-

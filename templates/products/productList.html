@@ -1,7 +1,18 @@
+        <div class="content-block-inner" id="barraRicerca">
+          <form>
+            <div class="quantity">
+              <input type="text" id="search" />
 
+            
+
+              <a id="searchButton" value="Cerca">Cerca</a>
+            </div>
+          </form>
+
+        </div>
         <div class="content-block-inner">
             <div class="shop-area">
-                {{#each Prodotti}} 
+                {{#each Prodotti}}
                 <div class="single-shop-list" id="goToProductDetail" data-id="{{id}}">
                     <div class="shop-inner">
                         <div class="shop-img">
@@ -21,9 +32,9 @@
                             <div class="price-box">
                                 <span class="new-price">{{price}}</span>
                                 <!--<span class="old-price">£120.00</span>-->
-                            </div>	
+                            </div>
                             <p>{{{description_short}}}</p>
-                        </div>					
+                        </div>
                     </div>
                 </div>
 

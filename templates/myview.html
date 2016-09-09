@@ -14,36 +14,6 @@
 
 -->
 
-<!-- menu end -->
-<div class="login-screen">
-    <div class="view">
-        <div class="page">
-            <div class="page-content login-screen-content registerbody">
-                <div class="register-content">
-                    <a href="#" class="close-login-screen floatright"><i class="fa fa-times"></i></a>
-                    <h3><img src="img/logo2.png" alt=""></h3>
-                    <form action="#">
-                        <div class="inputbox">
-                            <span>Username:</span><br>
-                            <input type="text" name="name" id="name" placeholder="Username">
-                        </div>
-                        <div class="inputbox">
-                            <span>Password:</span><br>
-                            <input type="password" name="password" placeholder="***********">
-                        </div>
-                        <div class="inputbox">
-                            <a data-popup=".popup-forgetpass" class="open-popup"   href="#">Forget Password?</a>
-                        </div>
-                        <div class="inputbox">
-                            <button class="button button-big">Login</button>
-                        </div>						
-                    </form>	
-                    <p>Don’t have an account?  <a data-popup=".popup-register" class="open-popup" href="#">Sign Up</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- forget password  start-->
 <div class="popup popup-forgetpass">
     <div class="registerbody">
@@ -57,8 +27,8 @@
                 </div>
                 <div class="inputbox">
                     <button class="button button-big">Remember me</button>
-                </div>						
-            </form>	
+                </div>
+            </form>
             <p>Don’t have an account?<a data-popup=".popup-register" class="open-popup" href="#"> Sign Up</a></p>
         </div>
     </div>
@@ -89,7 +59,7 @@
                 </div>
                 <div class="inputbox">
                     <button class="button button-big">Sign Up</button>
-                </div>					
+                </div>
             </form>
         </div>
     </div>
@@ -97,16 +67,16 @@
 <!-- resister popup start-->
 <!-- Views -->
 <!--<div class="views">
-     Your main view, should have "view-main" class 
+     Your main view, should have "view-main" class
     <div class="view view-main">
          Top Navbar
-        
+
          Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes
         <div class="pages navbar-through toolbar-through">
 
-             Page, "data-page" contains page name 
+             Page, "data-page" contains page name
             <div data-page="index" class="page">
-                 Scrollable page content 
+                 Scrollable page content
 -->
 <div class="page-content">
     <!-- Link to another page -->
@@ -147,7 +117,7 @@
         <div class="features-product">
             <div class="section-heading">
                 <h3>PRODOTTI</h3>
-            </div>	
+            </div>
             <div class="clear"></div>
             <div class="row">
                 {{#each Prodotti}}
@@ -155,7 +125,7 @@
                     <a href="shop.html">
                         <img src="http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
                         <h3>{{name}}</h3>
-                    </a>	
+                    </a>
                 </div>
                 {{/each}}
 
@@ -165,7 +135,7 @@
         <!--                        <div class="features-product">
                                     <div class="section-heading">
                                         <h3>FEATURED PRODUCTS</h3>
-                                    </div>	
+                                    </div>
                                     <div class="clear"></div>
                                     <div class="ks-slider-custom">
                                         <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container2 swiper-init">
@@ -187,7 +157,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -203,13 +173,13 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>					        	
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="single-project">
@@ -228,7 +198,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -244,14 +214,14 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>					        	
-                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="swiper-slide">
                                                     <div class="single-project">
                                                         <div class="product-img">
@@ -269,7 +239,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -285,22 +255,22 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>			        	
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>						
+                                    </div>
                                 </div>-->
         <!--                        <div class="features-product">
                                     <div class="section-heading">
                                         <h3>New Products</h3>
-                                    </div>	
+                                    </div>
                                     <div class="clear"></div>
                                     <div class="ks-slider-custom">
                                         <div data-space-between="0" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container3 swiper-init">
@@ -322,7 +292,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -338,14 +308,14 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>					        	
-                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="swiper-slide">
                                                     <div class="single-project">
                                                         <div class="product-img">
@@ -363,7 +333,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -379,13 +349,13 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>				        	
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="single-project">
@@ -404,7 +374,7 @@
                                                                         </div>
                                                                         <div class="compare-button">
                                                                             <a href="#"><i class="fa fa-exchange"></i></a>
-                                                                        </div>									
+                                                                        </div>
                                                                     </div>
                                                                     <div class="quickviewbtn">
                                                                         <a href="#"><i class="fa fa-search-plus"></i></a>
@@ -420,17 +390,17 @@
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
                                                                 <a href="#"><i class="fa fa-star"></i></a>
-                                                            </div>									
+                                                            </div>
                                                             <div class="price-box">
                                                                 <span class="new-price">£90.00</span>
                                                                 <span class="old-price">£120.00</span>
-                                                            </div>										
-                                                        </div>									
-                                                    </div>				        	
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>		
+                                    </div>
                                 </div>-->
         <div class="banner-area">
             <a href="#"><img src="img/banner/banner5.jpg" alt="" /></a>
@@ -470,7 +440,7 @@
                         </div>
                     </div>
                 </div>
-            </div>					
+            </div>
             <div class="footer-icon">
                 <p>Copyright 2015. All rights reserved.</p>
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -480,7 +450,7 @@
             </div>
         </div>
     </div>
-</div><!--                
+</div><!--
             </div>
         </div>
          Bottom Toolbar
