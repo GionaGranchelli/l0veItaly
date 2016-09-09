@@ -1,13 +1,37 @@
 
 <div class="content-block-inner">
 			<div class="single-product-area">
+
 				<div class="single-product">
+					<div class="swiper-container">
+					    <!-- Additional required wrapper -->
+					    <div class="swiper-wrapper">
+					        <!-- Slides -->
+									{{#each Immagini.images.models}}
+										<div class="swiper-slide" style="height:300px;background-image:url('{{attributes.href}}') ;">
+
+													<!-- <img  class="productsImages" src="{{attributes.href}}" alt="" /> -->
+										</div>
+
+									{{/each}}
+
+
+
+					    </div>
+					    <!-- If we need pagination -->
+
+
+					    <!-- If we need navigation buttons -->
+					    <!-- <div class="swiper-button-prev"></div>
+					    <div class="swiper-button-next"></div>
+
+					    <!-- If we need scrollbar -
+					    <div class="swiper-scrollbar"></div> -->
+					</div>
 					<div class="single-product-img">
 
-						<a href="#"><img src="img/product/5.jpg" alt="" /></a>
-
-            
 					</div>
+					{{#with Product}}
 					<div class="single-product-content">
 						<h1 class="product_title">{{product.name}}</h1>
 						<div class="price-box">
@@ -27,7 +51,31 @@
 							</div>
 						</form>
 					</div>
+						{{/with}}
 				</div>
+
 			</div>
 
 </div>
+<script>
+var mySwiper = new Swiper('.swiper-container', {
+														speed: 700,
+														spaceBetween: 100,
+														direction : 'horizontal',
+														effect : 'coverflow',
+														coverflow: {
+														  rotate: 50,
+														  stretch: 0,
+														  depth: 100,
+														  modifier: 1,
+														  slideShadows : true
+														},
+														cube: {
+														slideShadows: true,
+														shadow: true,
+														shadowOffset: 20,
+														shadowScale: 0.94
+														}
+
+													});
+</script>

@@ -371,3 +371,75 @@ float: left;
 .related-product-farm{
   float: left;
 }
+.farm-list {
+    width: 50%;
+    float: left;
+}
+.farm-list-shop-content h3 {
+    position: relative;
+    top: 34%;
+    left: 4%;
+}
+.farm-list-shop-content {
+    width: 100%;
+    height: 92px;
+    border: 1px solid black;
+}
+.single-product-content{
+  margin-top:10%;
+}
+.swiper-slide{
+
+}
+.swiper-container{
+  margin-bottom: 5px;
+
+}
+.shop-img{
+  background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 180px;
+}
+
+.shop-img-cat{
+  height: 50px;
+}
+.shop-content h3.categoryh{
+  margin-top: 5%;
+}
+.shopbox-home{
+  background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 180px;
+}
+.add-to-links {
+    position: relative;
+    top: 110px;
+    border: 1px solid #f6f6f6;
+    padding: 4px;
+    background-color: #f6f6f6;
+    right: -22%;
+    width: 105px;
+    box-shadow: -1px 1px 14px #888888;
+}
+.shopbox-content {
+    position: relative;
+    top: 1%;
+    left: 25%;
+}
+div#firemeDown {
+    float: left;
+    border-right: 1px solid #c0c0c0;
+    width: 50%;
+}
+.shopbox-content i.fa.fa-minus {
+    margin-left: 33%;
+}
+.shopbox-content i.fa.fa-plus {
+    margin-right: 15px;
+}
+div#firemeUp {
+    float: right;
+}

@@ -1,7 +1,7 @@
 // here we put the paths to all the libraries and framework we will use
 require.config({
     paths: {
-        jquery: '../lib/zepto/zepto', // ../lib/jquery/jquery', 
+        jquery: '../lib/zepto/zepto', // ../lib/jquery/jquery',
         underscore: '../lib/underscore/underscore',
         backbone: "../lib/backbone/backbone",
         text: '../lib/require/text',
@@ -13,8 +13,8 @@ require.config({
         preloader: '../lib/preloader/pre-loader',
         utils: '../lib/utils/utils',
         slideout: './slideout',
-        framework7: '../lib/template/framework7.min',
-        swiper: '../lib/template/jquery.swipebox'
+        framework7: '../lib/template/framework7.min'
+        // swiper: '../lib/template/jquery.swipebox'
 //    myapp: '../lib/template/my-app'
     },
     shim: {
@@ -38,7 +38,7 @@ require.config({
 
 // We launch the App
 require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) {
-    require(['preloader', 'router'], function (PreLoader, AppRouter) {
+    require(['preloader', 'router' ,'../lib/template/jquery.swipebox'], function (PreLoader, AppRouter, Swiper) {
 
         document.addEventListener("deviceready", run, false);
 

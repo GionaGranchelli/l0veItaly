@@ -11,8 +11,9 @@ define(function (require) {
 
     var MapView = require("views/pages/MapView");
     var Framework7 = require('framework7');
-    var myApp = new Framework7({swipePanel: 'left'});
+    var myApp = new Framework7();
     var Handlebars = require('handlebars');
+    // var Swiper = require('swiper');
     //Product
     var Product = require("models/Product");
     var Products = require("collections/Products");
@@ -33,6 +34,11 @@ define(function (require) {
     var Searchs = require('collections/Searchs');
     // var Search = require('models/Search');
     var SearchListView = require('views/pages/search/SearchListView');
+
+    //Images
+    var Images = require('collections/Images');
+    var Image = require('models/Image');
+
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -135,8 +141,12 @@ define(function (require) {
         goToProductDetail: function (key) {
             var model = new Product({id: key});
             model.fetch();
+            var immagini = new Images();
+            immagini.addIdProduct(key);
+            immagini.fetch();
             var page = new ProductDetailView({
-                model: model
+                model: model,
+                collection : immagini
             });
             // show the view
             this.changePage(page);

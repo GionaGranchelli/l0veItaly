@@ -7,21 +7,26 @@ define(function (require) {
 
         },
         model: Image,
-        baseUrl: 'http://loveitaly.altervista.org/api/images/products/',
-        url: function(idProduct){
-
-          return url;
-
-        },
-        addIdProduct : function(){
-          var url = this.baseUrl;
-          url += idProduct + '/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
-          this.url = url;
+        url: 'http://loveitaly.altervista.org/api/images/products/',
+        addIdProduct : function(idProduct){
+          this.url += idProduct + '/?display=full&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
+          console.log(this.url);
         },
         parse: function (data) {
-            console.log(data);
-            return data;
-        }
+
+          var $xml = $(data);
+
+          return $xml.find('declination').map(function () {
+                 var imageHref = $(this).attr('xlink:href');
+                 imageHref += "/?display=full&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H";
+                 return {"href":imageHref};
+                 }).get();
+        },
+        fetch: function (options) {
+        options = options || {};
+        options.dataType = "xml";
+        return Backbone.Collection.prototype.fetch.call(this, options);
+    }
     });
     return Images;
 });

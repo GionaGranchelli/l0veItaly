@@ -3,7 +3,7 @@ define(function (require) {
     var Image = Backbone.Model.extend({
         initialize: function () {
         },
-        url: 'http://loveitaly.altervista.org/api/products/',
+        url: 'http://192.168.56.101/loveitaly/api/products/',
         addIdProduct : function(idProduct){
             var url = this.url;
             url += idProduct + '/';
@@ -11,7 +11,7 @@ define(function (require) {
         },
         addIdImage : function(idImage){
             var url = this.url;
-            url += idImage + '/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
+            url += idImage + '/?display=full&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
             this.url = url;
         }
       });

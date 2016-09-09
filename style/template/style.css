@@ -228,6 +228,7 @@ input[type=text]:focus,input[type=email]:focus,input[type=number]:focus,input[ty
   padding: 10px 15px;
   position: relative;
   width: 100%;
+  
 }
 .navbar-inner, .toolbar-inner {
   background: #fff none repeat scroll 0 0;
