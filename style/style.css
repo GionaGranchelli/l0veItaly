@@ -443,3 +443,20 @@ div#firemeDown {
 div#firemeUp {
     float: right;
 }
+.shopbox-category{
+    width: 49%;
+    height: 97px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.shopbox-content-category{
+  box-shadow: 1px 0px 8px black;
+  background-color: #047832;
+  top: -1px;
+    left:0;
+    text-align: center;
+}
+.shopbox-content-category h3{
+  font-size: 20px;
+}

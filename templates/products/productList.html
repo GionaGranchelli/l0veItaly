@@ -1,9 +1,21 @@
         <div class="content-block-inner" id="barraRicerca">
           <form>
             <div class="quantity">
-              <input type="text" id="search" />
+              <!-- <input type="text" id="search" /> -->
+              <select id="categorySelector">
+              {{#each Categorie}}
+                    {{#ifCond id '==' 1 }}
+                    <option value="0" data-CategoryId="0"> </option>
+                    {{/ifCond}}
+                {{#ifCond id_parent '==' 2 }}
 
+                    {{#ifCond id '<' 31 }}
+                      <option value="{{id}}" data-CategoryId={{id}}> {{name}}</option>
+                    {{/ifCond}}
 
+                {{/ifCond}}
+              {{/each}}
+            </select>
 
               <a id="searchButton" value="Cerca">Cerca</a>
             </div>

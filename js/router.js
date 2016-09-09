@@ -54,7 +54,8 @@ define(function (require) {
             "gotocategory/:key" : "goToCategory",
             "gotofarmlist" : "goToFarmList",
             "gotofarmdetail/:key": "goToFarmDetail",
-            "gotosearchresult/:query":"goToSearchResult"
+            "gotosearchresult/:query":"goToSearchResult",
+            "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory"
         },
         firstView: "myview",
         initialize: function (options) {
@@ -132,9 +133,14 @@ define(function (require) {
             var model = new Products();
             model.setLimit(4);
             model.fetch();
+            var category = new Categories();
+            category.fetch();
+            // window.localStorage.setItem('category', category);
+            // window.localStorage.setItem('categoryKey', 0);
             // create the view
             var page = new ProductListView({
-                collection: model
+                collection: model,
+                model : category
             });
             this.changePage(page);
         },
@@ -144,6 +150,7 @@ define(function (require) {
             var immagini = new Images();
             immagini.addIdProduct(key);
             immagini.fetch();
+
             var page = new ProductDetailView({
                 model: model,
                 collection : immagini
@@ -190,8 +197,13 @@ define(function (require) {
             model.setLimit(5);
             model.setCategory(key);
             model.fetch();
+            var category = new Categories();
+            category.fetch();
+            // window.localStorage.setItem('category', category);
+            // window.localStorage.setItem('categoryKey', key);
              var page = new ProductListView({
-                collection: model
+                collection: model,
+                model : category
             });
             // show the view
             this.changePage(page);
@@ -210,6 +222,21 @@ define(function (require) {
           });
           this.changePage(page);
 
+        },
+        goToSearchResultCategory : function(query, category){
+          var model = new Categories();
+          model.fetch();
+          var collection = new Searchs();
+          console.log("Query" + query);
+          collection.setQuery(query);
+          collection.addCategoryFilter(category);
+          collection.fetch();
+          console.log(collection);
+          var page = new SearchListView({
+            collection: collection,
+            category: model
+          });
+          this.changePage(page);
         }
 
     });

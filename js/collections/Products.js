@@ -38,7 +38,7 @@ define(function (require) {
           this.url = 'http://loveitaly.altervista.org/api/products/?display=full&io_format=JSON&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
           this.url += '&limit=' +encodeURIComponent(iniziale) + ',' + encodeURIComponent(finale);
           if(this.category === undefined){
-            console.log("category undefined");
+            // console.log("category undefined");
           }else {
               this.setCategory(this.category);
           }

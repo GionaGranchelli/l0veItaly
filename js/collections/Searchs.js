@@ -17,6 +17,9 @@ define(function (require) {
         },
         setQuery : function(queryValue){
           this.url += "&query=" + queryValue;
+        },
+        addCategoryFilter : function(categoryKey){
+          this.url += '&filter[id_category_default]=[' + categoryKey + ']';
         }
     });
     return Searchs;

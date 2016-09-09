@@ -5,18 +5,20 @@ define(function(require) {
   var Utils = require("utils");
   var ProductDetailView = require('views/pages/products/ProductDetailView');
   var Products = require("collections/Products");
+  var Categories = require("collections/Categories");
 
   var ProductListView = Utils.Page.extend({
 
     constructorName: "ProductListView",
     collection: Products,
-
+    model: Categories,
     initialize: function() {
-
+      this.cat = window.localStorage.getItem('CategoryId');
       _.bindAll(this, 'render');
       // load the precompiled template
       this.template = Utils.templates.productlist;
       this.collection.on('sync', this.render, this);
+      this.model.on('sync', this.render, this);
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
       //   $('#content').on("swipe", function(data){
@@ -32,16 +34,21 @@ define(function(require) {
     className: "i-g page",
     iniziale: 4,
     limit: 8,
+    cat: undefined,
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToProductDetail" : "goToProductDetail",
       "scroll" : "fetchSheets",
       "tap #searchButton" : "doSearch",
-      "keypress #search": "doSearchRapid"
+      "keypress #search": "doSearchRapid",
+      "change #categorySelector" : "chooseCategory"
     },
 
     render: function() {
-      $(this.el).html(this.template({Prodotti: this.collection.toJSON()}));
+      $(this.el).html(this.template({
+        Prodotti: this.collection.toJSON(),
+        Categorie: this.model.toJSON()
+      }));
       //      this.model.toJSON()
       return this;
     },
@@ -78,11 +85,26 @@ define(function(require) {
                 //  console.log("offsetHeight" + offsetHeight);
       return (scrollHeight - (scrollTop - offsetHeight));
     },
-    doSearch : function(){
+    doSearch : function(ev){
       var searchQuery = $('#search').val();
       console.log(searchQuery);
-      Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
+      this.cat = window.localStorage.getItem('CategoryId');
+      console.log(this.cat);
+      if(typeof this.cat === undefined){
+          // console.log("Undef");
+          Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
+      }else{
+        if(this.cat == 0){
+          // console.log("sei zero");
+          Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
+        }else{
+          // console.log("def");
+          Backbone.history.navigate("gotosearchresultcategory/" + searchQuery + "/"+ this.cat,{trigger: true});
+        }
 
+      }
+
+      var categoria=  $('select>option').data('CategoryId');
     },
     doSearchRapid : function(event){
       console.log(event.keyCode);
@@ -93,6 +115,13 @@ define(function(require) {
         console.log(searchQuery);
         Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
       }
+    },
+    chooseCategory : function(ev){
+      var cateCatch = $("#categorySelector").val();
+
+      window.localStorage.setItem('CategoryId', cateCatch);
+
+
     }
   });
 
