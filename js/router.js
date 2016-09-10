@@ -39,6 +39,10 @@ define(function (require) {
     var Images = require('collections/Images');
     var Image = require('models/Image');
 
+    //contacts
+    var AboutUs = require('collections/AboutUs');
+    var AboutUsView = require('views/pages/common/AboutUsView');
+    
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -55,7 +59,8 @@ define(function (require) {
             "gotofarmlist" : "goToFarmList",
             "gotofarmdetail/:key": "goToFarmDetail",
             "gotosearchresult/:query":"goToSearchResult",
-            "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory"
+            "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory",
+            "gotoaboutus" : "goToAboutUs"
         },
         firstView: "myview",
         initialize: function (options) {
@@ -209,16 +214,14 @@ define(function (require) {
             this.changePage(page);
         },
         goToSearchResult: function(query){
-          var model = new Categories();
-          model.fetch();
           var collection = new Searchs();
-          console.log("Query" + query);
           collection.setQuery(query);
           collection.fetch();
-          console.log(collection);
+          var model = new Categories();
+          model.fetch();
           var page = new SearchListView({
             collection: collection,
-            category: model
+            model: model
           });
           this.changePage(page);
 
@@ -227,14 +230,20 @@ define(function (require) {
           var model = new Categories();
           model.fetch();
           var collection = new Searchs();
-          console.log("Query" + query);
           collection.setQuery(query);
           collection.addCategoryFilter(category);
           collection.fetch();
-          console.log(collection);
           var page = new SearchListView({
             collection: collection,
-            category: model
+            model: model
+          });
+          this.changePage(page);
+        },
+        goToAboutUs : function(){
+          var collection = new AboutUs();
+          collection.fetch();
+          var page = new AboutUsView({
+            collection : collection
           });
           this.changePage(page);
         }

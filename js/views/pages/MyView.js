@@ -16,6 +16,8 @@ define(function (require) {
         initialize: function () {
             // load the precompiled template
             this.template = Utils.templates.myview;
+            $('#back-button').css('display','none');
+            $('#toggle-button').css('display','block');
             this.collection.on('sync', this.render, this);
             // here we can register to inTheDOM or removing events
             // this.listenTo(this, "inTheDOM", function() {

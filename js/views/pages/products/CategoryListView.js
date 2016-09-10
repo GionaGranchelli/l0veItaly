@@ -4,7 +4,7 @@ define(function(require) {
 //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   var Categories = require("collections/Categories");
-  
+
   var CategoryListView = Utils.Page.extend({
 
     constructorName: "CategoryListView",
@@ -13,6 +13,8 @@ define(function(require) {
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.productcategory;
+      $('#back-button').css('display','block');
+      $('#toggle-button').css('display','none');
       this.collection.on('sync', this.render, this);
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
@@ -31,11 +33,11 @@ define(function(require) {
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToCategory" : "category"
-     
+
     },
 
     render: function() {
-        
+
       $(this.el).html(this.template({Category : this.collection.toJSON()}));
 //      this.model.toJSON()
       return this;
@@ -53,8 +55,8 @@ define(function(require) {
         trigger: true
       });
     }
-      
-    
+
+
   });
 
   return CategoryListView;

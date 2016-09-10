@@ -19,5 +19,6 @@ define({
     product : "templates/products/productDetail.html",
     productlist : "templates/products/productList.html",
     productcategory : "templates/products/categoryList.html",
-    searchlist : "templates/search/searchList.html"
+    searchlist : "templates/search/searchList.html",
+    aboutus : "templates/common/aboutus.html"
 });

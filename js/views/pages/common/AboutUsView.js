@@ -3,15 +3,16 @@ define(function(require) {
   var Backbone = require("backbone");
 //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
-  var Farms = require('collections/Farms');
-  var FarmListView = Utils.Page.extend({
+  var AboutUs = require("collections/AboutUs");
 
-    constructorName: "FarmListView",
-    collection: Farms,
+  var AboutUsView = Utils.Page.extend({
+
+    constructorName: "AboutUsView",
+    collection: AboutUs,
 
     initialize: function() {
       // load the precompiled template
-      this.template = Utils.templates.farmlist;
+      this.template = Utils.templates.aboutus;
       $('#back-button').css('display','block');
       $('#toggle-button').css('display','none');
       this.collection.on('sync', this.render, this);
@@ -26,16 +27,18 @@ define(function(require) {
       // by convention, all the inner views of a view must be stored in this.subViews
     },
 
-    id: "farmlist",
+    id: "aboutus",
     className: "i-g page",
 
     events: {
       "tap #goToMap": "goToMap",
-      "tap #farmItem" : "goToFarmDetail"
+
     },
 
     render: function() {
-      $(this.el).html(this.template({Farms : this.collection.toJSON()}));
+
+      $(this.el).html(this.template({Category : this.collection.toJSON()}));
+//      this.model.toJSON()
       return this;
     },
 
@@ -43,16 +46,11 @@ define(function(require) {
       Backbone.history.navigate("map", {
         trigger: true
       });
-    },
-    goToFarmDetail: function(ev){
-
-
-      Backbone.history.navigate("gotofarmdetail/" + $(ev.currentTarget).data('id'), {
-        trigger: true
-      });
     }
+
+
   });
 
-  return FarmListView;
+  return AboutUsView;
 
 });

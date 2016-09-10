@@ -22,33 +22,47 @@ define(function (require) {
             "tap #nav3": "ProductList",
             "tap #nav4": "CategoryList",
             "tap #nav5": "FarmList",
+            "tap #nav6": "AboutUs",
             "tap #menuButton": "openMenu",
             "opened .panel": "apertura",
-            "tap #settingsModal" : "openSearchBar"
+            "tap #settingsModal" : "openSearchBar",
+            "tap #back-button" : "goBack"
         },
         initialize: function (options) {
-
             // load the precompiled template
             this.template = Utils.templates.structure;
+            $('#back-button').css('display','none');
+            $('#toggle-button').css('display','block');
             //this.on("inTheDOM", this.rendered);
             // bind the back event to the goBack function
-            //document.getElementById("back").addEventListener("back", this.goBack(), false);
+            // document.getElementById("back-button").addEventListener("back", this.goBack(), false);
+            _.bindAll(this, 'beforeRender', 'render', 'afterRender');
+            var _this = this;
+            this.render = _.wrap(this.render, function(render) {
+              _this.beforeRender();
+              render();
+              _this.afterRender();
+              return _this;
+            });
 
+
+        },
+        beforeRender: function() {
+           console.log('beforeRender');
         },
         render: function () {
             // load the template
             this.el.innerHTML = this.template({});
             // cache a reference to the content element
             this.contentElement = this.$el.find('#content')[0];
-            
+
             return this;
         },
-        // rendered: function(e) {
-        // },
-
-        // generic go-back function
+        afterRender: function() {
+        console.log('afterRender');
+        },
         goBack: function () {
-            //window.history.back();
+            window.history.back();
         },
         setActiveTabBarElement: function (elementId) {
             // here we assume that at any time at least one tab bar element is active
@@ -88,6 +102,11 @@ define(function (require) {
         },
         openSearchBar : function(event){
 
+        },
+        AboutUs: function(){
+          Backbone.history.navigate("gotoaboutus", {
+              trigger: true
+          });
         }
     });
 

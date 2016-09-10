@@ -13,7 +13,11 @@ define(function(require) {
     collection: Products,
     model: Categories,
     initialize: function() {
-      this.cat = window.localStorage.getItem('CategoryId');
+      this.cat.reset;
+      this.searchQuery = null;
+      $('#categorySelector').val(0);
+      $('a#back-button').css('display','block');
+      $('a#toggle-button').css('display','none');
       _.bindAll(this, 'render');
       // load the precompiled template
       this.template = Utils.templates.productlist;
@@ -34,7 +38,8 @@ define(function(require) {
     className: "i-g page",
     iniziale: 4,
     limit: 8,
-    cat: undefined,
+    cat: 0,
+    searchQuery : null,
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToProductDetail" : "goToProductDetail",
@@ -86,40 +91,43 @@ define(function(require) {
       return (scrollHeight - (scrollTop - offsetHeight));
     },
     doSearch : function(ev){
-      var searchQuery = $('#search').val();
-      console.log(searchQuery);
-      this.cat = window.localStorage.getItem('CategoryId');
+      this.searchQuery = $('#search').val();
+      console.log("searchQuery");
+      // this.cat = window.localStorage.getItem('CategoryId');
+      console.log(this.searchQuery);
+      console.log(typeof this.searchQuery);
+      console.log("cat");
       console.log(this.cat);
-      if(typeof this.cat === undefined){
-          // console.log("Undef");
-          Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
-      }else{
-        if(this.cat == 0){
-          // console.log("sei zero");
-          Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
-        }else{
-          // console.log("def");
-          Backbone.history.navigate("gotosearchresultcategory/" + searchQuery + "/"+ this.cat,{trigger: true});
-        }
+      if(this.searchQuery){
+        if(this.cat == 0 || this.cat == undefined || this.cat == null){
+            console.log("gotosearchresult");
 
+            Backbone.history.navigate("gotosearchresult/" + this.searchQuery,{trigger: true});
+
+        }else{
+            console.log("gotosearchresultcategory");
+            Backbone.history.navigate("gotosearchresultcategory/" + this.searchQuery + "/"+ this.cat,{trigger: true});
+          }
+
+      }else{
+          if(this.cat != 0){
+            console.log('goToCategory');
+            Backbone.history.navigate("gotocategory/" + this.cat,{trigger: true});
+          }
       }
 
-      var categoria=  $('select>option').data('CategoryId');
     },
     doSearchRapid : function(event){
       console.log(event.keyCode);
-      if (event.keyCode === 13) {
-        console.log($('#search').val());
-
-        var searchQuery = $('#search').val();
-        console.log(searchQuery);
-        Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
+      var code = event.keyCode || event.which;
+      if (code === 13) {
+        this.doSearch();
       }
     },
     chooseCategory : function(ev){
-      var cateCatch = $("#categorySelector").val();
+      this.cat = $("#categorySelector").val();
 
-      window.localStorage.setItem('CategoryId', cateCatch);
+      // window.localStorage.setItem('CategoryId', cateCatch);
 
 
     }

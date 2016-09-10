@@ -5,18 +5,20 @@ define(function(require) {
   var Utils = require("utils");
   // var ProductDetailView = require('views/pages/products/ProductDetailView');
   var Seachs = require("collections/Searchs");
-
+  var Categories = require("collections/Categories");
   var SearcListView = Utils.Page.extend({
 
     constructorName: "SearcListView",
     collection: Seachs,
-
+    model : Categories,
     initialize: function() {
-      console.log("Sono dentro la Search List");
+
       _.bindAll(this, 'render');
       // load the precompiled template
       this.template = Utils.templates.searchlist;
       this.collection.on('sync', this.render, this);
+      $('#back-button').css('display','block');
+      $('#toggle-button').css('display','none');
       // here we can register to inTheDOM or removing events
       // this.listenTo(this, "inTheDOM", function() {
       //   $('#content').on("swipe", function(data){
@@ -41,11 +43,12 @@ define(function(require) {
     },
 
     render: function() {
-      console.log(this.collection);
+
 
       $(this.el).html(this.template({
           Products : this.collection.products,
-          Category : this.collection.category
+          Category : this.collection.category,
+          Categorie: this.model.toJSON()
       }));
       //      this.model.toJSON()
       return this;
@@ -68,7 +71,7 @@ define(function(require) {
       var delta = this.checkScroll();
       console.log(delta);
       if (delta > -10) {
-        this.collection.setPagination(this.iniziale, this.limit);
+        this.collection.products.setPagination(this.iniziale, this.limit);
         this.inziale = this.limit;
         this.limit += 5;
         this.collection.fetch({remove: false});
@@ -83,10 +86,31 @@ define(function(require) {
       //  console.log("offsetHeight" + offsetHeight);
       return (scrollHeight - (scrollTop - offsetHeight));
     },
-    doSearch : function(){
-      var searchQuery = $('#search').val();
-      console.log("doSearch " + searchQuery);
-      Backbone.history.navigate("gotosearchresult/" + searchQuery,{trigger: true});
+    doSearch : function(ev){
+      this.searchQuery = $('#search').val();
+      console.log("searchQuery");
+      this.cat = window.localStorage.getItem('CategoryId');
+      console.log(this.searchQuery);
+      console.log(typeof this.searchQuery);
+      console.log("cat");
+      console.log(this.cat);
+      if(this.searchQuery){
+        if(this.cat == 0 || this.cat == undefined || this.cat == null){
+            console.log("gotosearchresult");
+
+            Backbone.history.navigate("gotosearchresult/" + this.searchQuery,{trigger: true});
+
+        }else{
+            console.log("gotosearchresultcategory");
+            Backbone.history.navigate("gotosearchresultcategory/" + this.searchQuery + "/"+ this.cat,{trigger: true});
+          }
+
+      }else{
+          if(this.cat == 0 || this.cat == undefined || this.cat == null){
+            console.log('goToCategory');
+            Backbone.history.navigate("goToCategory/" + this.cat,{trigger: true});
+          }
+      }
 
     },
     doSearchRapid : function(event){
