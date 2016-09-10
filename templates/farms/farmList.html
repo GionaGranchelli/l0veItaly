@@ -1,17 +1,14 @@
 
-        <div class="content-block-inner">
-            <div class="shop-area">
-                {{#each Farms}}
-                <div class="single-shop-list farm-list" id="farmItem" data-id="{{id}}">
-                    <div class="shop-inner farm-list-shop-inner">
-                        <!-- <div class="shop-img farm-list-shop-img">
-                            <img src="img/product/4.jpg" alt="" />
-                        </div> -->
-                        <div class="shop-content farm-list-shop-content">
-                            <h3>{{name}}</h3>
-                        </div>
-                    </div>
-                </div>
-                {{/each}}
-            </div>
+<div class="content-block-inner">
+  <div class="shop-area">
+    {{#each Farms}}
+    <div class="single-shop-list farm-list" id="farmItem" data-id="{{id}}" >
+      <div class="shop-inner farm-list-shop-inner" style="background-image:url('img/farms/{{@index}}.jpg');">
+        <div class="shop-content farm-list-shop-content">
+          <h3 class="farmName">{{name}}</h3>
         </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

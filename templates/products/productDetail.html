@@ -1,81 +1,83 @@
 
 <div class="content-block-inner">
-			<div class="single-product-area">
+	<div class="single-product-area">
 
-				<div class="single-product">
-					<div class="swiper-container">
-					    <!-- Additional required wrapper -->
-					    <div class="swiper-wrapper">
-					        <!-- Slides -->
-									{{#each Immagini.images.models}}
-										<div class="swiper-slide" style="height:300px;background-image:url('{{attributes.href}}') ;">
-
-													<!-- <img  class="productsImages" src="{{attributes.href}}" alt="" /> -->
-										</div>
-
-									{{/each}}
-
-
-
-					    </div>
-					    <!-- If we need pagination -->
-
-
-					    <!-- If we need navigation buttons -->
-					    <!-- <div class="swiper-button-prev"></div>
-					    <div class="swiper-button-next"></div>
-
-					    <!-- If we need scrollbar -
-					    <div class="swiper-scrollbar"></div> -->
-					</div>
-					<div class="single-product-img">
-
-					</div>
-					{{#with Product}}
-					<div class="single-product-content">
-						<h1 class="product_title">{{product.name}}</h1>
-						<div class="price-box">
-							<span class="new-price">{{product.price}}</span>
-
-
-						</div>
-
-						<div class="short-description">
-							<p>{{{product.description_short}}}</p>
-						</div>
-						<form action="#">
-							<div class="quantity">
-								<input type="number" value="1">
-                <input type="number" value="{{product.quantity}}" disabled>
-							  <a href="#">Aggiungi</a>
-							</div>
-						</form>
-					</div>
-						{{/with}}
+		<div class="single-product">
+			<div class="swiper-container">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					{{#each Immagini.images.models}}
+					<div class="swiper-slide" style="height:300px;background-image:url('{{attributes.href}}') ;"></div>
+					{{/each}}
 				</div>
-
 			</div>
+			<div class="single-product-img"></div>
+			{{#with Product}}
+			<div class="single-product-content">
+				<h1 class="product_title">{{product.name}}</h1>
+				<div class="price-box">
+					<span class="new-price">{{product.price}}€</span>
+				</div>
+				<div class="pro-rating">
+							Quantità: {{product.unity}}
+						</div>
+				<div class="short-description">
+					<p>{{{product.description_short}}}</p>
+				</div>
+				<form action="#">
+					<div class="row">
+						<div class="left">
+							<p>Aggiungi al Carrello</p>
+							<div class="quantity quantity-detail-product">
+								<div class="detail-product-addbutton">
+
+									<div id="firemeDown" class="compare-button" data-id="{{id}}">
+										<i class="fa fa-minus" style="color: black"></i>
+									</div>
+									<div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
+										<i class="fa fa-plus" style="color: black"></i>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="right">
+							<p>Quantità Disponibile</p>
+							<input type="number" value="{{product.quantity}}" disabled>
+						</div>
+
+
+					</div>
+				</form>
+			</div>
+			{{/with}}
+		</div>
+
+	</div>
 
 </div>
 <script>
-var mySwiper = new Swiper('.swiper-container', {
-														speed: 700,
-														spaceBetween: 100,
-														direction : 'horizontal',
-														effect : 'coverflow',
-														coverflow: {
-														  rotate: 50,
-														  stretch: 0,
-														  depth: 100,
-														  modifier: 1,
-														  slideShadows : true
-														},
-														cube: {
-														slideShadows: true,
-														shadow: true,
-														shadowOffset: 20,
-														shadowScale: 0.94
-														}
 
-													});
+var mySwiper = new Swiper('.swiper-container', {
+	speed: 700,
+	spaceBetween: 100,
+	autoplay: 1500,
+	direction : 'horizontal',
+	effect : 'coverflow',
+	coverflow: {
+		rotate: 50,
+		stretch: 0,
+		depth: 100,
+		modifier: 1,
+		slideShadows : true
+	},
+	cube: {
+		slideShadows: true,
+		shadow: true,
+		shadowOffset: 20,
+		shadowScale: 0.94
+	}
+
+});
 </script>

@@ -11,7 +11,8 @@ define(function(require) {
     constructorName: "FarmDetailView",
     model : Farm,
     collection : Products,
-
+    iniziale: 4,
+    limit: 8,
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.farm;
@@ -33,6 +34,7 @@ define(function(require) {
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToProductDetail" : "goToProductDetail",
+      "scroll" : "fetchSheets"
     },
     beforeRender : function(){
         this.collection.on('sync', this.render, this);
@@ -61,6 +63,27 @@ define(function(require) {
         trigger: true
       });
 
+    },
+    fetchSheets: function () {
+
+      var delta = this.checkScroll();
+      console.log(delta);
+      if (delta > -10) {
+        this.collection.setPagination(this.iniziale, this.limit);
+        this.collection.setFarm(this.model.id);
+        this.inziale = this.limit;
+        this.limit += 5;
+        this.collection.fetch({remove: false});
+      }
+    },
+    checkScroll: function () {
+      var scrollHeight = this.el.offsetHeight;
+                //  console.log("scrollHeight " + scrollHeight);
+      var scrollTop = this.el.scrollHeight;// Altezza del contenuto di Page
+                //  console.log("scrollTop " + scrollTop);
+      var offsetHeight = this.el.scrollTop;  // Delta spostamento dello spostamento
+                //  console.log("offsetHeight" + offsetHeight);
+      return (scrollHeight - (scrollTop - offsetHeight));
     }
   });
 

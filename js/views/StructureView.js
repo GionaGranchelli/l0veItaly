@@ -118,22 +118,20 @@ define(function (require) {
             });
         },
          fireMe: function (ev) {
-             console.log("fireme");
-            
+
             productItem = $(ev.currentTarget).data('id');
-             console.log(productItem);
-           
             window.cart.addOne(productItem);
-            console.log(window.cart);
         },
          fireMeDown: function (ev) {
-             console.log("firemeDown");
-            
             productItem = $(ev.currentTarget).data('id');
-             console.log(productItem);
-           
+            $(ev.currentTarget).next('shopbox-content').css('background-image','url("img/cart.png")');
+            console.log($(ev.currentTarget));
+            console.log($(ev.currentTarget).siblings());
+            console.log($(ev.currentTarget).next().next());
+            console.log($(ev.currentTarget).next('shopbox-content'));
+            console.log($(ev.currentTarget).next().next('shopbox-content'));
             window.cart.subOne(productItem);
-            console.log(window.cart);
+
         },
         AboutUs: function(){
           Backbone.history.navigate("gotoaboutus", {

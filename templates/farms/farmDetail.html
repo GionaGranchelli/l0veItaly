@@ -2,16 +2,13 @@
 <div class="content-block-inner">
     <div class="single-product-area-farm">
         <div class="single-product-farm">
-            <div class="single-product-img">
+            <div class="single-product-img-farm">
                 <img src="http://www.loveitaly.net/img/cms/fine%20vendemmia%20pecorino_sito.jpg" alt="" />
             </div>
-            <div class="single-product-content">
+            <div class="single-product-content-farm">
                 <h1 class="product_title">{{model.manufacturer.name}}</h1>
-
-
-
             </div>
-            <div class="short-description">
+            <div class="short-description-farm">
                 <p>{{{model.manufacturer.meta_description}}}</p>
             </div>
         </div>
@@ -20,22 +17,15 @@
         <div class="rel-title">
             <h3>Prodotti</h3>
         </div>
-        <!--                <h3>Products {{Products}}</h3>
-                        <h3> products {{products}}</h3>
-                        <h3>products.name{{products.name}}</h3>
-                        <h3> name {{name}}</h3>-->
         <h3>{{#each Products}}</h3>
-        <div class="single-shop-list" >
-            <div class="shop-inner" id="goToProductDetail" data-id={{id}}>
-                <div class="shop-img">
-                    <img src="http://loveitaly.altervista.org/api/images/products/{{attributes.id}}/{{attributes.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H" alt="" />
-                </div>
+        <div class="single-shop-list" id="goToProductDetail" data-id="{{attributes.id}}">
+            <div class="shop-inner">
+                <div class="shop-img" style="background-image:url('http://loveitaly.altervista.org/api/images/products/{{attributes.id}}/{{attributes.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
                 <div class="shop-content">
-                    <h3><a href="#">{{products}}</a> {{attributes.name}}</h3>
-
+                    <h3><a href="#">{{attributes.name}}</a></h3>
                     <div class="price-box">
-                        <span class="new-price">€{{attributes.price}}</span>
-
+                        <span class="new-price">{{attributes.price}}</span>
+                        <!--<span class="old-price">£120.00</span>-->
                     </div>
                     <p>{{{attributes.description_short}}}</p>
                 </div>
