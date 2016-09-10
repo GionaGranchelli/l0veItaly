@@ -38,12 +38,14 @@ require.config({
 
 // We launch the App
 require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) {
-    require(['preloader', 'router' ,'../lib/template/jquery.swipebox'], function (PreLoader, AppRouter, Swiper) {
+    require(['preloader', 'router' ,'../lib/template/jquery.swipebox',  'collections/Cart', 'models/Customer'], function (PreLoader, AppRouter, Swiper,  Cart, Customer) {
 
         document.addEventListener("deviceready", run, false);
 
         function run() {
-
+            
+            window.cart = new Cart();
+            window.customer = new Customer();
             // Here we precompile ALL the templates so that the app will be quickier when switching views
             // see utils.js
             Utils.loadTemplates().once("templatesLoaded", function () {
@@ -57,7 +59,7 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
                 } else {
                     // start the router directly if there are no images to be preloaded
                     startRouter();
-                }
+                }   
 
                 function startRouter() {
                     // launch the router

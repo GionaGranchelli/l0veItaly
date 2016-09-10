@@ -23,10 +23,13 @@ define(function (require) {
             "tap #nav4": "CategoryList",
             "tap #nav5": "FarmList",
             "tap #nav6": "AboutUs",
+            "tap #nav7": "LoginPage",
             "tap #menuButton": "openMenu",
             "opened .panel": "apertura",
             "tap #settingsModal" : "openSearchBar",
-            "tap #back-button" : "goBack"
+            "tap #back-button" : "goBack",
+            "tap #firemeUp": "fireMe",
+            "tap #firemeDown": "fireMeDown"
         },
         initialize: function (options) {
             // load the precompiled template
@@ -102,6 +105,29 @@ define(function (require) {
         },
         openSearchBar : function(event){
 
+        },
+         LoginPage: function(event){
+            Backbone.history.navigate("login", {
+                trigger: true
+            });
+        },
+         fireMe: function (ev) {
+             console.log("fireme");
+            
+            productItem = $(ev.currentTarget).data('id');
+             console.log(productItem);
+           
+            window.cart.addOne(productItem);
+            console.log(window.cart);
+        },
+         fireMeDown: function (ev) {
+             console.log("firemeDown");
+            
+            productItem = $(ev.currentTarget).data('id');
+             console.log(productItem);
+           
+            window.cart.subOne(productItem);
+            console.log(window.cart);
         },
         AboutUs: function(){
           Backbone.history.navigate("gotoaboutus", {

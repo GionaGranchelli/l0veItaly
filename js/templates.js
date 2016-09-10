@@ -20,5 +20,6 @@ define({
     productlist : "templates/products/productList.html",
     productcategory : "templates/products/categoryList.html",
     searchlist : "templates/search/searchList.html",
-    aboutus : "templates/common/aboutus.html"
+    aboutus : "templates/common/aboutus.html",
+    login : "templates/common/login.html"
 });

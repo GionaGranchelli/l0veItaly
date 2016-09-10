@@ -43,6 +43,12 @@ define(function (require) {
     var AboutUs = require('collections/AboutUs');
     var AboutUsView = require('views/pages/common/AboutUsView');
     
+    //Customer
+    var Customer = require('models/Customer');
+    
+    //Loginview
+    var LoginView = require('views/pages/common/Login');
+    
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -60,7 +66,8 @@ define(function (require) {
             "gotofarmdetail/:key": "goToFarmDetail",
             "gotosearchresult/:query":"goToSearchResult",
             "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory",
-            "gotoaboutus" : "goToAboutUs"
+            "gotoaboutus" : "goToAboutUs",
+            "login" : "login"
         },
         firstView: "myview",
         initialize: function (options) {
@@ -99,6 +106,7 @@ define(function (require) {
             });
         },
         myView: function () {
+            console.log(window.customer.logged);
             // highlight the nav1 tab bar element as the current one
             this.structureView.setActiveTabBarElement("nav1");
             // create a model with an arbitrary attribute for testing the template engine
@@ -246,6 +254,13 @@ define(function (require) {
             collection : collection
           });
           this.changePage(page);
+        },
+         login: function () {
+            //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
+             var page = new LoginView({
+            });
+            // show the view
+            this.changePage(page);
         }
 
     });
