@@ -8,6 +8,7 @@ define(function (require) {
         initialize: function (x) {
            
             this.quantity=0;
+            this.fetch();
             
         },
         quantity: 0,

@@ -12,7 +12,7 @@ define({
     structure: "templates/structure.html",
     myview: "templates/myview.html",
     account : "templates/account/accountDetail.html",
-    cart : "templates/account/cart.html",
+    cart : "templates/cart/cart.html",
     wishlist : "templates/account/wishList.html",
     farm : "templates/farms/farmDetail.html",
     farmlist : "templates/farms/farmList.html",

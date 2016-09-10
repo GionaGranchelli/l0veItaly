@@ -49,6 +49,9 @@ define(function (require) {
     //Loginview
     var LoginView = require('views/pages/common/Login');
     
+    //CartView
+    var CartView = require('views/pages/cart/CartView');
+    
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -67,6 +70,7 @@ define(function (require) {
             "gotosearchresult/:query":"goToSearchResult",
             "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory",
             "gotoaboutus" : "goToAboutUs",
+            "carrello" : "ShowCart",
             "login" : "login"
         },
         firstView: "myview",
@@ -104,6 +108,35 @@ define(function (require) {
                     return options.inverse(this);
                 }
             });
+            
+            Handlebars.registerHelper('twodigit', function(variable, options)  {
+                if (typeof variable !== 'undefined') {
+                    var temp = variable.toString(); 
+                    console.log(temp);
+                    if(((temp.length-1)-temp.indexOf("."))>3){
+                    return temp.substring(0, temp.indexOf(".")+3);
+                }else options.inverse(this);
+                } else {
+                    return options.inverse(this);
+                }
+            });
+             Handlebars.registerHelper('multiply', function(variable, variable2, options)  {
+                if ((typeof variable !== 'undefined')&(typeof variable2 !== 'undefined')) {
+                    var temp = variable * variable2;
+                    return temp.toString();
+                 }else {
+                    return options.inverse(this);
+                }
+            });
+            Handlebars.registerHelper('isnullo', function(variable, variable2, options)  {
+                console.log(variable);
+                if ((variable != null )&(variable != undefined)&(variable != "")) {
+                    return variable2.toString() + variable.toString();
+                 }else {
+                    return "";
+                }
+            });
+            
         },
         myView: function () {
             console.log(window.customer.logged);
@@ -258,6 +291,13 @@ define(function (require) {
          login: function () {
             //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
              var page = new LoginView({
+            });
+            // show the view
+            this.changePage(page);
+        },
+         ShowCart: function () {
+            //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
+             var page = new CartView({
             });
             // show the view
             this.changePage(page);

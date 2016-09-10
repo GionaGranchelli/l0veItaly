@@ -24,6 +24,7 @@ define(function (require) {
             "tap #nav5": "FarmList",
             "tap #nav6": "AboutUs",
             "tap #nav7": "LoginPage",
+            "tap #nav8": "Carrello",
             "tap #menuButton": "openMenu",
             "opened .panel": "apertura",
             "tap #settingsModal" : "openSearchBar",
@@ -108,6 +109,11 @@ define(function (require) {
         },
          LoginPage: function(event){
             Backbone.history.navigate("login", {
+                trigger: true
+            });
+        },
+        Carrello: function(event){
+            Backbone.history.navigate("carrello", {
                 trigger: true
             });
         },
