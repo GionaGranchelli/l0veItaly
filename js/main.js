@@ -43,23 +43,31 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
         document.addEventListener("deviceready", run, false);
 
         function run() {
-            
+
             window.cart = new Cart();
             window.customer = new Customer();
             // Here we precompile ALL the templates so that the app will be quickier when switching views
             // see utils.js
             Utils.loadTemplates().once("templatesLoaded", function () {
 
-                var images = []; // here the developer can add the paths to the images that he would like to be preloaded
+                var preloadedImages = ['img/farms/1.jpg',
+                              'img/farms/2.jpg',
+                              'img/farms/3.jpg',
+                              'img/farms/4.jpg',
+                              'img/farms/5.jpg',
+                              'img/farms/home1.jpg',
+                              'img/farms/home2.jpg',
+                              'img/farms/home3.jpg'
+                            ]; // here the developer can add the paths to the images that he would like to be preloaded
 
-                if (images.length) {
-                    new PreLoader(images, {
+                if (preloadedImages.length) {
+                    new PreLoader(preloadedImages, {
                         onComplete: startRouter
                     });
                 } else {
                     // start the router directly if there are no images to be preloaded
                     startRouter();
-                }   
+                }
 
                 function startRouter() {
                     // launch the router

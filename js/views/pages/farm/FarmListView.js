@@ -22,7 +22,7 @@ define(function(require) {
       //   });
       // });
       // this.listenTo(this, "removing", functionName);
-
+      
       // by convention, all the inner views of a view must be stored in this.subViews
     },
 

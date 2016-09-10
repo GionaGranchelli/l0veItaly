@@ -46,8 +46,8 @@ define(function(require) {
     },
 
     render: function() {
-      console.log("images Dentro render");
-      console.log(this.collection);
+      // console.log("images Dentro render");
+      // console.log(this.collection);
       // var arrayImage = {images : )};
       // console.log(arrayImage);
 
