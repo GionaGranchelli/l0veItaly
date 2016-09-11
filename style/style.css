@@ -565,7 +565,7 @@ div#firemeUp:active {
   opacity: 0;
 }
 div#myview {
-    MARGIN-TOP: 2%;
+  MARGIN-TOP: 2%;
 }
 .left, .right{
   width: 49%;
@@ -587,46 +587,46 @@ div#myview {
 }
 
 .cart-image {
-    height: 100px;
-    width: 33%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    float: left;
+  height: 100px;
+  width: 33%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
 }
 
 .cart-name {
-    width: 33%;
-    float: left;
+  width: 33%;
+  float: left;
 }
 .cart-quantity {
-    width: 15%;
-    float: left;
+  width: 15%;
+  float: left;
 }
 .cart-prices{
   width: 10%;
-    float: left;
+  float: left;
 }
 .carrello-intestazione {
-    height: 95px;
-    background: #cccccc none repeat scroll 0 0;
-    padding: 10px;
+  height: 95px;
+  background: #cccccc none repeat scroll 0 0;
+  padding: 10px;
 
 }
 .carrello-intestazione p{
-    color: red;
+  color: red;
 }
 .cart-page-edit {
-    border: 1px solid #cccccc;
-    height: 30px;
-    box-shadow: 1px 4px 5px #cccccc;
+  border: 1px solid #cccccc;
+  height: 30px;
+  box-shadow: 1px 4px 5px #cccccc;
 }
 .carrello-checkout {
-    width: 100%;
-    background: #cccccc none repeat scroll 0 0;
-    padding: 10px;
-    float: left;
-    margin-top: 5%;
+  width: 100%;
+  background: #cccccc none repeat scroll 0 0;
+  padding: 10px;
+  float: left;
+  margin-top: 5%;
 }
 .cart-empty-button{
   width: 100%;
@@ -644,12 +644,12 @@ div#myview {
   float: left;
 }
 /*.cart-quantity{
-  width: 100%;
-  float: left;
+width: 100%;
+float: left;
 }
 .cart-quantity h5{
-  width: 50%;
-  float: left;
+width: 50%;
+float: left;
 }*/
 /*Fine Carrello*/
 .register-content-profile{
@@ -664,30 +664,42 @@ div#myview {
 }
 .inputbox-profile input{
   display: block;
-      margin-top: 5px;
-      overflow: hidden;
-      height: 34px;
-      padding: 0 2%;
-      width: 95%;
-      background: transparent;
-      /* border: 1px solid #037930; */
-      border: 1px solid black;
-      color: #037930;
-      box-shadow: 1px 0px 8px black;
-      border-radius: 0px;
+  margin-top: 5px;
+  overflow: hidden;
+  height: 34px;
+  padding: 0 2%;
+  width: 95%;
+  background: transparent;
+  /* border: 1px solid #037930; */
+  border: 1px solid black;
+  color: #037930;
+  box-shadow: 1px 0px 8px black;
+  border-radius: 0px;
 }
 .profile-container{
-    width: 100%;
-    height: auto;
-    margin-top: 7% !important;
-    text-align: left;
+  width: 100%;
+  height: auto;
+  margin-top: 7% !important;
+  text-align: left;
 }
 .profile-container h1 {
   box-shadow: 1px 0px 8px black;
   background-color: #047832;
-      padding: 7px;
+  padding: 7px;
 }
-.spalshscreen{
+.splashscren{
   text-align: center;
 
+}
+.button-big-grey{
+  background:#cccccc none repeat scroll 0 0 !important;
+}
+.banner-home{
+  background-image: url('../img/farms/tempodi.jpg');
+  height: 380px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loaderGif{
+      margin-left: 46%;
 }

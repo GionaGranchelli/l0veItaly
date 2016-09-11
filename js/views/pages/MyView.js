@@ -18,6 +18,7 @@ define(function (require) {
             this.template = Utils.templates.myview;
             $('#back-button').css('display','none');
             $('#toggle-button').css('display','block');
+            // var customer = window.localStorage.getItem('customer');
             this.collection.on('sync', this.render, this);
             // here we can register to inTheDOM or removing events
             // this.listenTo(this, "inTheDOM", function() {
@@ -26,6 +27,7 @@ define(function (require) {
             //   });
             // });
             // this.listenTo(this, "removing", functionName);
+      
         },
         id: "myview",
         className: "i-g page",
@@ -33,7 +35,6 @@ define(function (require) {
             "tap #goToMap": "goToMap"
         },
         render: function () {
-
             $(this.el).html(this.template({Prodotti: this.collection.toJSON()}));
             return this;
         },
