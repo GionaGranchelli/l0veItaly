@@ -621,7 +621,20 @@ div#myview {
     height: 30px;
     box-shadow: 1px 4px 5px #cccccc;
 }
-
+.carrello-checkout {
+    width: 100%;
+    background: #cccccc none repeat scroll 0 0;
+    padding: 10px;
+    float: left;
+    margin-top: 5%;
+}
+.cart-empty-button{
+  width: 100%;
+  float: left;
+}
+.cart-empty-button button{
+  width: 25%;
+}
 
 
 
