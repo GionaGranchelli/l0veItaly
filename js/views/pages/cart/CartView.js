@@ -52,7 +52,7 @@ define(function(require) {
     
 
     render: function() {
-    console.log(window.cart.models);
+    console.log(window.cart);
       $(this.el).html(this.template({articoli : window.cart.models}));
 //      this.model.toJSON()
       return this;

@@ -55,12 +55,14 @@ define(function (require) {
             probCus = new Customer(formValues.email.toString());
             probCus.fetch({
                 success: function () {
-                    console.log(probCus);
+                    //console.log(probCus);
                      //console.log(probCus).attributes;
                     probLog = probCus.attributes[0];
-                    if ((probLog.passwd == formValues.password) & (probLog.passwd == formValues.password)) {
+                    //console.log(probLog);
+                    if ((probLog.passwd == formValues.password) & (probLog.passwd == formValues.password)&(probLog!=null)) {
                         window.customer = probLog;
                         window.customer.logged = true;
+                       // console.log( window.customer);
                         Backbone.history.navigate("myview", {
                         trigger: true
                     });

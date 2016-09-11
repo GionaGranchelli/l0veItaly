@@ -30,7 +30,8 @@ define(function (require) {
             "tap #settingsModal" : "openSearchBar",
             "tap #back-button" : "goBack",
             "tap #firemeUp": "fireMe",
-            "tap #firemeDown": "fireMeDown"
+            "tap #firemeDown": "fireMeDown",
+            "tap #logout": "logout"
         },
         initialize: function (options) {
             // load the precompiled template
@@ -137,6 +138,21 @@ define(function (require) {
           Backbone.history.navigate("gotoaboutus", {
               trigger: true
           });
+        },
+        logout: function(){
+            console.log("qaaaaaaaaaaaaa");
+            window.cart.resettami();
+           
+            
+            window.customer={};
+            window.customer.logged=false;
+            console.log(window.customer);
+            console.log( window.cart);
+            Backbone.history.navigate("myview", {
+              trigger: true
+          });
+            
+            
         }
     });
 

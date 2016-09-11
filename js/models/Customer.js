@@ -4,40 +4,46 @@ define(function (require) {
     var $ = require('jquery');
     var Customer = Backbone.Model.extend({
         initialize: function (param) {
-           this.param=param;
-           
-            
+            this.param = param;
+            this.logged=false;
+            this.id=undefined;
+
+
         },
-        constructorName:"Customer",
+        constructorName: "Customer",
         idAttribute: "id",
-        logged:false,
-        param:"",
-        
-        
-     
+        logged: false,
+        param: "",
         url: function () {
-            
+
             var url = 'http://loveitaly.altervista.org/api/customers/';
-                url += '?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H&filter[email]=['+this.param+']&display=full&io_format=JSON';
-               // url += '&filter[email]=['+this.email+']&display=full';
-                //
-               console.log(url);
+            url += '?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H&filter[email]=[' + this.param + ']&display=full&io_format=JSON';
+            // url += '&filter[email]=['+this.email+']&display=full';
+            //
+            console.log(url);
             return url;
-        }, 
-        
-        parse : function(data){
-            
+       },
+        parse: function (data) {
+
             return data.customers;
-            
-            
+
+
         },
-        printUrl:function(){
-            
+        printUrl: function () {
+
             console.log(this.url);
-            
-        }
-        
-      });
-      
-return Customer;
+
+        },
+        resettami : function (options) {
+            cinsole.log("ewsettami");
+            this.clear(options);
+            console.log(this);
+            this.set(this.defaults);
+            console.log(this);
+            this.reset({});
+            }
+
+    });
+
+    return Customer;
 });
