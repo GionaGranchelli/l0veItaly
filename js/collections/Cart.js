@@ -15,9 +15,6 @@ define(function (require) {
         modello = new CartProduct({id: Itm})
         modello.addOneItm();
         this.add(modello);
-        console.log(this.get(Itm));
-        console.log(modello);
-        console.log(this);
       } else {
         this.get(Itm).addOneItm();
         console.log("ancora");
@@ -56,7 +53,7 @@ define(function (require) {
     totale: function(){
       var tot=0;
       for (var key in this.models){
-        tot+= this.models[key].quantity*this.models[key].attributes.product.price;
+        if(this.models[key].attributes.product!=undefined ){tot+= this.models[key].quantity*this.models[key].attributes.product.price;}
 
       }
 
