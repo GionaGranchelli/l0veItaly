@@ -31,7 +31,8 @@ define(function (require) {
             "tap #back-button" : "goBack",
             "tap #firemeUp": "fireMe",
             "tap #firemeDown": "fireMeDown",
-            "tap #logout": "logout"
+            "tap #logout": "logout",
+            "tap #orderlist" : "orderList"
         },
         initialize: function (options) {
             // load the precompiled template
@@ -155,7 +156,12 @@ define(function (require) {
           });
             
             
-        }
+        },
+        orderList: function(){
+          Backbone.history.navigate("gotoorderlist", {
+              trigger: true
+          });
+        },
     });
 
     return StructureView;

@@ -4,7 +4,7 @@ define(function (require) {
   var CartProduct = require("models/CartProduct");
   var Product = require("models/Product");
   var Cart = Backbone.Collection.extend({
-    initialize: function (option, category, farm) {
+    initialize: function (option) {
       console.log("carrello inizializzato");
     },
     model: CartProduct,

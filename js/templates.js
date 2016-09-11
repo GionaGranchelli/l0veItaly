@@ -21,5 +21,9 @@ define({
     productcategory : "templates/products/categoryList.html",
     searchlist : "templates/search/searchList.html",
     aboutus : "templates/common/aboutus.html",
-    login : "templates/common/login.html"
+    login : "templates/common/login.html",
+    orderlist : "templates/private/OrderList.html",
+    order:  "templates/private/OrderList.html"    
+    
+
 });

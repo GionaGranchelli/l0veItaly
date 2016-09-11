@@ -52,6 +52,12 @@ define(function (require) {
     //CartView
     var CartView = require('views/pages/cart/CartView');
     
+    //Order
+    var OrderList = require('views/pages/private/OrdersList');
+    var OrderDetail = require('views/pages/private/OrderDetail');
+    var Orders = require('collections/Orders');
+    var Order = require('models/Order');
+    
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -71,7 +77,9 @@ define(function (require) {
             "gotosearchresultcategory/:query/:category" : "goToSearchResultCategory",
             "gotoaboutus" : "goToAboutUs",
             "carrello" : "ShowCart",
-            "login" : "login"
+            "login" : "login",
+            "orderlist" : "goToOrderList",
+            "orderdetail" : "goToOrderDetail"
         },
         firstView: "myview",
         initialize: function (options) {
@@ -301,8 +309,26 @@ define(function (require) {
             });
             // show the view
             this.changePage(page);
-        }
-
+        },
+        goToOrderList: function (event) {
+            var model = new Orders();
+            model.fetch();
+            var page = new OrderList({
+                collection: model
+            });
+            // show the view
+            this.changePage(page);
+        },
+        goToOrderDetail: function (event) {
+            var model = new Order();
+            model.fetch();
+            var page = new OrderDetail({
+                model: model
+            });
+            // show the view
+            this.changePage(page);
+        },
+        
     });
 
     return AppRouter;
