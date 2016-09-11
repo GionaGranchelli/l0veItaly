@@ -7,13 +7,13 @@
   <div class="carrello-intestazione">
 
       <div class="cart-content-intestazione">
-        <div class="cart-image"><p>Foto</p></div>
+        <div class="cart-image"><h5>Foto</h5></div>
         <div class="cart-name">
-          <p class="cart-name-p">Prodotto</p>
-          <p class="cart-description">e Descrizione</p>
+          <h5 class="cart-name-p">Prodotto</h5>
+          <h5 class="cart-description">e Descrizione</h5>
         </div>
-        <div class="cart-quantity"><p>Q.ta</p></div>
-        <div class="cart-prices"><p>Prezzo</p> </div>
+        <div class="cart-quantity"><h5>Q.ta</h5></div>
+        <div class="cart-prices"><h5>Prezzo</h5> </div>
       </div>
 
   </div>
@@ -22,8 +22,8 @@
       <div class="cart-content">
         <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
         <div class="cart-name">
-          <p class="cart-name-p">{{attributes.product.name}}</p>
-          <p class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</p>
+          <h5 class="cart-name-p">{{attributes.product.name}}</h5>
+          <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
           <div class="cart-page-edit">
             <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
               <i class="fa fa-plus" style="color: black"></i>
@@ -37,9 +37,9 @@
         <div class="cart-quantity">{{quantity}}</div>
         <div class="cart-prices">
           <p>Cad</p>
-          <p>€&nbsp;{{twodigit attributes.product.price}}</p>
+          <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
           <p>Totale</p>
-          <p class="totale">{{multiply quantity attributes.product.price}}</p>
+          <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
 
         </div>
       </div>
@@ -48,18 +48,20 @@
   <div class="carrello-checkout">
 
       <div class="cart-content-checkout">
-        <!-- <div class="cart-image">
-          <p>&nbsp;</p>
-        </div> -->
-        <div class="cart-name">
-        <button>Svuota carrello</button>
+        <div class="cart-manage-money">
+          <h5>Costi Gestione</h5>
+          <h5>€2</h5>
         </div>
+
         <div class="cart-quantity">
-          <p>Quantità Totale</p>
+          <h5>Quantità Totale</h5>
         </div>
         <div class="cart-prices">
-          <p>Totale</p>
-          <p></p>
+          <h5>Totale</h5>
+          <h5> </h5>
+        </div>
+        <div class="cart-name cart-empty-button">
+        <button>Svuota carrello</button>
         </div>
       </div>
 
@@ -67,8 +69,8 @@
 <script>
 var qualcosa = 0;
 $.each($('.totale'),function(){
-
-  console.log(this);
+  qualcosa += 1;
+  console.log();
 });
 
 </script>
