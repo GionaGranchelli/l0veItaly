@@ -635,15 +635,14 @@ div#myview {
 .cart-empty-button button{
   width: 25%;
 }
-.cart-manage-money{
+.cart-manage-money, .cart-quantity-result, .cart-prices-result{
   width: 100%;
   float: left;
 }
-.cart-manage-money h5{
+.cart-manage-money h5, .cart-quantity-result h5, .cart-prices-result h5{
   width: 50%;
   float: left;
 }
-
 /*.cart-quantity{
   width: 100%;
   float: left;

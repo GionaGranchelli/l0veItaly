@@ -58,10 +58,11 @@ define(function(require) {
     },
 
     render: function() {
-      console.log(window.cart.models);
+      var costoTotale = window.cart.totale() + 2;
       $(this.el).html(this.template({articoli : window.cart.models,
         totale : window.cart.totale(),
-        totaleColli : window.cart.totaleColli()
+        totaleColli : window.cart.totaleColli(),
+        CostoTotale :  costoTotale
       }));
       //      this.model.toJSON()
       return this;
