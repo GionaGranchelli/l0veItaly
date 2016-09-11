@@ -63,6 +63,7 @@ define(function (require) {
                         window.customer = probLog;
                         window.customer.logged = true;
                        // console.log( window.customer);
+                       window.localStorage.setItem('customer', probLog);
                         Backbone.history.navigate("myview", {
                         trigger: true
                     });
