@@ -14,7 +14,7 @@ define(function (require) {
             return url;
         },
     parse:function(data){
-            return dara.Orders;
+            return data.orders;
     }
     });
     return Orders;

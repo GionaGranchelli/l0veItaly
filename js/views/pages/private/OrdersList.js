@@ -26,8 +26,8 @@ define(function(require) {
 
     className: "i-g page",
     events: {
-      "tap #goToMap": "goToMap",
-      "tap #goToProductDetail" : "goToOrderDetail",
+      "tap #goToMap": "goToMap"
+//      "tap #goToProductDetail" : "goToOrderDetail",
     },
 
     render: function() {
