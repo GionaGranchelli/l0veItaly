@@ -32,7 +32,7 @@ define(function (require) {
             "tap #firemeUp": "fireMe",
             "tap #firemeDown": "fireMeDown",
             "tap #logout": "logout",
-            "tap #orderlist" : "orderList",
+            "tap #orderList" : "orderList",
             "tap #orderDetail" : "orderDetail",
             "tap #profile" : "profile"
 

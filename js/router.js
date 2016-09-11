@@ -74,7 +74,7 @@ define(function (require) {
             "gotoaboutus": "goToAboutUs",
             "carrello": "ShowCart",
             "login": "login",
-            "orderlist": "goToOrderList",
+            "gotoorderlist": "goToOrderList",
             "orderdetail": "goToOrderDetail",
             "gotoprofile": "goToProfile"
         },
@@ -319,7 +319,8 @@ define(function (require) {
             this.changePage(page);
         },
         goToOrderList: function (event) {
-            var model = new Orders();
+            
+            var model = new Orders(window.customer.id);
             model.fetch();
             var page = new OrderList({
                 collection: model

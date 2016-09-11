@@ -24,6 +24,6 @@ define({
     aboutus : "templates/common/aboutus.html",
     login : "templates/common/login.html",
     orderlist : "templates/private/OrderList.html",
-    order:  "templates/private/OrderList.html",    
+    order:  "templates/private/OrderDetail.html",    
     profile : "templates/private/profile.html"
 });

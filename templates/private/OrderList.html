@@ -1,16 +1,68 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="content-block-inner">
+    <div class="cartbox">
+        <div class="cart-heading-1 ">
+            <h2><i class="fa fa-star-o"></i> I Miei Ordini</h2>
+        </div>
+        <div class="check-contenttext">
+            <div class="list-block accordion-list">
+                <ul>
+                    {{#each Ordini}}
+                    <li class="accordion-item">
+                        <a class=" item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title"><span></span> {{reference}} del {{invoice_date}}</div>
+                            </div>
+                        </a> 
+
+                        <div class="accorodinbox">
+                            <h2>Dettaglio</h2>
+                            <p>Prodotti:</p>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4>Nome</h4>
+                                    </td>
+                                    <td>
+                                        <h4>Quantit&agrave;</h4>
+                                    </td>
+                                    <td>
+                                        <h4>Prezzo</h4>
+                                    </td>
+
+
+                                </tr>
+                                {{#each associations.order_rows}}
+
+                                <tr>
+                                    <td>
+                                        <h4>{{product_name}}</h4>
+                                    </td>
+                                    <td>
+                                        <h4>{{product_quantity}}</h4>
+                                    </td>
+                                    <td>
+                                        <h4>{{twodigit product_price}}</h4>
+                                    </td>
+
+
+                                </tr>
+
+
+
+
+
+                                {{/each}}
+                            </table>  
+                            <span>Totale Pagato: {{total_paid}}</span>
+
+                        </div>											
+
+
+
+                        {{/each}}   
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
