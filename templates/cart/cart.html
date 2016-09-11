@@ -18,55 +18,64 @@
 
   </div>
 <div class="carrello">
-    {{#each articoli}}
-      <div class="cart-content">
-        <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
-        <div class="cart-name">
-          <h5 class="cart-name-p">{{attributes.product.name}}</h5>
-          <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
-          <div class="cart-page-edit">
-            <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
-              <i class="fa fa-plus" style="color: black"></i>
+    {{#exists articoli}}
+      {{#each articoli}}
+        <div class="cart-content">
+          <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
+          <div class="cart-name">
+            <h5 class="cart-name-p">{{attributes.product.name}}</h5>
+            <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
+            <div class="cart-page-edit">
+              <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
+                <i class="fa fa-plus" style="color: black"></i>
+              </div>
+              <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
+                <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+              </div>
+
             </div>
-            <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
-              <i  accesskey=""class="fa fa-minus" style="color: black"></i>
-            </div>
+          </div>
+          <div class="cart-quantity">{{quantity}}</div>
+          <div class="cart-prices">
+            <p>Cad</p>
+            <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
+            <p>Totale</p>
+            <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
 
           </div>
         </div>
-        <div class="cart-quantity">{{quantity}}</div>
-        <div class="cart-prices">
-          <p>Cad</p>
-          <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
-          <p>Totale</p>
-          <h5€&nbsp;class="totale">{{multiply quantity attributes.product.price}}</h5>
-
-        </div>
+      {{/each}}
+    {{/exists}}
+    {{#isEmpty articoli}}
+      <div class="cart-name">
+        <h1> Carrello Vuoto </h1>
       </div>
-    {{/each}}
+      <img is="emptyCart"src="img/cart.png">
+    {{/isEmpty}}
   </div>
   <div class="carrello-checkout">
 
       <div class="cart-content-checkout">
         <div class="cart-manage-money">
           <h5>Costo Gestione</h5>
-          <h5>€2</h5>
+          <h5>€&nbsp;2</h5>
         </div>
 
         <div class="cart-quantity cart-quantity-result">
           <h5>Quantità Totale</h5>
-          <h5>{{totaleColli}} </h5>
+          <h5>{{totaleColli}} unit&agrave;</h5>
         </div>
         <div class="cart-prices cart-prices-result">
           <h5>Costo Prodotti</h5>
-          <h5> {{totale}}</h5>
+          <h5>€&nbsp;{{totale}}</h5>
         </div>
         <div class="cart-prices cart-prices-result">
           <h5>Costo Totale</h5>
-          <h5> {{CostoTotale}}</h5>
+          <h5>€&nbsp;{{CostoTotale}}</h5>
         </div>
         <div class="cart-name cart-empty-button">
-        <button id="resetButton">Svuota carrello</button>
+        <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
+        <button class="button mybutton floatright" id="checkout">Checkout</button>
         </div>
       </div>
 

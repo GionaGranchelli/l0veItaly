@@ -31,7 +31,8 @@ define(function (require) {
             "tap #back-button" : "goBack",
             "tap #firemeUp": "fireMe",
             "tap #firemeDown": "fireMeDown",
-            "tap #logout": "logout"
+            "tap #logout": "logout",
+            "tap #profile" : "profile"
         },
         initialize: function (options) {
             // load the precompiled template
@@ -141,20 +142,22 @@ define(function (require) {
               trigger: true
           });
         },
+        profile : function(){
+          Backbone.history.navigate("gotoprofile", {
+              trigger: true
+          });
+        },
         logout: function(){
             console.log("qaaaaaaaaaaaaa");
             window.cart.resettami();
-           
-            
             window.customer={};
             window.customer.logged=false;
-            console.log(window.customer);
-            console.log( window.cart);
+            window.localStorage.removeItem('customer');
             Backbone.history.navigate("myview", {
               trigger: true
           });
-            
-            
+
+
         }
     });
 

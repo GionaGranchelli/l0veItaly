@@ -652,3 +652,42 @@ div#myview {
   float: left;
 }*/
 /*Fine Carrello*/
+.register-content-profile{
+
+}
+.inputbox-profile{
+
+}
+.inputbox-profile span{
+  /*color: #c61424 ;*/
+  color: black;
+}
+.inputbox-profile input{
+  display: block;
+      margin-top: 5px;
+      overflow: hidden;
+      height: 34px;
+      padding: 0 2%;
+      width: 95%;
+      background: transparent;
+      /* border: 1px solid #037930; */
+      border: 1px solid black;
+      color: #037930;
+      box-shadow: 1px 0px 8px black;
+      border-radius: 0px;
+}
+.profile-container{
+    width: 100%;
+    height: auto;
+    margin-top: 7% !important;
+    text-align: left;
+}
+.profile-container h1 {
+  box-shadow: 1px 0px 8px black;
+  background-color: #047832;
+      padding: 7px;
+}
+.spalshscreen{
+  text-align: center;
+  
+}

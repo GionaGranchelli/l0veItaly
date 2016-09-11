@@ -45,7 +45,15 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
         function run() {
 
             window.cart = new Cart();
-            window.customer = new Customer();
+            var customer = window.localStorage.getItem('customer');
+            if(customer){
+                window.customer =  customer;
+                alert('loggato');
+            }else{
+              alert('non loggato');
+                window.customer = new Customer();
+            }
+
             // Here we precompile ALL the templates so that the app will be quickier when switching views
             // see utils.js
             Utils.loadTemplates().once("templatesLoaded", function () {
