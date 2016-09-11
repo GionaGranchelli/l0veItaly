@@ -17,8 +17,6 @@ define(function (require) {
         this.add(modello);
       } else {
         this.get(Itm).addOneItm();
-        console.log("ancora");
-
       }
       //parz= this.totale();
       //              console.log (parz);
@@ -31,7 +29,6 @@ define(function (require) {
         return this;
       } else {
         result = this.get(Itm).subOneItm();
-        console.log("ancora subone");
         if (result <= 0) {
           this.remove(Itm);
         }
@@ -53,7 +50,7 @@ define(function (require) {
     totale: function(){
       var tot=0;
       for (var key in this.models){
-        if(this.models[key].attributes.product!=undefined ){tot+= this.models[key].quantity*this.models[key].attributes.product.price;}
+        tot+= this.models[key].quantity*this.models[key].attributes.product.price;
 
       }
 

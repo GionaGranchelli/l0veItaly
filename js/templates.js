@@ -11,6 +11,7 @@
 define({
     structure: "templates/structure.html",
     myview: "templates/myview.html",
+    splashscreen : "templates/common/splashscreen.html",
     account : "templates/account/accountDetail.html",
     cart : "templates/cart/cart.html",
     wishlist : "templates/account/wishList.html",
@@ -23,7 +24,6 @@ define({
     aboutus : "templates/common/aboutus.html",
     login : "templates/common/login.html",
     orderlist : "templates/private/OrderList.html",
-    order:  "templates/private/OrderList.html"    
-    
-
+    order:  "templates/private/OrderList.html",    
+    profile : "templates/private/profile.html"
 });

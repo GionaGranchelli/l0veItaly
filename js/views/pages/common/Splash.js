@@ -3,8 +3,8 @@ define(function (require) {
     var Backbone = require("backbone");
     var Customer = require("models/Customer");
     var Utils = require("utils");
-    var Login = Utils.Page.extend({
-        constructorName: "Login",
+    var Splash = Utils.Page.extend({
+        constructorName: "Splash",
         model: Customer,
         email: "",
         password: "",
@@ -25,8 +25,8 @@ define(function (require) {
         // });
         // this.listenTo(this, "removing", functionName);
 
-        id: "myview",
-        className: "i-g page",
+        id: "splash",
+        className: "splashscren",
         events: {
             "tap #goToMap": "goToMap",
             "redirect": "redirect",
@@ -62,7 +62,6 @@ define(function (require) {
                     if ((probLog.passwd == formValues.password) & (probLog.passwd == formValues.password)&(probLog!=null)) {
                         window.customer = probLog;
                         window.customer.logged = true;
-                        window.localStorage.setItem('customer', window.customer);
                        // console.log( window.customer);
                         Backbone.history.navigate("myview", {
                         trigger: true
@@ -78,33 +77,6 @@ define(function (require) {
 
                 }
             });
-//            url="http://loveitaly.altervista.org/api/customers/?io_format=JSON&filter[email]=["+formValues.email+"]";
-//             var autenticazione = function(xhr) {
-//                var key64 = 'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6'; //codifica 64 della API key
-//                var token = 'Basic '.concat(key64);
-//                xhr.setRequestHeader('Authorization', token);
-//    }
-//            $.ajax({
-//            url:url,
-//            type:'GET',
-//            dataType:"json",
-//            beforeSend: function (xhr) {
-//                         xhr.setRequestHeader ("Authorization", "Basic " +'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6')
-//          },
-//            success:function (data) {
-//                console.log(["Login request details: ", data]);
-//
-//                if(data.error) {  // If there is an error, show the error messages
-//                 console.log("error");
-//                }
-//                else { // If not, send them back to the home page
-//                 console.log(data); //  window.location.replace('#');
-//                }
-//            },error:function (data) {console.log(data)}
-//        });
-
-
-
         },
         goToMap: function (e) {
             Backbone.history.navigate("map", {
@@ -113,6 +85,6 @@ define(function (require) {
         }
     });
 
-    return Login;
+    return Splash;
 
 });
