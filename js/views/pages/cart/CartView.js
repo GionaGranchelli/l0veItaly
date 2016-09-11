@@ -1,7 +1,7 @@
 define(function(require) {
 
   var Backbone = require("backbone");
-//  var MyModel = require("models/MyModel");
+  //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   var Cart = require("collections/Cart");
   var Products = require("collections/Products");
@@ -14,7 +14,8 @@ define(function(require) {
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.cart;
-      
+      window.cart.on('itemSubtraction', this.render, this);
+      window.cart.on('itemAddiction', this.render, this);
       //$('#back-button').css('display','block');
       //$('#toggle-button').css('display','none');
       //this.collection.on('sync', this.render, this);
@@ -35,29 +36,40 @@ define(function(require) {
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToCategory" : "category",
-      "tap .carriveri" : "render"
-      
+      "tap #resetButton" : "svuotaCarrello"
+      // "tap .carriveri" : "render"
+
 
     },
-//    firequi : function(){
-//       
-//        this.render();
-//         this.trigger('fireme');
-//    },
-//    firedownqui : function(){
-//      
-//        this.render();
-//          this.trigger('firemeDown');
-//    },
-    
+    //    firequi : function(){
+    //
+    //        this.render();
+    //         this.trigger('fireme');
+    //    },
+    //    firedownqui : function(){
+    //
+    //        this.render();
+    //          this.trigger('firemeDown');
+    //    },
+    redirectQui : function(){
+      Backbone.history.navigate("carrello", {
+        trigger: true
+      });
+    },
 
     render: function() {
-    console.log(window.cart);
-      $(this.el).html(this.template({articoli : window.cart.models}));
-//      this.model.toJSON()
+      console.log(window.cart.models);
+      $(this.el).html(this.template({articoli : window.cart.models,
+        totale : window.cart.totale(),
+        totaleColli : window.cart.totaleColli()
+      }));
+      //      this.model.toJSON()
       return this;
     },
-
+    svuotaCarrello : function(){
+      window.cart.resettami();
+      this.render();
+    },
     goToMap: function(e) {
       Backbone.history.navigate("map", {
         trigger: true
@@ -65,7 +77,7 @@ define(function(require) {
     },
 
     category: function(ev) {
-//        console.log("category qui");
+      //        console.log("category qui");
       Backbone.history.navigate("gotocategory/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });

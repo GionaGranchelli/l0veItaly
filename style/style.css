@@ -635,7 +635,21 @@ div#myview {
 .cart-empty-button button{
   width: 25%;
 }
+.cart-manage-money{
+  width: 100%;
+  float: left;
+}
+.cart-manage-money h5{
+  width: 50%;
+  float: left;
+}
 
-
-
+/*.cart-quantity{
+  width: 100%;
+  float: left;
+}
+.cart-quantity h5{
+  width: 50%;
+  float: left;
+}*/
 /*Fine Carrello*/

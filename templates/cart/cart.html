@@ -39,7 +39,7 @@
           <p>Cad</p>
           <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
           <p>Totale</p>
-          <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
+          <h5€&nbsp;class="totale">{{multiply quantity attributes.product.price}}</h5>
 
         </div>
       </div>
@@ -53,27 +53,21 @@
           <h5>€2</h5>
         </div>
 
-        <div class="cart-quantity">
+        <div class="cart-quantity cart-quantity-result">
           <h5>Quantità Totale</h5>
+          <h5>{{totaleColli}} </h5>
         </div>
-        <div class="cart-prices">
+        <div class="cart-prices cart-prices-result">
           <h5>Totale</h5>
-          <h5> </h5>
+          <h5> {{totale}}</h5>
         </div>
         <div class="cart-name cart-empty-button">
-        <button>Svuota carrello</button>
+        <button id="resetButton">Svuota carrello</button>
         </div>
       </div>
 
   </div>
-<script>
-var qualcosa = 0;
-$.each($('.totale'),function(){
-  qualcosa += 1;
-  console.log();
-});
 
-</script>
 
   <!-- <div class="cart-table">
     <table>
