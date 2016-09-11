@@ -48,10 +48,9 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
             var customer = window.localStorage.getItem('customer');
             if(customer){
                 window.customer =  customer;
-                alert('loggato');
             }else{
-              alert('non loggato');
                 window.customer = new Customer();
+                window.localStorage.setItem('customer', window.customer);
             }
 
             // Here we precompile ALL the templates so that the app will be quickier when switching views

@@ -298,7 +298,7 @@ width: 52%;
 .container-2 input#search {
   width: 40px;
   height: 40px;
-  background: #2b303b;
+  background: #ccc;
   border: none;
   font-size: 10pt;
   float: right;
@@ -689,5 +689,5 @@ div#myview {
 }
 .spalshscreen{
   text-align: center;
-  
+
 }

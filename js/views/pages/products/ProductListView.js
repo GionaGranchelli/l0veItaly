@@ -92,12 +92,6 @@ define(function(require) {
     },
     doSearch : function(ev){
       this.searchQuery = $('#search').val();
-      console.log("searchQuery");
-      // this.cat = window.localStorage.getItem('CategoryId');
-      console.log(this.searchQuery);
-      console.log(typeof this.searchQuery);
-      console.log("cat");
-      console.log(this.cat);
       if(this.searchQuery){
         if(this.cat == 0 || this.cat == undefined || this.cat == null){
             console.log("gotosearchresult");
