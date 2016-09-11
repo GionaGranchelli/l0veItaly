@@ -23,7 +23,8 @@ define(function (require) {
                 console.log("ancora");
 
             }
-
+//parz= this.totale();
+//              console.log (parz); 
             return this;
         },
         subOne: function (Itm) {
@@ -37,7 +38,8 @@ define(function (require) {
                     this.remove(Itm);
                 }
             }
-
+//            parz= this.totale();
+//              console.log (parz);  
             return this;
         },
         resettami: function () {
@@ -48,6 +50,15 @@ define(function (require) {
 
 
 
+        },
+        totale: function(){
+            var tot=0;
+            for (var key in this.models){
+                tot+= this.models[key].quantity*this.models[key].attributes.product.price;
+                
+            }
+            
+            return tot;
         }
 
 

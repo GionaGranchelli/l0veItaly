@@ -122,6 +122,7 @@ define(function (require) {
 
             productItem = $(ev.currentTarget).data('id');
             window.cart.addOne(productItem);
+            console.log(window.cart.totale());
         },
          fireMeDown: function (ev) {
             productItem = $(ev.currentTarget).data('id');
@@ -132,6 +133,7 @@ define(function (require) {
             console.log($(ev.currentTarget).next('shopbox-content'));
             console.log($(ev.currentTarget).next().next('shopbox-content'));
             window.cart.subOne(productItem);
+             console.log(window.cart.totale());
 
         },
         AboutUs: function(){
