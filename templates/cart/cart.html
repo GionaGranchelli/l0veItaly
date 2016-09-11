@@ -1,109 +1,164 @@
 
-<!-- We don't need full layout here, because this page will be parsed with Ajax-->
-<!-- Top Navbar-->
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-        <div class="center sliding">Shopping Cart</div>
-    </div>
-</div>
 
-<!-- Page, data-page contains page name-->
-<div data-page="shop-list" class="page">
-    <!-- Scrollable page content-->
+<div class="content-block-inner">
+  <div class="cart-heading-1 ">
+    <h2><i class="fa fa-cart"></i> Carrello</h2>
+  </div>
+  <div class="carrello-intestazione">
 
-    <div class="content-block-inner">
-        <div class="cart-heading-1 ">
-            <h2><i class="fa fa-star-o"></i> Carrello</h2>
+      <div class="cart-content-intestazione">
+        <div class="cart-image"><p>Foto</p></div>
+        <div class="cart-name">
+          <p class="cart-name-p">Prodotto</p>
+          <p class="cart-description">e Descrizione</p>
         </div>
-        <div class="cart-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="width-1"></th>
-                        <th class="width-2">Nome Prodotto</th>
-                        <th class="width-3"> </th>
-                        <th class="width-4">Prezzo Unit&agrave;</th>
-                        <th class="width-5">Qt&agrave;</th>	
-                        <th class="width-6">Parziale</th>	
-                        <th class="width-7"> </th>	
-                    </tr>														
-                </thead>
-                <tbody>
-                    {{#each articoli}}
-                    <tr class="carttr_1">
-                        <td>
-                            <div class="cartpage-image">
-                                <a href="#"><img alt="" src="http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H"></a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cartpage-pro-dec">
-                                <p><a href="#">{{attributes.product.name}}</a></p>
-                                <span> {{isnullo attributes.product.unity "Descrizione:"}}</span>
-                                <!--<span>Color: Gold</span>-->
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cart-page-edit">
-                                <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
-                                    <i class="fa fa-plus" style="color: black"></i>
-                                </div>
-                                <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
-                                    <i  accesskey=""class="fa fa-minus" style="color: black"></i>
-                                </div>
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="unite-price">
-                                <p>€{{twodigit attributes.product.price}}</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cart-quty">
-                                <input type="number" value="{{quantity}}">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="subtotal">
-                                <p>€{{multiply quantity attributes.product.price}}</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="cartpage-delete-item">
-                                <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
-                            </div>
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>									
-            </table>
-        </div>
-        <div class="cartpage-button">
-            <ul>
-                <li><button>Continua lo shopping</button></li>
-                <li><button>Categorie</button></li>
-                <li><button>Aziende</button></li>
-                <br>
-                <li><button>Svuota carrello</button></li>
-             </ul>
-        </div>
+        <div class="cart-quantity"><p>Q.ta</p></div>
+        <div class="cart-prices"><p>Prezzo</p> </div>
+      </div>
 
-        <div class="cartbox">
-            <div class="cart-heading">
-                <h2>Riepilogo</h2>
+  </div>
+<div class="carrello">
+    {{#each articoli}}
+      <div class="cart-content">
+        <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
+        <div class="cart-name">
+          <p class="cart-name-p">{{attributes.product.name}}</p>
+          <p class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</p>
+          <div class="cart-page-edit">
+            <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
+              <i class="fa fa-plus" style="color: black"></i>
             </div>
-            <div class="cart-contenttext">
-                <div class="carttotal">
-                    <p><span class="sub-t">Subtotale <span class="sub-t-p">$999.99</span></span></p>
-                    <p><span class="sub-t">Spese Gestione <span class="sub-t-p">2€</span></span></p>
-                    <p><span class="grand-t">Totale <span class="sub-t-p">$999.99</span></span>	</p>
-                    <p><input type="button" class="mybutton" value="CHECK OUT">	</p>							
-                    <p>Genew porchetta team</p>						
-                </div>
-            </div>	
-        </div>	
-    </div>
+            <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
+              <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+            </div>
 
+          </div>
+        </div>
+        <div class="cart-quantity">{{quantity}}</div>
+        <div class="cart-prices">
+          <p>Cad</p>
+          <p>€&nbsp;{{twodigit attributes.product.price}}</p>
+          <p>Totale</p>
+          <p class="totale">{{multiply quantity attributes.product.price}}</p>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="carrello-checkout">
+
+      <div class="cart-content-checkout">
+        <!-- <div class="cart-image">
+          <p>&nbsp;</p>
+        </div> -->
+        <div class="cart-name">
+        <button>Svuota carrello</button>
+        </div>
+        <div class="cart-quantity">
+          <p>Quantità Totale</p>
+        </div>
+        <div class="cart-prices">
+          <p>Totale</p>
+          <p></p>
+        </div>
+      </div>
+
+  </div>
+<script>
+var qualcosa = 0;
+$.each($('.totale'),function(){
+
+  console.log(this);
+});
+
+</script>
+
+  <!-- <div class="cart-table">
+    <table>
+      <thead>
+        <tr>
+          <th class="width-1"></th>
+          <th class="width-2">Nome Prodotto</th>
+          <th class="width-3"> </th>
+          <th class="width-4">Prezzo Unit&agrave;</th>
+          <th class="width-5">Qt&agrave;</th>
+          <th class="width-6">Parziale</th>
+          <th class="width-7"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each articoli}}
+        <tr class="carttr_1">
+          <td>
+            <div class="cartpage-image">
+              <a href="#"><img alt="" src=""></a>
+            </div>
+          </td>
+          <td>
+            <div class="cartpage-pro-dec">
+              <p><a href="#"></a></p>
+              <span> </span>
+              <!--<span>Color: Gold</span>
+            </div>
+          </td>
+          <td>
+            <div class="cart-page-edit">
+              <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
+                <i class="fa fa-plus" style="color: black"></i>
+              </div>
+              <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
+                <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+              </div>
+
+            </div>
+          </td>
+          <td>
+            <div class="unite-price">
+              <p></p>
+            </div>
+          </td>
+          <td>
+            <div class="cart-quty">
+              <input type="number" value="">
+            </div>
+          </td>
+          <td>
+            <div class="subtotal">
+              <p>€{{multiply quantity attributes.product.price}}</p>
+            </div>
+          </td>
+          <td>
+            <div class="cartpage-delete-item">
+              <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
+            </div>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="cartpage-button">
+    <ul>
+      <li><button>Continua lo shopping</button></li>
+      <li><button>Categorie</button></li>
+      <li><button>Aziende</button></li>
+      <br>
+      <li><button>Svuota carrello</button></li>
+    </ul>
+  </div>
+  <div class="cartbox">
+    <div class="cart-heading">
+      <h2>Riepilogo</h2>
+    </div>
+    <div class="cart-contenttext">
+      <div class="carttotal">
+        <p><span class="sub-t">Subtotale <span class="sub-t-p">$999.99</span></span></p>
+        <p><span class="sub-t">Spese Gestione <span class="sub-t-p">2€</span></span></p>
+        <p><span class="grand-t">Totale <span class="sub-t-p">$999.99</span></span>	</p>
+        <p><input type="button" class="mybutton" value="CHECK OUT">	</p>
+        <p>Genew porchetta team</p>
+      </div>
+    </div>
+  </div>
 </div>
+-->
