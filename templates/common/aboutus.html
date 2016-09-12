@@ -1,21 +1,21 @@
 
-                <div class="content-block-inner">
-                    <div class="shop-area">
-                      <div class="row">
-                        {{#each Contacts}}
+<div class="content-block-inner">
+    <div class="cart-heading-1 ">
+        <h2  style="text-align: center;"><i class="fa fa-phone"></i>Chi Siamo</h2>
+    </div>
+    <div class="shop-area">
 
-                                <div class="shopbox shopbox-category">
-                                  <div class="shopbox-content shopbox-content-category">
+        {{#each Contacts}}
+        <div class="row">
 
-                                    <h1>{{name}}</h1>
-                                    <h2>{{email}}</h2>
-                                    <h3>{{description}}</h3>
+            <div class="cart-heading-1  chi-siamo">
+                <h2><i class="fa fa-user"></i>{{name}}</h2>
+                <p><i class="fa fa-envelope-o"></i>&nbsp;<a id="mailto" data-mailto="{{email}}">{{email}}</a></p>
+                <p><i class="fa fa-gear"></i>&nbsp;{{description}}</p>
+            </div>
+        </div>
+        {{/each}}
 
-                                  </div>
-                                </div>
+    </div>
 
-                        {{/each}}
-                      </div>
-                    </div>
-
-                </div>
+</div>

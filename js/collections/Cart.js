@@ -10,9 +10,8 @@ define(function (require) {
     model: CartProduct,
     constructorName: "Cart",
     addOne: function (Itm) {
-      console.log("addone");
       if (this.get(Itm) == undefined) {
-        modello = new CartProduct({id: Itm})
+        modello = new CartProduct({id: Itm});
         modello.addOneItm();
         this.add(modello);
       } else {

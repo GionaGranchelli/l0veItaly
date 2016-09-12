@@ -44,7 +44,6 @@ define(function (require) {
           }
         },
         parse: function (data) {
-          console.log(this.base);
             return data.products;
         }
     });

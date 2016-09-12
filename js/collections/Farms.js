@@ -16,6 +16,9 @@ define(function (require) {
 //            console.log("data " + data);
 //            console.log("data.manufacturers " + data.manufacturers);
             return data.manufacturers;
+        },
+        addLimit : function (x){
+            this.url = this.url +"&limit=" + x;
         }
     });
     return Farms;

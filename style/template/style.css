@@ -63,7 +63,7 @@ padding: 0
 }
 a.closebutton{float: right;font-size: 25px;
 padding: 10px;color:#fff;}
-.clear{clear:both}
+.clear{clear:both;    height: 25px;}
 .text-center{text-align: center;}
 input[type=text]:focus,input[type=email]:focus,input[type=number]:focus,input[type=password]:focus,textarea:focus{border:1px solid #EC4445;}
 /*------------------------
@@ -603,9 +603,12 @@ h2.product-name {
   width: 46%;
 }
 .shop-inner {
-  overflow: hidden;
-  padding: 5px;
+    overflow: hidden;
+    padding: 5px;
+    border: 3px solid #0A7D39;
 }
+
+
 .shop-img a img {
   width: 100%;
 }
@@ -1122,13 +1125,13 @@ opacity:0;
 13. sopping cart css
 --------------------------*/
 .cart-heading-1 > h2 {
-  background: #cccccc none repeat scroll 0 0;
-  color: #555;
+  background: #0a7d3a none repeat scroll 0 0;
+  color: white;
   font-weight: normal;
   text-align: left;
 }
 .cart-heading-1 > h2 i {
-  background: #ec4445 none repeat scroll 0 0;
+  background: #0a7d3a none repeat scroll 0 0;
   color: #fff;
   padding: 12px;
   colo

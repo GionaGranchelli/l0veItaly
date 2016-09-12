@@ -126,17 +126,23 @@ define(function (require) {
                     if (((temp.length - 1) - temp.indexOf(".")) > 3) {
                         return temp.substring(0, temp.indexOf(".") + 3);
                     } else
-                        options.inverse(this);
+                        "";
                 } else {
-                    return options.inverse(this);
+                    
+                    return "";
                 }
             });
             Handlebars.registerHelper('multiply', function (variable, variable2, options) {
                 if ((typeof variable !== 'undefined') & (typeof variable2 !== 'undefined')) {
-                    var temp = variable * variable2;
-                    return temp.toString();
-                } else {
-                    return options.inverse(this);
+                    var temp1 = variable * variable2;
+                    var temp = temp1.toString();
+                    if (((temp.length - 1) - temp.indexOf(".")) > 3) {
+                        return temp.substring(0, temp.indexOf(".") + 3);
+                    }else{
+                        return temp;
+                    }
+                }else{
+                    return "";
                 }
             });
             Handlebars.registerHelper('isnullo', function (variable, variable2, options) {
@@ -154,34 +160,42 @@ define(function (require) {
             this.changePage(page);
         },
         myView: function () {
-            console.log(window.customer.logged);
+//            console.log(window.customer.logged);
             // highlight the nav1 tab bar element as the current one
             this.structureView.setActiveTabBarElement("nav1");
             // create a model with an arbitrary attribute for testing the template engine
             var model = new Products();
             model.setLimit(4);
             model.fetch();
+            var categories = new Categories();
+            categories.addLimit(2,4);
+            categories.fetch();
             // create the view
+            
             var page = new MyView({
-                collection: model
+                collection: model,
+                model : categories
             });
             
             // show the view
             this.changePage(page);
         },
-        map: function () {
-            // highlight the nav2 tab bar element as the current one
-            this.structureView.setActiveTabBarElement("nav2");
-            // create the view and show it
-            var page = new MapView();
-            this.changePage(page);
-        },
         // load the structure view
         showStructure: function () {
-            var count = window.localStorage.getItem('customer');
+            var customer = JSON.parse(window.localStorage.getItem('customer'));
+            if (customer.logged === true){
+//                console.log("showstructure ramo true");
+                this.firstView = "myview";
+//                console.log(customer.logged);
+            }else{
+//                console.log("ramo false");
+//                console.log(customer.logged);
+            }
             if (!this.structureView) {
                 this.structureView = new StructureView({
-                    myApp: myApp
+                    myApp: myApp,
+                    myflag : customer.logged
+                    
                 });
                 // put the el element of the structure view into the DOM
                 document.body.appendChild(this.structureView.render().el);
@@ -233,7 +247,7 @@ define(function (require) {
             //            console.log("goToFarmList");
             var collection = new Farms();
             collection.fetch();
-            console.log(collection);
+//            console.log(collection);
             var page = new FarmListView({
                 collection: collection
             });

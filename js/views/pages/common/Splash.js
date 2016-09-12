@@ -29,14 +29,14 @@ define(function (require) {
         className: "splashscren",
         events: {
             "tap #goToMap": "goToMap",
-            "redirect": "redirect",
-            "tap #loginFire": "loginAction"
+            "redirect": "redirect"
         },
         render: function (flag) {
             // $("")
-            if(flag){
-                $(this.el).html(this.template({messaggio:"User e password sbagliati riprova"}));
-            }else $(this.el).html(this.template());
+            if (flag) {
+                $(this.el).html(this.template({messaggio: "User e password sbagliati riprova"}));
+            } else
+                $(this.el).html(this.template());
 
             return this;
         },
@@ -46,38 +46,6 @@ define(function (require) {
                 trigger: true
             });
 
-        },
-        loginAction: function (event) {
-            event.preventDefault(); // Don't let this button submit the form
-            var formValues = {
-                email: $('#inputEmail').val(),
-                password: $('#inputPassword').val()};
-            probCus = new Customer(formValues.email.toString());
-            probCus.fetch({
-                success: function () {
-                    //console.log(probCus);
-                     //console.log(probCus).attributes;
-                    probLog = probCus.attributes[0];
-                    //console.log(probLog);
-                    if ((probLog.passwd == formValues.password) & (probLog.passwd == formValues.password)&(probLog!=null)) {
-                        window.customer = probLog;
-                        window.customer.logged = true;
-                       // console.log( window.customer);
-                       window.localStorage.setItem('customer', probLog);
-                        Backbone.history.navigate("myview", {
-                        trigger: true
-                    });
-                    } else {
-
-                        this.render(true);
-                    }
-                },
-                error: function () {
-                    this.render(true);
-
-
-                }
-            });
         },
         goToMap: function (e) {
             Backbone.history.navigate("map", {

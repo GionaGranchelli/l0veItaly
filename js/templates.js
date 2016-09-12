@@ -10,6 +10,7 @@
 //  - value: the path of the html file containing the HTML fragment of the template
 define({
     structure: "templates/structure.html",
+    structurePublic: "templates/structurePublic.html",
     myview: "templates/myview.html",
     splashscreen : "templates/common/splashscreen.html",
     account : "templates/account/accountDetail.html",

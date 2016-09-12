@@ -37,6 +37,7 @@ define(function(require) {
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToProductDetail" : "goToProductDetail",
+      "tap #goToCategory" : "goToCategory",
       "scroll" : "fetchSheets",
       "tap #searchButton" : "doSearch",
       "keypress #search": "doSearchRapid"
@@ -65,6 +66,11 @@ define(function(require) {
         trigger: true
       });
 
+    },
+    goToCategory: function (ev){
+        Backbone.history.navigate("gotocategory/" + $(ev.currentTarget).data('id'), {
+        trigger: true
+      });
     },
     fetchSheets: function () {
 

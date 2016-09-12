@@ -43,15 +43,28 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
         document.addEventListener("deviceready", run, false);
 
         function run() {
-
+            
             window.cart = new Cart();
-            var customer = window.localStorage.getItem('customer');
-            if(customer){
-                window.customer =  customer;
+            
+            var customer = JSON.parse(window.localStorage.getItem('customer'));
+//            console.log(customer);
+            if(customer !== null){
+                if(customer.logged !== false && customer.logged !== undefined){
+//                    console.log('ci sta');
+                    window.customer =  customer;
+                }else{
+//                    console.log('non ci sta');
+                    window.customer = new Customer();
+                    window.customer.logged = false;
+                    window.localStorage.setItem('customer', JSON.stringify(window.customer));
+                }
             }else{
+//                console.log('non ci sta');
                 window.customer = new Customer();
-                window.localStorage.setItem('customer', window.customer);
+                window.customer.logged = false;
+                window.localStorage.setItem('customer', JSON.stringify(window.customer));
             }
+           
 
             // Here we precompile ALL the templates so that the app will be quickier when switching views
             // see utils.js

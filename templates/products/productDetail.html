@@ -1,83 +1,86 @@
 
 <div class="content-block-inner">
-	<div class="single-product-area">
+    <div class="cart-heading-1 ">
+        <h2  style="text-align: center;"><i class="fa fa-home"></i>Dettagli Prodotto</h2>
+    </div>
+    <div class="single-product-area">
 
-		<div class="single-product">
-			<div class="swiper-container">
-				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">
-					<!-- Slides -->
-					{{#each Immagini.images.models}}
-					<div class="swiper-slide" style="height:300px;background-image:url('{{attributes.href}}') ;"></div>
-					{{/each}}
-				</div>
-			</div>
-			<div class="single-product-img"></div>
-			{{#with Product}}
-			<div class="single-product-content">
-				<h1 class="product_title">{{product.name}}</h1>
-				<div class="price-box">
-					<span class="new-price">{{product.price}}€</span>
-				</div>
-				<div class="pro-rating">
-							Quantità: {{product.unity}}
-						</div>
-				<div class="short-description">
-					<p>{{{product.description_short}}}</p>
-				</div>
-				<form action="#">
-					<div class="row">
-						<div class="left">
-							<p>Aggiungi al Carrello</p>
-							<div class="quantity quantity-detail-product">
-								<div class="detail-product-addbutton">
+        <div class="single-product">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {{#each Immagini.images.models}}
+                    <div class="swiper-slide" style="height:300px;background-image:url('{{attributes.href}}') ;"></div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="single-product-img"></div>
+            {{#with Product}}
+            <div class="single-product-content">
+                <h1 class="product_title">{{product.name}}</h1>
+                <div class="price-box">
+                    Prezzo: <span class="new-price">{{twodigit product.price}}€</span>
+                </div>
+                <div class="pro-rating">
+                    Quantità: {{product.unity}}
+                </div>
+                <div class="short-description">
+                    <p>{{{product.description_short}}}</p>
+                </div>
+                <form action="#">
+                    <div class="row">
+                        <div class="left">
+                            <p>Aggiungi al Carrello</p>
+                            <div class="quantity quantity-detail-product">
+                                <div class="detail-product-addbutton">
 
-									<div id="firemeDown" class="compare-button" data-id="{{id}}">
-										<i class="fa fa-minus" style="color: black"></i>
-									</div>
-									<div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
-										<i class="fa fa-plus" style="color: black"></i>
-									</div>
-								</div>
+                                    <div id="firemeDown" class="compare-button" data-id="{{id}}">
+                                        <i class="fa fa-minus" style="color: black"></i>
+                                    </div>
+                                    <div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
+                                        <i class="fa fa-plus" style="color: black"></i>
+                                    </div>
+                                </div>
 
-							</div>
-						</div>
-						<div class="right">
-							<p>Quantità Disponibile</p>
-							<input type="number" value="{{product.quantity}}" disabled>
-						</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <p>Quantità Disponibile</p>
+                            <input type="number" value="{{product.quantity}}" disabled>
+                        </div>
 
 
-					</div>
-				</form>
-			</div>
-			{{/with}}
-		</div>
+                    </div>
+                </form>
+            </div>
+            {{/with}}
+        </div>
 
-	</div>
+    </div>
 
 </div>
 <script>
 
-var mySwiper = new Swiper('.swiper-container', {
-	speed: 700,
-	spaceBetween: 100,
-	autoplay: 1500,
-	direction : 'horizontal',
-	effect : 'coverflow',
-	coverflow: {
-		rotate: 50,
-		stretch: 0,
-		depth: 100,
-		modifier: 1,
-		slideShadows : true
-	},
-	cube: {
-		slideShadows: true,
-		shadow: true,
-		shadowOffset: 20,
-		shadowScale: 0.94
-	}
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 700,
+        spaceBetween: 100,
+        autoplay: 1500,
+        direction: 'horizontal',
+        effect: 'coverflow',
+        coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+        },
+        cube: {
+            slideShadows: true,
+            shadow: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+        }
 
-});
+    });
 </script>

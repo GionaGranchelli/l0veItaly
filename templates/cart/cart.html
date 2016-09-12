@@ -2,7 +2,7 @@
 
 <div class="content-block-inner">
   <div class="cart-heading-1 ">
-    <h2><i class="fa fa-cart"></i> Carrello</h2>
+    <h2><i class="fa fa-shopping-cart"></i> Carrello</h2>
   </div>
   <div class="carrello-intestazione">
 
@@ -50,7 +50,7 @@
       <div class="cart-name">
         <h1> Carrello Vuoto </h1>
       </div>
-      <img is="emptyCart"src="img/cart.png">
+      <img id="emptyCart" src="img/cart.png">
     {{/isEmpty}}
   </div>
   <div class="carrello-checkout">
@@ -67,7 +67,7 @@
         </div>
         <div class="cart-prices cart-prices-result">
           <h5>Costo Prodotti</h5>
-          <h5>€&nbsp;{{totale}}</h5>
+          <h5>€&nbsp;{{twodigit totale}}</h5>
         </div>
         <div class="cart-prices cart-prices-result">
           <h5>Costo Totale</h5>

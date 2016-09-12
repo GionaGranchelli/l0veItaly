@@ -1,43 +1,46 @@
 
-                <div class="content-block-inner">
-                    <div class="shop-area">
-                      <div class="row">
-                        {{#each Category}}
-                            {{#ifCond id_parent '==' 2 }}
-                                {{#ifCond id '<' 31 }}
+<div class="content-block-inner">
+    <div class="cart-heading-1 ">
+        <h2><i class="fa fa-leaf"></i> Categorie </h2>
+    </div>
+    <div class="shop-area">
+        <div class="row">
+            {{#each Category}}
+            {{#ifCond id_parent '==' 2 }}
+            {{#ifCond id '<' 31 }}
 
-                                <!-- <div class="single-shop-list">
-                                    <div class="shop-inner">
+            <!-- <div class="single-shop-list">
+                <div class="shop-inner">
 
-                                            <div class="shop-img shop-img-cat" style="background-image:url('http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')">
-                                                <img src="" alt="" />
-                                            </div>
-                                            <div class="shop-content">
-                                                <h3 class="categoryh">{{name}}</h3>
+                        <div class="shop-img shop-img-cat" style="background-image:url('http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="shop-content">
+                            <h3 class="categoryh">{{name}}</h3>
 
-                                            </div>
-
-                                    </div>
-                                </div> -->
-                                <div class="shopbox shopbox-category"  id="goToCategory" data-id="{{id}}" style="background-image:url('http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H');">
-                                  <div class="shopbox-content shopbox-content-category">
-                                    <h3>{{name}}</h3>
-                                    <!-- <div class="add-to-links">
-                                        <div id="firemeDown" class="compare-button" data-id="{{id}}">
-                                            <i class="fa fa-minus" style="color: black"></i>
-                                        </div>
-                                        <div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
-                                            <i class="fa fa-plus" style="color: black"></i>
-                                        </div>
-
-                                  </div> -->
-                                  </div>
-                                </div>
-                                {{/ifCond}}
-
-                            {{/ifCond}}
-                        {{/each}}
-                      </div>
-                    </div>
+                        </div>
 
                 </div>
+            </div> -->
+            <div class="shopbox shopbox-category"  id="goToCategory" data-id="{{id}}" style="background-image:url('http://loveitaly.altervista.org/api/images/categories/{{id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H');">
+                <div class="shopbox-content shopbox-content-category">
+                    <h3>{{name}}</h3>
+                    <!-- <div class="add-to-links">
+                        <div id="firemeDown" class="compare-button" data-id="{{id}}">
+                            <i class="fa fa-minus" style="color: black"></i>
+                        </div>
+                        <div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
+                            <i class="fa fa-plus" style="color: black"></i>
+                        </div>
+
+                  </div> -->
+                </div>
+            </div>
+            {{/ifCond}}
+
+            {{/ifCond}}
+            {{/each}}
+        </div>
+    </div>
+
+</div>
