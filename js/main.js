@@ -71,6 +71,7 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
             Utils.loadTemplates().once("templatesLoaded", function () {
 
                 var preloadedImages = ['img/farms/1.jpg',
+                              'img/farms/tempodi.jpg',
                               'img/farms/2.jpg',
                               'img/farms/3.jpg',
                               'img/farms/4.jpg',

@@ -20,6 +20,7 @@ define(function (require) {
             this.template = Utils.templates.myview;
             $('#back-button').css('display','none');
             $('#toggle-button').css('display','block');
+            // var customer = window.localStorage.getItem('customer');
             this.collection.on('sync', this.render, this);
             this.model.on('sync', this.render, this);
             // here we can register to inTheDOM or removing events
@@ -29,6 +30,7 @@ define(function (require) {
             //   });
             // });
             // this.listenTo(this, "removing", functionName);
+      
         },
         id: "myview",
         className: "i-g page",
