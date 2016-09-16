@@ -31,7 +31,7 @@ define(function(require) {
     },
 
     id: "productcategory",
-    className: "i-g page",
+    className: "i-g page cart-result",
 
     events: {
       "tap #goToMap": "goToMap",

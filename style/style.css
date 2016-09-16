@@ -732,3 +732,6 @@ float: left;
 .product-name-red{
     color: #ec4445;
 }
+.cart-result{
+height : 95% !important;
+}
