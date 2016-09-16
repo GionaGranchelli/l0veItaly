@@ -69,7 +69,7 @@ define(function (require) {
 
             var delta = this.checkScroll();
             
-            if (delta > -1) {
+            if (delta > -4) {
                 if(this.collection){
                     this.collection.setPagination(this.iniziale, this.limit);
 //                console.log(this.collection);

@@ -62,7 +62,6 @@ define(function (require) {
             "": "showStructure",
             "myview": "myView",
             "splashscreen": "splashScreen",
-            "map": "map",
             "gotoproductlist": "goToProductList",
             "gotoproductdetail/:key": "goToProductDetail",
             "gotocategorylist": "goToCategoryList",
@@ -121,15 +120,23 @@ define(function (require) {
                 }
             });
             Handlebars.registerHelper('twodigit', function (variable, options) {
-                if (typeof variable !== 'undefined') {
+                
+                if (typeof variable != 'undefined') {
                     var temp = variable.toString();
-                    if (((temp.length - 1) - temp.indexOf(".")) > 3) {
-                        return temp.substring(0, temp.indexOf(".") + 3);
-                    } else
-                        "";
+                    return temp.substring(0, temp.indexOf(".") + 2);
+//                    if (((temp.length - 1) - temp.indexOf(".")) > 3) {
+//                        return temp.substring(0, temp.indexOf(".") + 2);
+//                    } else{
+//                        console.log("temp.length" );
+//                        console.log(temp.length );
+//                        console.log("indexOf()" );
+//                        console.log(temp.indexOf(".") );
+//                        console.log(((temp.length - 1) - temp.indexOf(".")));           
+//                        "";
+//                    }
                 } else {
                     
-                    return "";
+                    return "stocazzo";
                 }
             });
             Handlebars.registerHelper('multiply', function (variable, variable2, options) {

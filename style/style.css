@@ -436,7 +436,7 @@ width: 52%;
 }
 .shopbox-home h3{
     color:white;
-    background-color: green;
+    background-color: #0a7d3a;
     height: 17%;
     padding: 2px;
 }
@@ -625,7 +625,7 @@ div#myview {
 
 }
 .carrello-intestazione p{
-  color: red;
+  color: #be1a2b;
 }
 .cart-page-edit {
   border: 1px solid #cccccc;
