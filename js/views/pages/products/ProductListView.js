@@ -1,12 +1,9 @@
 define(function (require) {
 
     var Backbone = require("backbone");
-    //  var MyModel = require("models/MyModel");
     var Utils = require("utils");
-    var ProductDetailView = require('views/pages/products/ProductDetailView');
     var Products = require("collections/Products");
     var Categories = require("collections/Categories");
-
     var ProductListView = Utils.Page.extend({
         constructorName: "ProductListView",
         collection: Products,
@@ -58,66 +55,43 @@ define(function (require) {
             });
         },
         goToProductDetail: function (ev) {
-
             Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
                 trigger: true
             });
-
         },
         fetchSheets: function () {
-
             var delta = this.checkScroll();
-            
             if (delta > -4) {
                 if(this.collection){
                     this.collection.setPagination(this.iniziale, this.limit);
-//                console.log(this.collection);
-                this.inziale = this.limit;
-                this.limit += 5;
-                this.collection.fetch({remove: false});
+                    this.inziale = this.limit;
+                    this.limit += 5;
+                    this.collection.fetch({remove: false});
                 }
-                
-                
             }
-            
-            
         },
         checkScroll: function () {
             var scrollHeight = this.el.offsetHeight;
-//            console.log("scrollHeight " + scrollHeight);
             var scrollTop = this.el.scrollHeight;// Altezza del contenuto di Page
-//            console.log("scrollTop " + scrollTop);
             var offsetHeight = this.el.scrollTop;  // Delta spostamento dello spostamento
-//              console.log("offsetHeight" + offsetHeight);
             return (scrollHeight - (scrollTop - offsetHeight));
         },
         chooseCategory: function (ev) {
             this.cat = $("#categorySelector").val();
-
-            // window.localStorage.setItem('CategoryId', cateCatch);
-
-
         },
         doSearch: function (ev) {
             this.searchQuery = $('#search').val();
             if (this.searchQuery) {
                 if (this.cat == 0 || this.cat == undefined || this.cat == null) {
-                    console.log("gotosearchresult");
-
                     Backbone.history.navigate("gotosearchresult/" + this.searchQuery, {trigger: true});
-
                 } else {
-                    console.log("gotosearchresultcategory");
                     Backbone.history.navigate("gotosearchresultcategory/" + this.searchQuery + "/" + this.cat, {trigger: true});
                 }
-
             } else {
-                if (this.cat != 0) {
-                    console.log('goToCategory');
+                if (this.cat !== 0) {
                     Backbone.history.navigate("gotocategory/" + this.cat, {trigger: true});
                 }
             }
-
         },
         doSearchRapid: function (event) {
             console.log(event.keyCode);

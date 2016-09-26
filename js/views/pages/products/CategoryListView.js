@@ -1,15 +1,11 @@
 define(function(require) {
 
   var Backbone = require("backbone");
-//  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   var Categories = require("collections/Categories");
-
   var CategoryListView = Utils.Page.extend({
-
     constructorName: "CategoryListView",
     collection: Categories,
-
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.productcategory;

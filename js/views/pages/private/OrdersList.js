@@ -15,18 +15,12 @@ define(function(require) {
     },
     className: "i-g page",
     events: {
-      "tap #goToMap": "goToMap"
     },
     render: function() {
       $(this.el).html(this.template({
         Ordini: this.collection.toJSON()
       }));
       return this;
-    },
-    goToMap: function(e) {
-      Backbone.history.navigate("map", {
-        trigger: true
-      });
     }
   });
 

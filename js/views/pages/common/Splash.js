@@ -11,28 +11,13 @@ define(function (require) {
         initialize: function () {
             this.template = Utils.templates.login;
             this.render;
-            //var cust = new Customer({email:this.email});
-            //cust.fetch({success:function(){
-
-
-
         },
-        // here we can register to inTheDOM or removing events
-        // this.listenTo(this, "inTheDOM", function() {
-        //   $('#content').on("swipe", function(data){
-        //     console.log(data);
-        //   });
-        // });
-        // this.listenTo(this, "removing", functionName);
-
         id: "splash",
         className: "splashscren",
         events: {
-            "tap #goToMap": "goToMap",
             "redirect": "redirect"
         },
         render: function (flag) {
-            // $("")
             if (flag) {
                 $(this.el).html(this.template({messaggio: "User e password sbagliati riprova"}));
             } else
@@ -46,11 +31,6 @@ define(function (require) {
                 trigger: true
             });
 
-        },
-        goToMap: function (e) {
-            Backbone.history.navigate("map", {
-                trigger: true
-            });
         }
     });
 

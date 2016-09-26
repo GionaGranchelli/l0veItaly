@@ -1,9 +1,7 @@
 define(function(require) {
 
   var Backbone = require("backbone");
-  //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
-  // var ProductDetailView = require('views/pages/products/ProductDetailView');
   var Searchs = require("collections/Searchs");
   var Categories = require("collections/Categories");
   var SearcListView = Utils.Page.extend({
@@ -73,11 +71,8 @@ define(function(require) {
     },
     checkScroll: function () {
       var scrollHeight = this.el.offsetHeight;
-      //  console.log("scrollHeight " + scrollHeight);
       var scrollTop = this.el.scrollHeight;// Altezza del contenuto di Page
-      //  console.log("scrollTop " + scrollTop);
       var offsetHeight = this.el.scrollTop;  // Delta spostamento dello spostamento
-      //  console.log("offsetHeight" + offsetHeight);
       return (scrollHeight - (scrollTop - offsetHeight));
     },
     doSearch : function(ev){
@@ -90,15 +85,12 @@ define(function(require) {
       console.log(this.cat);
       if(this.searchQuery){
         if(this.cat == 0 || this.cat == undefined || this.cat == null){
-            console.log("gotosearchresult");
             Backbone.history.navigate("gotosearchresult/" + this.searchQuery,{trigger: true});
         }else{
-            console.log("gotosearchresultcategory");
             Backbone.history.navigate("gotosearchresultcategory/" + this.searchQuery + "/"+ this.cat,{trigger: true});
         }
       }else{
           if(this.cat == 0 || this.cat == undefined || this.cat == null){
-            console.log('goToCategory');
             Backbone.history.navigate("goToCategory/" + this.cat,{trigger: true});
           }
       }

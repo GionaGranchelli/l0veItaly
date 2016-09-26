@@ -8,7 +8,6 @@ define(function(require) {
 
     constructorName: "FarmListView",
     collection: Farms,
-
     initialize: function() {
       // load the precompiled template
       this.template = Utils.templates.farmlist;
@@ -21,26 +20,21 @@ define(function(require) {
 
     id: "farmlist",
     className: "i-g page",
-
     events: {
       "tap #goToMap": "goToMap",
       "tap #farmItem" : "goToFarmDetail"
     },
-
     render: function() {
       $(this.el).html(this.template({Farms : this.collection.toJSON()}));
       return this;
     },
-
     goToMap: function(e) {
       Backbone.history.navigate("map", {
         trigger: true
       });
     },
     goToFarmDetail: function(ev){
-
-
-      Backbone.history.navigate("gotofarmdetail/" + $(ev.currentTarget).data('id'), {
+        Backbone.history.navigate("gotofarmdetail/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });
     }

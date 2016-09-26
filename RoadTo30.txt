@@ -1,4 +1,4 @@
-- Cambiare il Router, non si istanziano gli oggetti nel router, spostare tutto nell'inizializate delle View.
+- Cambiare il Router, non si istanziano gli oggetti nel router, spostare tutto nell'inizializate delle View. (DONE)
 - Gestione degli errori da parte del server, l'utente deve capire cosa sta succedendo
 - Aggiungere controlli se la rete è presente o meno.
 - Aggiungere gli indirizzi!!! Nel senso che nel nel profilo ne nel carrello/checkout ti chiede dove spedirlo

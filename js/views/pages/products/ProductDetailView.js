@@ -4,13 +4,9 @@ define(function(require) {
   var Product = require("models/Product");
   var Utils = require("utils");
   var Images = require('collections/Images');
-  // var Swiper = require('swiper');
-
-
   var ProductDetailView = Utils.Page.extend({
 
     constructorName: "ProductDetailView",
-
     model: Product,
     collection: Images,
     initialize: function(productKey) {
@@ -32,40 +28,20 @@ define(function(require) {
             return _this;
       });
     },
-
     id: "product",
     className: "i-g page",
-
     events: {
       "tap #goToMap": "goToMap"
     },
-
     render: function() {
-      // console.log("images Dentro render");
-      // console.log(this.collection);
-      // var arrayImage = {images : )};
-      // console.log(arrayImage);
-
-
-      idProduct: this.model.id,
       $(this.el).html(this.template({
           Product : this.model.toJSON(),
           Immagini : {images : this.collection}
       }));
-//      this.model.toJSON()
       return this;
     },
-
-    beforeRender: function() {
-      //  console.log('beforeRender');
-    },
-
-    afterRender: function() {
-        // console.log('afterRender');
-
-
-    },
-
+    beforeRender: function() {},
+    afterRender: function() {},
     goToMap: function(e) {
       Backbone.history.navigate("map", {
         trigger: true

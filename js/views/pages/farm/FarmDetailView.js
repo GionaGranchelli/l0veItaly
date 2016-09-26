@@ -1,13 +1,10 @@
 define(function(require) {
 
   var Backbone = require("backbone");
-//  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   var Farm = require('models/Farm');
   var Products = require('collections/Products');
-
   var FarmDetailView = Utils.Page.extend({
-
     constructorName: "FarmDetailView",
     model : Farm,
     collection : Products,
@@ -24,10 +21,8 @@ define(function(require) {
       this.collection.on('sync', this.render, this);
       this.model.on('sync', this.render, this);
     },
-
     id: "farm",
     className: "i-g page",
-
     events: {
       "tap #goToMap": "goToMap",
       "tap #goToProductDetail" : "goToProductDetail",
@@ -37,32 +32,24 @@ define(function(require) {
         this.collection.on('sync', this.render, this);
     },
     render: function() {
-
      $(this.el).html(this.template({
           model : this.model.toJSON(),
           Products : this.collection.models
-
       }
       ));
-//      $(this.el).html(this.template({Products : }));
       return this;
     },
-
     goToMap: function(e) {
       Backbone.history.navigate("map", {
         trigger: true
       });
-
     },
     goToProductDetail: function(ev){
-
       Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });
-
     },
     fetchSheets: function () {
-
       var delta = this.checkScroll();
       console.log(delta);
       if (delta > -10) {
@@ -75,11 +62,8 @@ define(function(require) {
     },
     checkScroll: function () {
       var scrollHeight = this.el.offsetHeight;
-                //  console.log("scrollHeight " + scrollHeight);
       var scrollTop = this.el.scrollHeight;// Altezza del contenuto di Page
-                //  console.log("scrollTop " + scrollTop);
       var offsetHeight = this.el.scrollTop;  // Delta spostamento dello spostamento
-                //  console.log("offsetHeight" + offsetHeight);
       return (scrollHeight - (scrollTop - offsetHeight));
     }
   });
