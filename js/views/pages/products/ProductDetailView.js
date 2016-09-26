@@ -3,7 +3,7 @@ define(function(require) {
   var Backbone = require("backbone");
   var Product = require("models/Product");
   var Utils = require("utils");
-  var Img = require('collections/Images');
+  var Images = require('collections/Images');
   // var Swiper = require('swiper');
 
 
@@ -12,30 +12,25 @@ define(function(require) {
     constructorName: "ProductDetailView",
 
     model: Product,
-    collection: Img,
-    initialize: function() {
+    collection: Images,
+    initialize: function(productKey) {
       // load the precompiled template
       _.bindAll(this, 'beforeRender', 'render', 'afterRender');
       this.template = Utils.templates.product;
+      this.model = new Product({id: productKey});
+      this.model.fetch();
+      this.collection = new Images();
+      this.collection.addIdProduct(productKey);
+      this.collection.fetch();
       this.collection.on('sync', this.render, this);
       this.model.on('sync', this.render, this);
-      // here we can register to inTheDOM or removing events
-      // this.listenTo(this, "inTheDOM", function() {
-      //   $('#content').on("swipe", function(data){
-      //     console.log(data);
-      //   });
-      // });
-      // this.listenTo(this, "removing", functionName);
       var _this = this;
-              this.render = _.wrap(this.render, function(render) {
-                  _this.beforeRender();
-                  render();
-                  _this.afterRender();
-                  return _this;
-              });
-
-
-      // by convention, all the inner views of a view must be stored in this.subViews
+      this.render = _.wrap(this.render, function(render) {
+            _this.beforeRender();
+            render();
+            _this.afterRender();
+            return _this;
+      });
     },
 
     id: "product",

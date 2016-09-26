@@ -13,19 +13,16 @@ define(function(require) {
     collection : Products,
     iniziale: 4,
     limit: 8,
-    initialize: function() {
+    initialize: function(farmKey) {
       // load the precompiled template
       this.template = Utils.templates.farm;
+      this.model = new Farm({id:farmKey });
+      this.model.fetch();
+      this.collection = new Products();
+      this.collection .setFarm(farmKey);
+      this.collection .fetch();
       this.collection.on('sync', this.render, this);
-      // here we can register to inTheDOM or removing events
-      // this.listenTo(this, "inTheDOM", function() {
-      //   $('#content').on("swipe", function(data){
-      //     console.log(data);
-      //   });
-      // });
-      // this.listenTo(this, "removing", functionName);
-
-      // by convention, all the inner views of a view must be stored in this.subViews
+      this.model.on('sync', this.render, this);
     },
 
     id: "farm",

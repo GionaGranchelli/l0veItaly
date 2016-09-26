@@ -13,27 +13,18 @@ define(function (require) {
             this.template = Utils.templates.aboutus;
             $('#back-button').css('display', 'block');
             $('#toggle-button').css('display', 'none');
+            this.collection = new AboutUs();
+            this.collection.fetch();
             this.collection.on('sync', this.render, this);
-            // here we can register to inTheDOM or removing events
-            // this.listenTo(this, "inTheDOM", function() {
-            //   $('#content').on("swipe", function(data){
-            //     console.log(data);
-            //   });
-            // });
-            // this.listenTo(this, "removing", functionName);
-
-            // by convention, all the inner views of a view must be stored in this.subViews
         },
         id: "aboutus",
         className: "i-g page",
         events: {
             "tap #goToMap": "goToMap",
             "tap #mailto": "mailto"
-
         },
         render: function () {
             $(this.el).html(this.template({Contacts: this.collection.toJSON()}));
-//      this.model.toJSON()
             return this;
         },
         mailto: function (ev) {

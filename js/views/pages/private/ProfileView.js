@@ -23,7 +23,6 @@ define(function(require) {
     render: function() {
       console.log(window.customer);
       $(this.el).html(this.template(window.customer));
-      //      this.model.toJSON()
       return this;
     }
 

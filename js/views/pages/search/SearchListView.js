@@ -4,32 +4,28 @@ define(function(require) {
   //  var MyModel = require("models/MyModel");
   var Utils = require("utils");
   // var ProductDetailView = require('views/pages/products/ProductDetailView');
-  var Seachs = require("collections/Searchs");
+  var Searchs = require("collections/Searchs");
   var Categories = require("collections/Categories");
   var SearcListView = Utils.Page.extend({
-
     constructorName: "SearcListView",
-    collection: Seachs,
+    collection: Searchs,
     model : Categories,
-    initialize: function() {
-
+    initialize: function(query,category) {
       _.bindAll(this, 'render');
-      // load the precompiled template
       this.template = Utils.templates.searchlist;
+      this.collection = new Searchs();
+      this.collection.setQuery(query);
+      if(category !== null){
+        this.collection.addCategoryFilter(category);    
+      }
+      this.collection.fetch();
+      this.model = new Categories();
+      this.model.fetch();
       this.collection.on('sync', this.render, this);
+      this.model.on('sync', this.render, this);
       $('#back-button').css('display','block');
       $('#toggle-button').css('display','none');
-      // here we can register to inTheDOM or removing events
-      // this.listenTo(this, "inTheDOM", function() {
-      //   $('#content').on("swipe", function(data){
-      //     console.log(data);
-      //   });
-      // });
-      // this.listenTo(this, "removing", functionName);
-
-      // by convention, all the inner views of a view must be stored in this.subViews
     },
-
     id: "searchlist",
     className: "i-g page",
     iniziale: 4,
@@ -42,30 +38,23 @@ define(function(require) {
       "tap #searchButton" : "doSearch",
       "keypress #search": "doSearchRapid"
     },
-
     render: function() {
-
-
       $(this.el).html(this.template({
           Products : this.collection.products,
           Category : this.collection.category,
           Categorie: this.model.toJSON()
       }));
-      //      this.model.toJSON()
       return this;
     },
-
     goToMap: function(e) {
       Backbone.history.navigate("map", {
         trigger: true
       });
     },
     goToProductDetail: function(ev){
-
       Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
         trigger: true
       });
-
     },
     goToCategory: function (ev){
         Backbone.history.navigate("gotocategory/" + $(ev.currentTarget).data('id'), {
@@ -73,7 +62,6 @@ define(function(require) {
       });
     },
     fetchSheets: function () {
-
       var delta = this.checkScroll();
       console.log(delta);
       if (delta > -10) {
@@ -103,24 +91,19 @@ define(function(require) {
       if(this.searchQuery){
         if(this.cat == 0 || this.cat == undefined || this.cat == null){
             console.log("gotosearchresult");
-
             Backbone.history.navigate("gotosearchresult/" + this.searchQuery,{trigger: true});
-
         }else{
             console.log("gotosearchresultcategory");
             Backbone.history.navigate("gotosearchresultcategory/" + this.searchQuery + "/"+ this.cat,{trigger: true});
-          }
-
+        }
       }else{
           if(this.cat == 0 || this.cat == undefined || this.cat == null){
             console.log('goToCategory');
             Backbone.history.navigate("goToCategory/" + this.cat,{trigger: true});
           }
       }
-
     },
     doSearchRapid : function(event){
-
       if (event.keyCode === 13) {
         var searchQuery = $('#search').val();
         console.log("doSearchRapid "+searchQuery);
@@ -129,6 +112,6 @@ define(function(require) {
     }
   });
 
-          return SearcListView;
+    return SearcListView;
 
 });

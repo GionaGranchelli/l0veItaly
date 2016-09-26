@@ -12,7 +12,7 @@ define(function (require) {
         collection: Products,
         model: Categories,
         prevFetch: 0,
-        initialize: function () {
+        initialize: function (productsLimit, category) {
             this.cat.reset;
             this.searchQuery = null;
             $('#categorySelector').val(0);
@@ -21,17 +21,16 @@ define(function (require) {
             _.bindAll(this, 'render');
             // load the precompiled template
             this.template = Utils.templates.productlist;
+            this.collection = new Products();
+            this.collection.setLimit(productsLimit);
+            if(category){
+                this.collection.setCategory(category);
+            }
+            this.collection.fetch();
+            this.model = new Categories();
+            this.model.fetch();
             this.collection.on('sync', this.render, this);
             this.model.on('sync', this.render, this);
-            // here we can register to inTheDOM or removing events
-            // this.listenTo(this, "inTheDOM", function() {
-            //   $('#content').on("swipe", function(data){
-            //     console.log(data);
-            //   });
-            // });
-            // this.listenTo(this, "removing", functionName);
-
-            // by convention, all the inner views of a view must be stored in this.subViews
         },
         id: "productlist",
         className: "i-g page",

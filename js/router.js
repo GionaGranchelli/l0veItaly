@@ -156,33 +156,19 @@ define(function (require) {
             this.changePage(page);
         },
         myView: function () {
-//            console.log(window.customer.logged);
-            // highlight the nav1 tab bar element as the current one
             this.structureView.setActiveTabBarElement("nav1");
-            
-            // create the view
-            
             var page = new MyView(4, 2, 4);
-            
-            // show the view
             this.changePage(page);
         },
-        // load the structure view
         showStructure: function () {
             var customer = JSON.parse(window.localStorage.getItem('customer'));
             if (customer.logged === true){
-//                console.log("showstructure ramo true");
                 this.firstView = "myview";
-//                console.log(customer.logged);
-            }else{
-//                console.log("ramo false");
-//                console.log(customer.logged);
             }
             if (!this.structureView) {
                 this.structureView = new StructureView({
                     myApp: myApp,
                     myflag : customer.logged
-                    
                 });
                 // put the el element of the structure view into the DOM
                 document.body.appendChild(this.structureView.render().el);
@@ -191,158 +177,59 @@ define(function (require) {
             // go to first view
             this.navigate(this.firstView, {trigger: true});
         },
-        goToProductList: function (e) {
-
-            var model = new Products();
-            model.setLimit(4);
-            model.fetch();
-            var category = new Categories();
-            category.fetch();
-            // window.localStorage.setItem('category', category);
-            // window.localStorage.setItem('categoryKey', 0);
-            // create the view
-            var page = new ProductListView({
-                collection: model,
-                model: category
-            });
+        goToProductList: function () {
+            var page = new ProductListView(4);
             this.changePage(page);
         },
         goToProductDetail: function (key) {
-            var model = new Product({id: key});
-            model.fetch();
-            var immagini = new Images();
-            immagini.addIdProduct(key);
-            immagini.fetch();
-
-            var page = new ProductDetailView({
-                model: model,
-                collection: immagini
-            });
-            // show the view
+            var page = new ProductDetailView(key);
             this.changePage(page);
         },
-        goToCategoryList: function (event) {
-            var model = new Categories();
-            model.fetch();
-            var page = new CategoryListView({
-                collection: model
-            });
-            // show the view
+        goToCategoryList: function () {
+            var page = new CategoryListView();
             this.changePage(page);
         },
-        goToFarmList: function (event) {
-            //            console.log("goToFarmList");
-            var collection = new Farms();
-            collection.fetch();
-//            console.log(collection);
-            var page = new FarmListView({
-                collection: collection
-            });
-            // show the view
+        goToFarmList: function () {
+            var page = new FarmListView();
             this.changePage(page);
         },
         goToFarmDetail: function (key) {
-            var model = new Farm({id: key});
-            model.fetch();
-            var collection = new Products();
-            collection.setFarm(key);
-            collection.fetch();
-            var page = new FarmDetailView({
-                model: model,
-                collection: collection
-            });
-            // show the view
+            var page = new FarmDetailView(key);
             this.changePage(page);
         },
         goToCategory: function (key) {
-            //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
-            var model = new Products();
-            model.setLimit(5);
-            model.setCategory(key);
-            model.fetch();
-            var category = new Categories();
-            category.fetch();
-            // window.localStorage.setItem('category', category);
-            // window.localStorage.setItem('categoryKey', key);
-            var page = new ProductListView({
-                collection: model,
-                model: category
-            });
-            // show the view
+            var page = new ProductListView(5, key);
             this.changePage(page);
         },
         goToSearchResult: function (query) {
-            var collection = new Searchs();
-            collection.setQuery(query);
-            collection.fetch();
-            var model = new Categories();
-            model.fetch();
-            var page = new SearchListView({
-                collection: collection,
-                model: model
-            });
+            var page = new SearchListView(query);
             this.changePage(page);
 
         },
         goToSearchResultCategory: function (query, category) {
-            var model = new Categories();
-            model.fetch();
-            var collection = new Searchs();
-            collection.setQuery(query);
-            collection.addCategoryFilter(category);
-            collection.fetch();
-            var page = new SearchListView({
-                collection: collection,
-                model: model
-            });
+            var page = new SearchListView(query, category);
             this.changePage(page);
         },
         goToAboutUs: function () {
-            var collection = new AboutUs();
-            collection.fetch();
-            var page = new AboutUsView({
-                collection: collection
-            });
+            var page = new AboutUsView();
             this.changePage(page);
         },
         login: function () {
-            //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
-            var page = new LoginView({
-            });
-            // show the view
+            var page = new LoginView();
             this.changePage(page);
         },
         ShowCart: function () {
-            //Da fixare qui devo querare solo i prodotti di una certa categoria e farli vedere in lista
-            var page = new CartView({
-            });
-            // show the view
+            var page = new CartView();
             this.changePage(page);
         },
         goToOrderList: function (event) {
-            
-            var model = new Orders(window.customer.id);
-            model.fetch();
-            var page = new OrderList({
-                collection: model
-            });
-            // show the view
-            this.changePage(page);
-        },
-        goToOrderDetail: function (event) {
-            var model = new Order();
-            model.fetch();
-            var page = new OrderDetail({
-                model: model
-            });
-            // show the view
+            var page = new OrderList();
             this.changePage(page);
         },
           goToProfile : function(){
-      var page = new ProfileView({
-      });
-      // show the view
-      this.changePage(page);
+            var page = new ProfileView();
+            // show the view
+            this.changePage(page);
           }
 
     });
