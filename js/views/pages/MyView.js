@@ -3,34 +3,27 @@ define(function (require) {
     var Backbone = require("backbone");
     var Products = require("collections/Products");
     var Categories = require("collections/Categories");
-    var Product = require("models/Product");
     var Utils = require("utils");
-//    var Framework7 = require('framework7');
-//    var swiper = require('swiper');
-//    var myapp = require('myapp');
-
-//  var ProductListView = require("views/pages/products/ProductListView");
 
     var MyView = Utils.Page.extend({
         constructorName: "MyView",
         collection: Products,
         model: Categories,
-        initialize: function () {
-            // load the precompiled template
+        initialize: function (productLimit, catInit, catLimit) {
+            
             this.template = Utils.templates.myview;
             $('#back-button').css('display','none');
             $('#toggle-button').css('display','block');
-            // var customer = window.localStorage.getItem('customer');
+            
+            // create a model with an arbitrary attribute for testing the template engine
+            this.collection = new Products();
+            this.collection.setLimit(productLimit);
+            this.collection.fetch();
+            this.model = new Categories();
+            this.model.addLimit(catInit,catLimit);
+            this.model.fetch();
             this.collection.on('sync', this.render, this);
             this.model.on('sync', this.render, this);
-            // here we can register to inTheDOM or removing events
-            // this.listenTo(this, "inTheDOM", function() {
-            //   $('#content').on("swipe", function(data){
-            //     console.log(data);
-            //   });
-            // });
-            // this.listenTo(this, "removing", functionName);
-      
         },
         id: "myview",
         className: "i-g page",

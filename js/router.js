@@ -120,20 +120,9 @@ define(function (require) {
                 }
             });
             Handlebars.registerHelper('twodigit', function (variable, options) {
-                
                 if (typeof variable != 'undefined') {
                     var temp = variable.toString();
                     return temp.substring(0, temp.indexOf(".") + 2);
-//                    if (((temp.length - 1) - temp.indexOf(".")) > 3) {
-//                        return temp.substring(0, temp.indexOf(".") + 2);
-//                    } else{
-//                        console.log("temp.length" );
-//                        console.log(temp.length );
-//                        console.log("indexOf()" );
-//                        console.log(temp.indexOf(".") );
-//                        console.log(((temp.length - 1) - temp.indexOf(".")));           
-//                        "";
-//                    }
                 } else {
                     
                     return "stocazzo";
@@ -170,19 +159,10 @@ define(function (require) {
 //            console.log(window.customer.logged);
             // highlight the nav1 tab bar element as the current one
             this.structureView.setActiveTabBarElement("nav1");
-            // create a model with an arbitrary attribute for testing the template engine
-            var model = new Products();
-            model.setLimit(4);
-            model.fetch();
-            var categories = new Categories();
-            categories.addLimit(2,4);
-            categories.fetch();
+            
             // create the view
             
-            var page = new MyView({
-                collection: model,
-                model : categories
-            });
+            var page = new MyView(4, 2, 4);
             
             // show the view
             this.changePage(page);
