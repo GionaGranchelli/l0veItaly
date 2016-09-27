@@ -7,14 +7,14 @@
             <!-- <input type="text" id="search" /> -->
             <select id="categorySelector">
                 {{#each Categorie}}
-                {{#ifCond id '==' 1 }}
-                <option value="0" data-CategoryId="0"> </option>
-                {{/ifCond}}
-                {{#ifCond id_parent '==' 2 }}
-                {{#ifCond id '<' 31 }}
-                <option value="{{id}}" data-CategoryId={{id}}> {{name}}</option>
-                {{/ifCond}}
-                {{/ifCond}}
+                    {{#ifCond id '==' 1 }}
+                    <option value="0" data-CategoryId="0"> </option>
+                    {{/ifCond}}
+                    {{#ifCond id_parent '==' 2 }}
+                        {{#ifCond id '<' 31 }}
+                        <option value="{{id}}" data-CategoryId={{id}}> {{name}}</option>
+                        {{/ifCond}}
+                    {{/ifCond}}
                 {{/each}}
             </select>
             <a id="searchButton">Cerca</a>
@@ -27,24 +27,30 @@
     </div>
     <div class="shop-area">
         {{#exists Prodotti}}
-            {{#each Prodotti}}
-            <div class="single-shop-list" id="goToProductDetail" data-id="{{id}}">
-                <div class="shop-inner">
-                    <div class="shop-img" style="background-image:url('http://loveitaly.altervista.org/api/images/products/{{id}}/{{associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
-                    <div class="shop-content">
-                        <h3><a href="#">{{name}}</a></h3>
-                        <div class="price-box">
-                            <span class="new-price">€&nbsp;{{twodigit price}}</span>
-                            <!--<span class="old-price">£120.00</span>-->
-                        </div>
-                        <p>{{{description_short}}}</p>
+        {{#each Prodotti}}
+        <div class="single-shop-list" id="goToProductDetail" data-id="{{id}}">
+            <div class="shop-inner">
+                {{#exists id_default_image}}
+                <div class="shop-img" style="background-image:url('http://loveitaly.altervista.org/api/images/products/{{id}}/{{id_default_image}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
+                {{/exists}}
+                {{#notExists id_default_image}}
+                <div class="shop-img" style="background-image:url('img/LOGO_DE200xF.png')"></div>
+                {{/notExists}}
+                <div class="shop-content">
+                    <h3><a href="#">{{name}}</a></h3>
+                    <div class="price-box">
+                        <span class="new-price">€&nbsp;{{twodigit price}}</span>
+                        <!--<span class="old-price">£120.00</span>-->
                     </div>
+                    <p>{{{description_short}}}</p>
+                    <p>{{available_now}}</p>
                 </div>
             </div>
-            {{/each}}
+        </div>
+        {{/each}}
         {{/exists}}
         {{#isEmpty Prodotti}}
-            <h3> Non ci Sono Prodotti per la tua ricerca </h3>
+        <h3> Non ci Sono Prodotti per la tua ricerca </h3>
         {{/isEmpty}}
     </div>
     <img class="loaderGif" src="img/loader.gif" />

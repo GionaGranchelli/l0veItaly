@@ -84,7 +84,14 @@ define(function (require) {
              * The {{#exists}} helper checks if a variable is defined.
              */
             Handlebars.registerHelper('exists', function (variable, options) {
-                if (typeof variable !== 'undefined') {
+                if (typeof variable !== 'undefined' && variable !== null && variable !== '') {
+                    return options.fn(this);
+                } else {
+                    return options.inverse(this);
+                }
+            });
+            Handlebars.registerHelper('notExists', function (variable, options) {
+                if (typeof variable === 'undefined' || variable === null|| variable === '') {
                     return options.fn(this);
                 } else {
                     return options.inverse(this);

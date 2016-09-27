@@ -40,10 +40,47 @@ require.config({
 require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) {
     require(['preloader', 'router' ,'../lib/template/jquery.swipebox',  'collections/Cart', 'models/Customer'], function (PreLoader, AppRouter, Swiper,  Cart, Customer) {
 
+        //CORDOVA PLUGIN ADDED
+//        cordova plugin add cordova-plugin-network-information
+//      cordova plugin add cordova-plugin-dialogs
+        document.addEventListener("offline", onOffline, false);
         document.addEventListener("deviceready", run, false);
 
-        function run() {
+        function onOffline(){
+            if (checkConnection() === 'No network connection') {
+                navigator.notification.alert(
+                    'Per Utilizzare LoveItaly devi essere Connesso', // messagio no rete
+                    alertDismissed, // Callback che non usiamo al momento
+                    'Attiva una Rete', // Titolo Messaggio errore
+                    'Ok'                  // Nome del Bottone
+                                       );
+            }
+        }
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+            var states = {};
+            states[Connection.UNKNOWN] = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI] = 'WiFi connection';
+            states[Connection.CELL_2G] = 'Cell 2G connection';
+            states[Connection.CELL_3G] = 'Cell 3G connection';
+            states[Connection.CELL_4G] = 'Cell 4G connection';
+            states[Connection.CELL] = 'Cell generic connection';
+            states[Connection.NONE] = 'No network connection';
+            return states[networkState];
+        }
+        function alertDismissed(){
             
+        }
+        function run() {
+              if (checkConnection() === 'No network connection') {
+                navigator.notification.alert(
+                    'Per Utilizzare LoveItaly devi essere Connesso', // messagio no rete
+                    alertDismissed, // Callback che non usiamo al momento
+                    'Attiva una Rete', // Titolo Messaggio errore
+                    'Ok'                  // Nome del Bottone
+                                       );
+            }
             window.cart = new Cart();
             
             var customer = JSON.parse(window.localStorage.getItem('customer'));
