@@ -1,8 +1,14 @@
 - Cambiare il Router, non si istanziano gli oggetti nel router, spostare tutto nell'inizializate delle View. (DONE)
+
 - Gestione degli errori da parte del server, l'utente deve capire cosa sta succedendo (Mario)
+
 - Aggiungere controlli se la rete è presente o meno. (FATTO)
-- Aggiungere gli indirizzi!!! Nel senso che nel nel profilo ne nel carrello/checkout ti chiede dove spedirlo
+
+- Aggiungere gli indirizzi!!! Nel senso che nel nel profilo ne nel carrello/checkout ti chiede dove spedirlo (Giona - in Corso)
+
 - Pagine di errore comune per ogni tipo di errore. (Mario)
+
 - Se un immagine non si carica, caricare un placeholder predefinito. (QUASI)
+
 - Non si può usare $$, ne tantomeno cambiare il css dalle View, al massimo è permesso usare Jquery per cambiare la classe ad un elemento
  

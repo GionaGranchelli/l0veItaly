@@ -5,10 +5,8 @@ define(function (require) {
     var Customer = Backbone.Model.extend({
         initialize: function (param) {
             this.param = param;
-            this.logged=false;
-            this.id=undefined;
-
-
+            this.logged = false;
+            this.id = undefined;
         },
         constructorName: "Customer",
         idAttribute: "id",
@@ -22,7 +20,7 @@ define(function (require) {
             //
             console.log(url);
             return url;
-       },
+        },
         parse: function (data) {
 
             return data.customers;
@@ -34,14 +32,11 @@ define(function (require) {
             console.log(this.url);
 
         },
-        resettami : function (options) {
-            cinsole.log("ewsettami");
+        resettami: function (options) {
             this.clear(options);
-            console.log(this);
             this.set(this.defaults);
-            console.log(this);
             this.reset({});
-            }
+        }
 
     });
 
