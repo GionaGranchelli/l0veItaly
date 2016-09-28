@@ -1,28 +1,59 @@
 <div class="profile-container">
-<!--  <h1> Riepilogo Profilo </h1>-->
-        <div class="cart-heading-1 ">
-            <h2><i class="fa fa-user"></i> Profilo</h2>
-        </div>
+    <!--  <h1> Riepilogo Profilo </h1>-->
+    <div class="cart-heading-1 ">
+        <h2><i class="fa fa-user"></i> Profilo</h2>
+    </div>
 
-  <div class="register-content register-content-profile">
-    <form >
-      <div class="inputbox-profile">
-        <span>Nome:</span><br>
-        <input type="text" name="firstname" placeholder="{{firstname}}" value="{{firstname}}" />
-      </div>
-      <div class="inputbox-profile">
-        <span>Cognome:</span><br>
-        <input type="text" name="lastname" placeholder="{{lastname}}" value="{{lastname}}" />
-      </div>
-      <div class="inputbox-profile">
-        <span>Email:</span><br>
-        <input type="email" name="email" placeholder="{{email}}" value="{{email}}" />
-      </div>
-      <div class="inputbox-profile" >
-        <span>Data di Nascita:</span><br>
-        <input type="text" name="birthday" placeholder="{{birthday}}" value="{{birthday}}" />
-      </div>
-    </form>
+    <div class="register-content register-content-profile">
+        <form >
+            <div class="inputbox-profile">
+                <span>Nome:</span><br>
+                <input type="text" name="firstname" placeholder="{{Customer.firstname}}" value="{{Customer.firstname}}" />
+            </div>
+            <div class="inputbox-profile">
+                <span>Cognome:</span><br>
+                <input type="text" name="lastname" placeholder="{{Customer.lastname}}" value="{{Customer.lastname}}" />
+            </div>
+            <div class="inputbox-profile">
+                <span>Email:</span><br>
+                <input type="email" name="email" placeholder="{{Customer.email}}" value="{{Customer.email}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Data di Nascita:</span><br>
+                <input type="text" name="birthday" placeholder="{{Customer.birthday}}" value="{{Customer.birthday}}" />
+            </div>
+            Addresses : {{Addresses}}
+            Addresses.address : {{Addresses.address}}
+            address :{{address}}
+            <div class="inputbox-profile" >
+                <span>Indirizzo:</span><br>
+                <input type="text" name="address1" placeholder="{{Addresses.address1}}" value="{{Addresses.address1}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Dettagli Indirizzo:</span><br>
+                <input type="text" name="address2" placeholder="{{Addresses.address2}}" value="{{Addresses.address2}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Citt&aacute;:</span><br>
+                <input type="text" name="city" placeholder="{{Addresses.city}}" value="{{Addresses.city}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>CAP:</span><br>
+                <input type="text" name="postcode" placeholder="{{Addresses.postcode}}" value="{{Addresses.postcode}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Telefono Casa:</span><br>
+                <input type="text" name="phone" placeholder="{{Addresses.phone}}" value="{{Addresses.phone}}" />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Telefono Mobile:</span><br>
+                <input type="text" name="phone_mobile" placeholder="{{Addresses.phone_mobile}}" value="{{Addresses.phone_mobile}}" />
+            </div>
+            <br/>
+            <br/>            
+            <br/>
+        </form>
 
-  </div>
+
+    </div>
 </div>
