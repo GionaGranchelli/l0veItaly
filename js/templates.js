@@ -26,5 +26,6 @@ define({
     login : "templates/common/login.html",
     orderlist : "templates/private/OrderList.html",
     order:  "templates/private/OrderDetail.html",    
-    profile : "templates/private/profile.html"
+    profile : "templates/private/profile.html",
+    genericerror : "templates/common/genericError.html"
 });

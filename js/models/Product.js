@@ -1,9 +1,9 @@
 define(function (require) {
     var Backbone = require("backbone");
+    var CommonModel = require("models/CommonModel");
     var $ = require('jquery');
-    var Product = Backbone.Model.extend({
-        initialize: function () {
-        },
+    var Product = CommonModel.extend({
+       
         url: function () {
             var url = 'http://loveitaly.altervista.org/api/products/';
             url += this.id;

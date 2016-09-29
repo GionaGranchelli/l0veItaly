@@ -32,6 +32,8 @@ define(function (require) {
     var Splash = require('views/pages/common/Splash');
     //profile
     var ProfileView = require('views/pages/private/ProfileView');
+    //genericError
+    var GenericError = require('views/pages/common/GenericErrorView');
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -53,7 +55,8 @@ define(function (require) {
             "login": "login",
             "gotoorderlist": "goToOrderList",
             "orderdetail": "goToOrderDetail",
-            "gotoprofile": "goToProfile"
+            "gotoprofile": "goToProfile",
+            "gotogenericerror": "goToGenericError"
         },
         firstView: "splashscreen",
         initialize: function (options) {
@@ -91,7 +94,7 @@ define(function (require) {
                 }
             });
             Handlebars.registerHelper('notExists', function (variable, options) {
-                if (typeof variable === 'undefined' || variable === null|| variable === '') {
+                if (typeof variable === 'undefined' || variable === null || variable === '') {
                     return options.fn(this);
                 } else {
                     return options.inverse(this);
@@ -109,7 +112,7 @@ define(function (require) {
                     var temp = variable.toString();
                     return temp.substring(0, temp.indexOf(".") + 2);
                 } else {
-                    
+
                     return "stocazzo";
                 }
             });
@@ -119,10 +122,10 @@ define(function (require) {
                     var temp = temp1.toString();
                     if (((temp.length - 1) - temp.indexOf(".")) > 3) {
                         return temp.substring(0, temp.indexOf(".") + 3);
-                    }else{
+                    } else {
                         return temp;
                     }
-                }else{
+                } else {
                     return "";
                 }
             });
@@ -147,13 +150,13 @@ define(function (require) {
         },
         showStructure: function () {
             var customer = JSON.parse(window.localStorage.getItem('customer'));
-            if (customer.logged === true){
+            if (customer.logged === true) {
                 this.firstView = "myview";
             }
             if (!this.structureView) {
                 this.structureView = new StructureView({
                     myApp: myApp,
-                    myflag : customer.logged
+                    myflag: customer.logged
                 });
                 // put the el element of the structure view into the DOM
                 document.body.appendChild(this.structureView.render().el);
@@ -211,13 +214,17 @@ define(function (require) {
             var page = new OrderList();
             this.changePage(page);
         },
-          goToProfile : function(){
+        goToProfile: function () {
             var page = new ProfileView();
             // show the view
             this.changePage(page);
-          }
+        },
+        goToGenericError: function () {
+            var page = new GenericError();
+            this.changePage(page);
+        }
 
     });
     return AppRouter;
-    
+
 });

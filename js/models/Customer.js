@@ -2,7 +2,8 @@
 define(function (require) {
     var Backbone = require("backbone");
     var $ = require('jquery');
-    var Customer = Backbone.Model.extend({
+    var CommonModel = require("models/CommonModel");
+    var Customer = CommonModel.extend({
         initialize: function (param) {
             this.param = param;
             this.logged = false;

@@ -1,10 +1,8 @@
 define(function (require) {
     var Backbone = require("backbone");
     var $ = require('jquery');
-    var Addresses = Backbone.Model.extend({
-        initialize: function () {
-
-        },
+    var CommonModel = require("models/CommonModel");
+    var Addresses = CommonModel.extend({
         constructorName: "Addresses",
         url: 'http://loveitaly.altervista.org/api/addresses/',
         addIdAddress: function (id) {

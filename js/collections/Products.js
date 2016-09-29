@@ -2,10 +2,9 @@ define(function (require) {
 
     var Backbone = require("backbone");
     var Product = require("models/Product");
-    var Products = Backbone.Collection.extend({
-        initialize: function () {
-
-        },
+    var CommonCollection = require('collections/CommonCollection') 
+    var Products = CommonCollection.extend({
+      
         initiale : 0,
         finale : 0,
         category: undefined,

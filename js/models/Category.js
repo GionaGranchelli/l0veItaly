@@ -1,6 +1,7 @@
 define(function (require) {
     var Backbone = require("backbone");
-    var Category = Backbone.Model.extend({
+     var CommonModel = require("models/CommonModel");
+    var Category = CommonModel.extend({
         initialize: function () {
         },
       });
