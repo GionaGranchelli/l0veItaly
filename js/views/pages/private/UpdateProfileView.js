@@ -39,7 +39,7 @@ define(function (require) {
 
             var updateContact = function () {
                 $.ajax({
-                    url: 'http://192.168.56.101/loveitaly/api/customers/?io_format=XML&schema=synopsis',
+                    url: 'http://loveitaly.altervista.org/api/customers/?io_format=XML&schema=blank',
                     async: true,
                     type: "GET",
                     dataType: 'xml',
@@ -78,13 +78,13 @@ define(function (require) {
                 console.log($xml);
                 
                 $xml.find('id').text(id);
-                $xml.find('name').find('language').text(firstname);
+                $xml.find('firstname').text(firstname);
                 $xml.find('email').text(email);
                 console.log("Contact");
                 var contact = '<prestashop>' + $xml.find('prestashop').html() + '</prestashop>';
                 console.log(contact);
                 $.ajax({
-                    url: 'http://192.168.56.101/loveitaly/api/customers/?io_format=XML&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H',
+                    url: 'http://loveitaly.altervista.org/api/customers/?io_format=XML&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H',
                     async: true,
                     type: "PUT",
                     dataType: 'xml',
