@@ -26,6 +26,7 @@ define(function (require) {
             "tap #nav6": "AboutUs",
             "tap #nav7": "LoginPage",
             "tap #nav8": "Carrello",
+            "tap #nav9": "Registrazione",
             "tap #menuButton": "openMenu",
             "opened .panel": "apertura",
             "tap #settingsModal": "openSearchBar",
@@ -67,10 +68,56 @@ define(function (require) {
             //this.on("inTheDOM", this.rendered);
             // bind the back event to the goBack function
             // document.getElementById("back-button").addEventListener("back", this.goBack(), false);
+        },
+        autenticazione: function (xhr) {
+            var key64 = 'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6'; //codifica 64 della API key
+            var token = 'Basic '.concat(key64);
+            xhr.setRequestHeader('Authorization', token);
+        },
+        payloadContact: function () {
+            $.ajax({
+                url: 'http://192.168.56.101/loveitaly/api/contacts/?io_format=XML&schema=blank',
+                async: true,
+                type: "GET",
+                dataType: 'xml',
+                beforeSend: autenticazione,
+                success: function (result) {
+                    //console.log(result);
+                    postContact(result)
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log('Errore chiamata ajax!' +
+                            '\nReponseText: ' + XMLHttpRequest.responseText +
+                            '\nStatus: ' + textStatus +
+                            '\nError: ' + errorThrown);
+                }
+            });
+        },
+        updateContact: function (xml) {
+            
+            var $xml = $(xml);
+            $xml.find('id').text(id);
+            $xml.find('name').find('language').text(nome);
+            var contact = '<prestashop>' + $xml.find('prestashop').html() + '</prestashop>';
 
-
-
-
+            $.ajax({
+                url: 'http://192.168.56.101/loveitaly/api/contacts/?io_format=XML',
+                async: true,
+                type: "PUT",
+                dataType: 'xml',
+                contentType: "text/xml",
+                beforeSend: autenticazione,
+                data: contact,
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log('Errore chiamata ajax!' +
+                            '\nReponseText: ' + XMLHttpRequest.responseText +
+                            '\nStatus: ' + textStatus +
+                            '\nError: ' + errorThrown);
+                }
+            });
         },
         loginAction: function (event) {
 
@@ -90,7 +137,6 @@ define(function (require) {
                     console.log(data.customers.passwd);
                     console.log(data.customers[0].passwd);
                     if ((data.customers[0].passwd == formValues.password) & (data.customers[0].email == formValues.email)) {
-
                         window.customer = data.customers[0];
                         window.customer.logged = true;
                         window.localStorage.setItem('customer', JSON.stringify(window.customer));
@@ -98,17 +144,15 @@ define(function (require) {
                         that.myflag = true;
                         console.log(that);
                         window.location.href = "";
-
                     }
-
-
                     if (data.error) {  // If there is an error, show the error messages
-//                        console.log("error");
+
                     } else { // If not, send them back to the home page
-//                        console.log(data); //  window.location.replace('#');
+//                        console.log(data); 
+//                        window.location.replace('#');
                     }
                 }, error: function (data) {
-                    
+
                 }
             });
 
@@ -116,13 +160,10 @@ define(function (require) {
 
         },
         loginato: function () {
-            
+
         },
         beforeRender: function () {
-            
-//               this.template = Utils.templates.structure;
-//               if(!window.customer.logged) Utils.templates.structurePublic;
-//               
+
 
         },
         render: function (my) {
@@ -133,7 +174,7 @@ define(function (require) {
             return this;
         },
         afterRender: function () {
-            
+
         },
         goBack: function () {
             window.history.back();
@@ -203,12 +244,11 @@ define(function (require) {
             });
         },
         profile: function () {
-            Backbone.history.navigate("gotoprofile", {
+            Backbone.history.navigate("gotoprofile" , {
                 trigger: true
             });
         },
         logout: function (e) {
-            console.log("qaaaaaaaaaaaaa");
             window.cart.resettami();
             window.customer = {};
             window.customer.logged = false;
@@ -249,6 +289,11 @@ define(function (require) {
             if (code === 13) {
                 this.doSearch();
             }
+        },
+        Registrazione : function (){
+            Backbone.history.navigate("gotoregistration", {
+                trigger: true
+            });
         }
 
 

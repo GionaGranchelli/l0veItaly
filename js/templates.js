@@ -27,5 +27,7 @@ define({
     orderlist : "templates/private/OrderList.html",
     order:  "templates/private/OrderDetail.html",    
     profile : "templates/private/profile.html",
+    updateprofile : "templates/private/UpdateProfile.html",
+    registration : "templates/common/registration.html",
     genericerror : "templates/common/genericError.html"
 });

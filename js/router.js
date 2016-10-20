@@ -32,6 +32,8 @@ define(function (require) {
     var Splash = require('views/pages/common/Splash');
     //profile
     var ProfileView = require('views/pages/private/ProfileView');
+    var UpdateProfileView = require('views/pages/private/UpdateProfileView');
+    var RegistrationView = require('views/pages/common/RegistrationView');
     //genericError
     var GenericError = require('views/pages/common/GenericErrorView');
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
@@ -56,6 +58,8 @@ define(function (require) {
             "gotoorderlist": "goToOrderList",
             "orderdetail": "goToOrderDetail",
             "gotoprofile": "goToProfile",
+            "gotoregistration" : "goToRegistration",
+            "gotoupdateprofile": "goToUpdateProfile",
             "gotogenericerror": "goToGenericError"
         },
         firstView: "splashscreen",
@@ -216,6 +220,15 @@ define(function (require) {
         },
         goToProfile: function () {
             var page = new ProfileView();
+            // show the view
+            this.changePage(page);
+        },
+        goToRegistration : function (){
+            var page = new RegistrationView();
+            this.changePage(page);
+        },
+        goToUpdateProfile : function (){
+            var page = new UpdateProfileView();
             // show the view
             this.changePage(page);
         },

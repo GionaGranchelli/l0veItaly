@@ -1,0 +1,56 @@
+<div class="profile-container">
+    <!--  <h1> Riepilogo Profilo </h1>-->
+    <div class="cart-heading-1 ">
+        <h2><i class="fa fa-user"></i> Modifica Profilo</h2>
+    </div>
+
+    <div class="register-content register-content-profile">
+        <form >
+            <div class="inputbox-profile">
+                <span>Nome:</span><br>
+                <input type="text" id="firstname" name="firstname" placeholder="{{Customer.firstname}}" value="{{Customer.firstname}}"  />
+            </div>
+            <div class="inputbox-profile">
+                <span>Cognome:</span><br>
+                <input type="text" id="lastname" name="lastname" placeholder="{{Customer.lastname}}" value="{{Customer.lastname}}"  />
+            </div>
+            <div class="inputbox-profile">
+                <span>Email:</span><br>
+                <input type="email" id="email" name="email" placeholder="{{Customer.email}}" value="{{Customer.email}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Data di Nascita:</span><br>
+                <input type="text" id="birthday" name="birthday" placeholder="{{Customer.birthday}}" value="{{Customer.birthday}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Indirizzo:</span><br>
+                <input type="text" id="address1" name="address1" placeholder="{{Addresses.address1}}" value="{{Addresses.address1}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Dettagli Indirizzo:</span><br>
+                <input type="text" id="address2" name="address2" placeholder="{{Addresses.address2}}" value="{{Addresses.address2}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Citt&aacute;:</span><br>
+                <input type="text" id="city" name="city" placeholder="{{Addresses.city}}" value="{{Addresses.city}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>CAP:</span><br>
+                <input type="text" id="postcode" name="postcode" placeholder="{{Addresses.postcode}}" value="{{Addresses.postcode}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Telefono Casa:</span><br>
+                <input type="text" id="phone" name="phone" placeholder="{{Addresses.phone}}" value="{{Addresses.phone}}"  />
+            </div>
+            <div class="inputbox-profile" >
+                <span>Telefono Mobile:</span><br>
+                <input type="text" id="phone_mobile" name="phone_mobile" placeholder="{{Addresses.phone_mobile}}" value="{{Addresses.phone_mobile}}"  />
+            </div>
+            <br/>
+            <div id="runUpdate" class="updateButton" data-id="{{Customer.id}}"> Modifica </div>          
+            <br/>
+        </form>
+
+
+    </div>
+</div>

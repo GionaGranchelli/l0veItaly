@@ -3,16 +3,16 @@ define(function (require) {
     var Backbone = require("backbone");
     var Utils = require("utils");
     var Addresses = require("models/Addresses");
-    var UpdateProfileView = Utils.Page.extend({
-        constructorName: "UpdateProfileView",
+    var RegistrationView = Utils.Page.extend({
+        constructorName: "RegistrationView",
         addresses: Addresses,
         initialize: function () {
             // load the precompiled template
-            this.template = Utils.templates.updateprofile;
-            this.addresses = new Addresses();
-            this.addresses.addIdAddress(window.customer.id);
-            this.addresses.fetch();
-            this.addresses.on('sync', this.render, this);
+            this.template = Utils.templates.registration;
+//            this.addresses = new Addresses();
+//            this.addresses.addIdAddress(window.customer.id);
+//            this.addresses.fetch();
+//            this.addresses.on('sync', this.render, this);
             $('#back-button').css('display', 'block');
             $('#toggle-button').css('display', 'none');
         },
@@ -22,10 +22,7 @@ define(function (require) {
             "tap #runUpdate": "runUpdate"
         },
         render: function () {
-
-            $(this.el).html(this.template({
-                Customer: window.customer,
-                Addresses: this.addresses.toJSON()}));
+            $(this.el).html(this.template());
             return this;
         },
         runUpdate: function (ev) {
@@ -110,6 +107,6 @@ define(function (require) {
         }
     });
 
-    return UpdateProfileView;
+    return RegistrationView;
 
 });
