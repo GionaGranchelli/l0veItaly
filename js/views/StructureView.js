@@ -7,6 +7,7 @@ define(function (require) {
     var myApp = new Framework7();
     var apriChiudi = 0;
     var Customer = require('models/Customer');
+    var Addresses = require("models/Addresses");
 //    var mainView = myApp.addView('.view-main', {
 //        // Because we use fixed-through navbar we can enable dynamic navbar
 //        dynamicNavbar: true
@@ -69,56 +70,6 @@ define(function (require) {
             // bind the back event to the goBack function
             // document.getElementById("back-button").addEventListener("back", this.goBack(), false);
         },
-        autenticazione: function (xhr) {
-            var key64 = 'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6'; //codifica 64 della API key
-            var token = 'Basic '.concat(key64);
-            xhr.setRequestHeader('Authorization', token);
-        },
-        payloadContact: function () {
-            $.ajax({
-                url: 'http://192.168.56.101/loveitaly/api/contacts/?io_format=XML&schema=blank',
-                async: true,
-                type: "GET",
-                dataType: 'xml',
-                beforeSend: autenticazione,
-                success: function (result) {
-                    //console.log(result);
-                    postContact(result)
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log('Errore chiamata ajax!' +
-                            '\nReponseText: ' + XMLHttpRequest.responseText +
-                            '\nStatus: ' + textStatus +
-                            '\nError: ' + errorThrown);
-                }
-            });
-        },
-        updateContact: function (xml) {
-            
-            var $xml = $(xml);
-            $xml.find('id').text(id);
-            $xml.find('name').find('language').text(nome);
-            var contact = '<prestashop>' + $xml.find('prestashop').html() + '</prestashop>';
-
-            $.ajax({
-                url: 'http://192.168.56.101/loveitaly/api/contacts/?io_format=XML',
-                async: true,
-                type: "PUT",
-                dataType: 'xml',
-                contentType: "text/xml",
-                beforeSend: autenticazione,
-                data: contact,
-                success: function (result) {
-                    console.log(result);
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log('Errore chiamata ajax!' +
-                            '\nReponseText: ' + XMLHttpRequest.responseText +
-                            '\nStatus: ' + textStatus +
-                            '\nError: ' + errorThrown);
-                }
-            });
-        },
         loginAction: function (event) {
 
             var formValues = {
@@ -134,16 +85,34 @@ define(function (require) {
                     xhr.setRequestHeader("Authorization", "Basic " + 'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6')
                 },
                 success: function (data) {
-                    console.log(data.customers.passwd);
-                    console.log(data.customers[0].passwd);
+                    //console.log(data.customers.passwd);
+                    //console.log(data.customers[0].passwd);
                     if ((data.customers[0].passwd == formValues.password) & (data.customers[0].email == formValues.email)) {
                         window.customer = data.customers[0];
-                        window.customer.logged = true;
-                        window.localStorage.setItem('customer', JSON.stringify(window.customer));
-                        window.localStorage.setItem('flag', JSON.stringify(true));
-                        that.myflag = true;
-                        console.log(that);
-                        window.location.href = "";
+                        var addresses = new Addresses();
+                        addresses.addIdAddress(window.customer.id);
+                        addresses.fetch({
+                            success: function (model, response, options) {
+                                window.customer.logged = true;
+                                window.customer.phone_mobile = model.get("phone_mobile");
+                                window.customer.phone = model.get("phone");
+                                window.customer.postcode = model.get("postcode");
+                                window.customer.address1 = model.get("address1");
+                                window.customer.city = model.get("city");
+                                window.customer.address2 = model.get("address2");
+                                window.localStorage.setItem('customer', JSON.stringify(window.customer));
+                                window.localStorage.setItem('flag', JSON.stringify(true));
+                              
+                                //console.log(JSON.stringify(window.customer));
+                                //console.log(window.customer);
+                                window.location.href = "";
+                            },
+                            error: function () {
+
+                                console.log("oooooooooooooooo");
+                            }
+                        });
+
                     }
                     if (data.error) {  // If there is an error, show the error messages
 
@@ -244,7 +213,7 @@ define(function (require) {
             });
         },
         profile: function () {
-            Backbone.history.navigate("gotoprofile" , {
+            Backbone.history.navigate("gotoprofile", {
                 trigger: true
             });
         },
@@ -290,7 +259,7 @@ define(function (require) {
                 this.doSearch();
             }
         },
-        Registrazione : function (){
+        Registrazione: function () {
             Backbone.history.navigate("gotoregistration", {
                 trigger: true
             });

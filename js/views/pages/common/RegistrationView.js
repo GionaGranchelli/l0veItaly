@@ -15,6 +15,7 @@ define(function (require) {
 //            this.addresses.on('sync', this.render, this);
             $('#back-button').css('display', 'block');
             $('#toggle-button').css('display', 'none');
+            this.render();
         },
         id: "profileview",
         className: "i-g page",
@@ -26,84 +27,29 @@ define(function (require) {
             return this;
         },
         runUpdate: function (ev) {
-            var autenticazione = function (xhr) {
-                var key64 = 'SVlJNk0zNU1MQjhVVlczOFk5OVJZM1lQUVdSWDVYOEg6'; //codifica 64 della API key
-//            var key = 'IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H';
-                var token = 'Basic '.concat(key64);
-//            var ntoken = 'Basic '.concat(key);
-                xhr.setRequestHeader('Authorization', token);
-            };
 
-            var updateContact = function () {
-                $.ajax({
-                    url: 'http://192.168.56.101/loveitaly/api/customers/?io_format=XML&schema=synopsis',
-                    async: true,
-                    type: "GET",
-                    dataType: 'xml',
-                    beforeSend: autenticazione,
-                    success: function (result) {
-                        console.log(result);
-                        postContact(result);
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        console.log('Errore chiamata ajax!' +
-                                '\nReponseText: ' + XMLHttpRequest.responseText +
-                                '\nStatus: ' + textStatus +
-                                '\nError: ' + errorThrown);
-                    }
-                });
+            //Get the modification 
+            var data = {
+                id: $("#idCostumer").val(),
+                firstname: $("#firstname").val(),
+                lastname: $("#lastname").val(),
+                city: $("#city").val(),
+                birthday: $("#birthday").val(),
+                address1: $("#address1").val(),
+                address2: $("#address2").val(),
+                email: $("#email").val(),
+                postcode: $("#postcode").val(),
+                phone: $("#phone").val(),
+                phone_mobile: $("#phone_mobile").val()
             };
-            updateContact();
-            var postContact = function (xml) {
-                //Get the modification 
-                var id = $("#idCostumer").val();
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                var city = $("#city").val();
-                var birthday = $("#birthday").val();
-                var address1 = $("#address1").val();
-                var address2 = $("#address2").val();
-                var email = $("#email").val();
-                var postcode = $("#postcode").val();
-                var phone = $("#phone").val();
-                var phone_mobile = $("#phone_mobile").val();
-                console.log(phone_mobile);
-                console.log("xml");
-                console.log(xml);
-                var $xml = $(xml);
-                console.log("$xml");
-                console.log($xml);
-                
-                $xml.find('id').text(id);
-                $xml.find('name').find('language').text(firstname);
-                $xml.find('email').text(email);
-                console.log("Contact");
-                var contact = '<prestashop>' + $xml.find('prestashop').html() + '</prestashop>';
-                console.log(contact);
-                $.ajax({
-                    url: 'http://192.168.56.101/loveitaly/api/customers/?io_format=XML&ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H',
-                    async: true,
-                    type: "PUT",
-                    dataType: 'xml',
-                    contentType: "text/xml",
-                    beforeSend: autenticazione,
-                    data: contact,
-                    success: function (result) {
-                        console.log(result);
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        console.log('Errore chiamata ajax!' +
-                                '\nReponseText: ' + XMLHttpRequest.responseText +
-                                '\nStatus: ' + textStatus +
-                                '\nError: ' + errorThrown);
-                    }
-                });
-            };
+             window.customer = data;
+             window.customer.logged = true;
+             window.localStorage.setItem('customer', JSON.stringify(window.customer));
+             window.localStorage.setItem('flag', JSON.stringify(true));
+           
+             //console.log(that);
+             window.location.href = "";
 
-
-//            Backbone.history.navigate("gotoproductdetail/" + $(ev.currentTarget).data('id'), {
-//                trigger: true
-//            });
         }
     });
 

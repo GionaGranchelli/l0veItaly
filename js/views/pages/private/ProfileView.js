@@ -9,12 +9,10 @@ define(function (require) {
         initialize: function () {
             // load the precompiled template
             this.template = Utils.templates.profile;
-            this.addresses = new Addresses();
-            this.addresses.addIdAddress(window.customer.id);
-            this.addresses.fetch();
-            this.addresses.on('sync', this.render, this);
+         
             $('#back-button').css('display', 'block');
             $('#toggle-button').css('display', 'none');
+            this.render();
         },
         id: "profileview",
         className: "i-g page",
@@ -24,8 +22,10 @@ define(function (require) {
         render: function () {
 
             $(this.el).html(this.template({
-                Customer: window.customer,
-                Addresses: this.addresses.toJSON()}));
+                Customer: window.customer
+                
+              //  Addresses: this.addresses.toJSON()
+             }));
             return this;
         },
         changeTemplate: function () {
