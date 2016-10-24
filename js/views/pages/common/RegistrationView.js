@@ -46,9 +46,8 @@ define(function (require) {
              window.customer.logged = true;
              window.localStorage.setItem('customer', JSON.stringify(window.customer));
              window.localStorage.setItem('flag', JSON.stringify(true));
-           
-             //console.log(that);
-             window.location.href = "";
+            console.log(window.customer);
+           window.location.href = "";
 
         }
     });
