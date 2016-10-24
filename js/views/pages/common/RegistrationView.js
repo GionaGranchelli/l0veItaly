@@ -20,13 +20,13 @@ define(function (require) {
         id: "profileview",
         className: "i-g page",
         events: {
-            "tap #runUpdate": "runUpdate"
+            "tap #update": "update"
         },
         render: function () {
             $(this.el).html(this.template());
             return this;
         },
-        runUpdate: function (ev) {
+        update: function (ev) {
 
             //Get the modification 
             var data = {
