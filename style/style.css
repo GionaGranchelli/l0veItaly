@@ -735,3 +735,10 @@ float: left;
 .cart-result{
 height : 95% !important;
 }
+.wormError {
+    background-image: url('../img/worm_error.png') !important;
+    background-repeat: no-repeat;
+}
+.aboutcontent > .cart-heading-1{
+    margin-top: 100%;
+}

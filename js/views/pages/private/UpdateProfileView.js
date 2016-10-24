@@ -26,6 +26,15 @@ define(function (require) {
             return this;
         },
         runUpdate: function (ev) {
+            navigator.notification.confirm(
+                    'Sei Sicuro delle Modifiche?', // message
+                    this.onConfirm, // callback to invoke with index of button pressed
+                    'Modifiche', // title
+                    ['Procedi', 'No!!']     // buttonLabels
+                    );
+
+        },
+        onConfirm: function (buttonIndex) {
 
             var data = {
                 id: $("#idCostumer").val(),
@@ -40,11 +49,16 @@ define(function (require) {
                 phone: $("#phone").val(),
                 phone_mobile: $("#phone_mobile").val()
             };
-            window.customer = data;
-            window.customer.logged = true;
-            window.localStorage.setItem('customer', JSON.stringify(window.customer));
-            window.localStorage.setItem('flag', JSON.stringify(true));
-            Backbone.history.navigate('gotoprofile', true);
+            if (buttonIndex === 1) {
+                window.customer = data;
+                window.customer.logged = true;
+                window.localStorage.setItem('customer', JSON.stringify(window.customer));
+                window.localStorage.setItem('flag', JSON.stringify(true));
+                Backbone.history.navigate("myview", {
+                    trigger: true
+                });
+            }
+
 
 
 
