@@ -1,173 +1,193 @@
 
 
 <div class="content-block-inner">
-  <div class="cart-heading-1 ">
-    <h2><i class="fa fa-shopping-cart"></i> Carrello</h2>
-  </div>
-  <div class="carrello-intestazione">
+    <div class="cart-heading-1 ">
+        <h2><i class="fa fa-shopping-cart"></i> Carrello</h2>
+    </div>
+    <div class="carrello-intestazione">
 
-      <div class="cart-content-intestazione">
-        <div class="cart-image"><h5>Foto</h5></div>
-        <div class="cart-name">
-          <h5 class="cart-name-p">Prodotto</h5>
-          <h5 class="cart-description">e Descrizione</h5>
-        </div>
-        <div class="cart-quantity"><h5>Q.ta</h5></div>
-        <div class="cart-prices"><h5>Prezzo</h5> </div>
-      </div>
-
-  </div>
-<div class="carrello">
-    {{#exists articoli}}
-      {{#each articoli}}
-        <div class="cart-content">
-          <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
-          <div class="cart-name">
-            <h5 class="cart-name-p">{{attributes.product.name}}</h5>
-            <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
-            <div class="cart-page-edit">
-              <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
-                <i class="fa fa-plus" style="color: black"></i>
-              </div>
-              <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
-                <i  accesskey=""class="fa fa-minus" style="color: black"></i>
-              </div>
-
+        <div class="cart-content-intestazione">
+            <div class="cart-image"><h5>Foto</h5></div>
+            <div class="cart-name">
+                <h5 class="cart-name-p">Prodotto</h5>
+                <h5 class="cart-description">e Descrizione</h5>
             </div>
-          </div>
-          <div class="cart-quantity">{{quantity}}</div>
-          <div class="cart-prices">
-            <p>Cad</p>
-            <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
-            <p>Totale</p>
-            <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
-
-          </div>
-        </div>
-      {{/each}}
-    {{/exists}}
-    {{#isEmpty articoli}}
-      <div class="cart-name">
-        <h1> Carrello Vuoto </h1>
-      </div>
-      <img id="emptyCart" src="img/cart.png">
-    {{/isEmpty}}
-  </div>
-  <div class="carrello-checkout">
-
-      <div class="cart-content-checkout">
-        <div class="cart-manage-money">
-          <h5>Costo Gestione</h5>
-          <h5>€&nbsp;2</h5>
+            <div class="cart-quantity"><h5>Q.ta</h5></div>
+            <div class="cart-prices"><h5>Prezzo</h5> </div>
         </div>
 
-        <div class="cart-quantity cart-quantity-result">
-          <h5>Quantità Totale</h5>
-          <h5>{{totaleColli}} unit&agrave;</h5>
-        </div>
-        <div class="cart-prices cart-prices-result">
-          <h5>Costo Prodotti</h5>
-          <h5>€&nbsp;{{twodigit totale}}</h5>
-        </div>
-        <div class="cart-prices cart-prices-result">
-          <h5>Costo Totale</h5>
-          <h5>€&nbsp;{{twodigit CostoTotale}}</h5>
-        </div>
-        <div class="cart-name cart-empty-button">
-        <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
-        <button class="button mybutton floatright" id="checkout">Checkout</button>
-        </div>
-      </div>
-
-  </div>
-
-
-  <!-- <div class="cart-table">
-    <table>
-      <thead>
-        <tr>
-          <th class="width-1"></th>
-          <th class="width-2">Nome Prodotto</th>
-          <th class="width-3"> </th>
-          <th class="width-4">Prezzo Unit&agrave;</th>
-          <th class="width-5">Qt&agrave;</th>
-          <th class="width-6">Parziale</th>
-          <th class="width-7"> </th>
-        </tr>
-      </thead>
-      <tbody>
+    </div>
+    <div class="carrello">
+        {{#exists articoli}}
         {{#each articoli}}
-        <tr class="carttr_1">
-          <td>
-            <div class="cartpage-image">
-              <a href="#"><img alt="" src=""></a>
+        <div class="cart-content">
+            <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
+            <div class="cart-name">
+                <h5 class="cart-name-p">{{attributes.product.name}}</h5>
+                <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
+                <div class="cart-page-edit">
+                    <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
+                        <i class="fa fa-plus" style="color: black"></i>
+                    </div>
+                    <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
+                        <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+                    </div>
+
+                </div>
             </div>
-          </td>
-          <td>
-            <div class="cartpage-pro-dec">
-              <p><a href="#"></a></p>
-              <span> </span>
-              <!--<span>Color: Gold</span>
-            </div>
-          </td>
-          <td>
-            <div class="cart-page-edit">
-              <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
-                <i class="fa fa-plus" style="color: black"></i>
-              </div>
-              <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
-                <i  accesskey=""class="fa fa-minus" style="color: black"></i>
-              </div>
+            <div class="cart-quantity">{{quantity}}</div>
+            <div class="cart-prices">
+                <p>Cad</p>
+                <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
+                <p>Totale</p>
+                <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
 
             </div>
-          </td>
-          <td>
-            <div class="unite-price">
-              <p></p>
-            </div>
-          </td>
-          <td>
-            <div class="cart-quty">
-              <input type="number" value="">
-            </div>
-          </td>
-          <td>
-            <div class="subtotal">
-              <p>€{{multiply quantity attributes.product.price}}</p>
-            </div>
-          </td>
-          <td>
-            <div class="cartpage-delete-item">
-              <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
-            </div>
-          </td>
-        </tr>
+        </div>
         {{/each}}
-      </tbody>
-    </table>
-  </div>
-  <div class="cartpage-button">
-    <ul>
-      <li><button>Continua lo shopping</button></li>
-      <li><button>Categorie</button></li>
-      <li><button>Aziende</button></li>
-      <br>
-      <li><button>Svuota carrello</button></li>
-    </ul>
-  </div>
-  <div class="cartbox">
-    <div class="cart-heading">
-      <h2>Riepilogo</h2>
+        {{/exists}}
+        {{#isEmpty articoli}}
+        <div class="cart-name">
+            <h1> Carrello Vuoto </h1>
+        </div>
+        <img id="emptyCart" src="img/cart.png">
+        {{/isEmpty}}
     </div>
-    <div class="cart-contenttext">
-      <div class="carttotal">
-        <p><span class="sub-t">Subtotale <span class="sub-t-p">$999.99</span></span></p>
-        <p><span class="sub-t">Spese Gestione <span class="sub-t-p">2€</span></span></p>
-        <p><span class="grand-t">Totale <span class="sub-t-p">$999.99</span></span>	</p>
-        <p><input type="button" class="mybutton" value="CHECK OUT">	</p>
-        <p>Genew porchetta team</p>
-      </div>
+    <div class="carrello-checkout">
+
+        <div class="cart-content-checkout">
+            <div class="cart-manage-money">
+                <h5>Costo Gestione</h5>
+                <h5>€&nbsp;2</h5>
+            </div>
+
+            <div class="cart-quantity cart-quantity-result">
+                <h5>Quantità Totale</h5>
+                <h5>{{totaleColli}} unit&agrave;</h5>
+            </div>
+            <div class="cart-prices cart-prices-result">
+                <h5>Costo Prodotti</h5>
+                <h5>€&nbsp;{{twodigit totale}}</h5>
+            </div>
+            <div class="cart-prices cart-prices-result">
+                <h5>Costo Totale</h5>
+                <h5>€&nbsp;{{twodigit CostoTotale}}</h5>
+            </div>
+
+
+
+              
+            <select  id="luoghiConsegna" name="luoghiConsegnaa" >
+                <option value="0">Dove vuoi ricevere i tuoi acquisti?</option>
+                <option value="1">Castel Frentano (CH)</option>
+                <option value="2">Fossacesia (CH)</option>
+                <option value="3">Frisa (CH)</option>
+                <option value="4">Lanciano (CH)</option>
+                <option value="5">Mozzagrogna (CH)</option>
+                <option value="6">Ortona (CH)</option>
+                <option value="7">Rocca San Giovanni (CH)</option>
+                <option value="8">Santa Maria Imbaro (CH)</option>
+                <option value="9">San Vito Chietino (CH)</option>
+                <option value="10">Treglio (CH)</option>
+
+
+            </select>
+
+            <div class="cart-name cart-empty-button">
+                <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
+                <button class="button mybutton floatright" id="checkout">Checkout</button>
+            </div>
+        </div>
+
     </div>
+
+   
+    <!-- <div class="cart-table">
+      <table>
+        <thead>
+          <tr>
+            <th class="width-1"></th>
+            <th class="width-2">Nome Prodotto</th>
+            <th class="width-3"> </th>
+            <th class="width-4">Prezzo Unit&agrave;</th>
+            <th class="width-5">Qt&agrave;</th>
+            <th class="width-6">Parziale</th>
+            <th class="width-7"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each articoli}}
+          <tr class="carttr_1">
+            <td>
+              <div class="cartpage-image">
+                <a href="#"><img alt="" src=""></a>
+              </div>
+            </td>
+            <td>
+              <div class="cartpage-pro-dec">
+                <p><a href="#"></a></p>
+                <span> </span>
+    <!--<span>Color: Gold</span>
   </div>
+</td>
+<td>
+  <div class="cart-page-edit">
+    <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
+      <i class="fa fa-plus" style="color: black"></i>
+    </div>
+    <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
+      <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+    </div>
+
+  </div>
+</td>
+<td>
+  <div class="unite-price">
+    <p></p>
+  </div>
+</td>
+<td>
+  <div class="cart-quty">
+    <input type="number" value="">
+  </div>
+</td>
+<td>
+  <div class="subtotal">
+    <p>€{{multiply quantity attributes.product.price}}</p>
+  </div>
+</td>
+<td>
+  <div class="cartpage-delete-item">
+    <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
+  </div>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
 </div>
--->
+<div class="cartpage-button">
+<ul>
+<li><button>Continua lo shopping</button></li>
+<li><button>Categorie</button></li>
+<li><button>Aziende</button></li>
+<br>
+<li><button>Svuota carrello</button></li>
+</ul>
+</div>
+<div class="cartbox">
+<div class="cart-heading">
+<h2>Riepilogo</h2>
+</div>
+<div class="cart-contenttext">
+<div class="carttotal">
+<p><span class="sub-t">Subtotale <span class="sub-t-p">$999.99</span></span></p>
+<p><span class="sub-t">Spese Gestione <span class="sub-t-p">2€</span></span></p>
+<p><span class="grand-t">Totale <span class="sub-t-p">$999.99</span></span>	</p>
+<p><input type="button" class="mybutton" value="CHECK OUT">	</p>
+<p>Genew porchetta team</p>
+</div>
+</div>
+</div>
+</div>
+    -->

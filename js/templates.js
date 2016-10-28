@@ -29,5 +29,6 @@ define({
     profile : "templates/private/profile.html",
     updateprofile : "templates/private/UpdateProfile.html",
     registration : "templates/common/registration.html",
-    genericerror : "templates/common/genericError.html"
+    genericerror : "templates/common/genericError.html",
+    checkout : "templates/private/CheckOut.html"
 });

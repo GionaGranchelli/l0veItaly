@@ -1,0 +1,75 @@
+
+
+<div class="content-block-inner">
+    <div class="cart-heading-1 ">
+        <h2><i class="fa fa-shopping-cart"></i> Riepilogo Ordine</h2>
+    </div>
+    <div class="carrello-intestazione">
+
+        <div class="cart-content-intestazione">
+            <div class="cart-image"><h5>Foto</h5></div>
+            <div class="cart-name">
+                <h5 class="cart-name-p">Prodotto</h5>
+                <h5 class="cart-description">e Descrizione</h5>
+            </div>
+            <div class="cart-quantity"><h5>Q.ta</h5></div>
+            <div class="cart-prices"><h5>Prezzo</h5> </div>
+        </div>
+
+    </div>
+    <div class="carrello">
+      
+        {{#each articoli}}
+        <div class="cart-content">
+            <div class="cart-image" style="background-image: url('http://loveitaly.altervista.org/api/images/products/{{attributes.product.id}}/{{attributes.product.associations.images.0.id}}?ws_key=IYI6M35MLB8UVW38Y99RY3YPQWRX5X8H')"></div>
+            <div class="cart-name" style="padding-top: 5%">
+                <h5 class="cart-name-p">{{attributes.product.name}}</h5>
+                <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
+                
+            </div>
+            <div class="cart-quantity">{{quantity}}</div>
+            <div class="cart-prices">
+                <p>Cad</p>
+                <h5>€&nbsp;{{twodigit attributes.product.price}}</h5>
+                <p>Totale</p>
+                <h5 class="totale">{{multiply quantity attributes.product.price}}</h5>
+
+            </div>
+        </div>
+        {{/each}}
+
+       
+        
+    </div>
+    <div class="carrello-checkout">
+
+        <div class="cart-content-checkout">
+            <div class="cart-manage-money">
+                <h5>Costo Gestione</h5>
+                <h5>€&nbsp;2</h5>
+            </div>
+
+            <div class="cart-quantity cart-quantity-result">
+                <h5>Quantità Totale</h5>
+                <h5>{{totaleColli}} unit&agrave;</h5>
+            </div>
+            <div class="cart-prices cart-prices-result">
+                <h5>Costo Prodotti</h5>
+                <h5>€&nbsp;{{twodigit totale}}</h5>
+            </div>
+            <div class="cart-prices cart-prices-result">
+                <h5>Costo Totale</h5>
+                <h5>€&nbsp;{{twodigit CostoTotale}}</h5>
+            </div>
+       
+           
+            <div class="cart-name cart-empty-button">
+                <button class="button mybutton floatleft" id="modifica">Modifica</button>
+                <button class="button mybutton floatright" id="conferma">Conferma</button>
+            </div>
+        </div>
+
+    </div>
+
+   
+  

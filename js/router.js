@@ -36,6 +36,8 @@ define(function (require) {
     var RegistrationView = require('views/pages/common/RegistrationView');
     //genericError
     var GenericError = require('views/pages/common/GenericErrorView');
+    //checkout
+    var CheckOut = require('views/pages/private/CheckOut');
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -60,7 +62,8 @@ define(function (require) {
             "gotoprofile": "goToProfile",
             "gotoregistration" : "goToRegistration",
             "gotoupdateprofile": "goToUpdateProfile",
-            "gotogenericerror": "goToGenericError"
+            "gotogenericerror": "goToGenericError",
+            "gotocheckout": "goToCheckOut"
         },
         firstView: "splashscreen",
         initialize: function (options) {
@@ -234,6 +237,10 @@ define(function (require) {
         },
         goToGenericError: function () {
             var page = new GenericError();
+            this.changePage(page);
+        },
+        goToCheckOut: function () {
+            var page = new CheckOut();
             this.changePage(page);
         }
 
