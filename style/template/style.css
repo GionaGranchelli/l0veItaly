@@ -497,7 +497,7 @@ h2.product-name {
 .product-curosel .owl-prev {
   right: 35px !important;
 }
-.product-curosel.owl-theme .owl-controls .owl-buttons div:hover{background:#000;color}
+.product-curosel.owl-theme .owl-controls .owl-buttons div:hover{background-color:#000;}
 .page {
   background: #fff none repeat scroll 0 0;
 }
@@ -516,7 +516,7 @@ h2.product-name {
 .corporate-area{}
 .single-corporate {
   line-height: 0;
-  margin-top: 30px;
+  margin-top: 30%;
   overflow: hidden;
   text-align: center;
 }
@@ -1134,7 +1134,6 @@ opacity:0;
   background: #0a7d3a none repeat scroll 0 0;
   color: #fff;
   padding: 12px;
-  colo
 }
 
 .cart-table table {
@@ -1216,7 +1215,7 @@ table tr th.width-4 {
   font-weight: normal;
   padding: 5px 10px;
 }
-.cart-contenttext,{
+.cart-contenttext{
   padding: 10px;
 }
 .inputbox label {
