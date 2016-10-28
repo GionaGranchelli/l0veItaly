@@ -15,7 +15,8 @@ define(function (require) {
         id: "splash",
         className: "splashscren",
         events: {
-            "redirect": "redirect"
+            "redirect": "redirect",
+            "#registrati" : "registrati"
         },
         render: function (flag) {
             if (flag) {
@@ -31,6 +32,11 @@ define(function (require) {
                 trigger: true
             });
 
+        },
+        registrati : function (){
+            Backbone.history.navigate("gotoregistration", {
+                trigger: true
+            });
         }
     });
 

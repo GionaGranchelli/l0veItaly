@@ -25,15 +25,15 @@
             <div class="cart-name">
                 <h5 class="cart-name-p">{{attributes.product.name}}</h5>
                 <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
-                <div class="cart-page-edit">
-                    <div id="firemeUp" class="add-to-wishlist carriveri" data-id="{{id}}">
-                        <i class="fa fa-plus" style="color: black"></i>
+
+                    <div id="firemeDown" class="removeButton removeButtonCart" data-id="{{id}}">
+
                     </div>
-                    <div id="firemeDown" class="compare-button carriveri" data-id="{{id}}">
-                        <i  accesskey=""class="fa fa-minus" style="color: black"></i>
+                    <div id="firemeUp" class="addButton addButtonCart"  data-id="{{id}}">
+
                     </div>
 
-                </div>
+
             </div>
             <div class="cart-quantity">{{quantity}}</div>
             <div class="cart-prices">
@@ -73,6 +73,7 @@
                 <h5>Costo Totale</h5>
                 <h5>€&nbsp;{{twodigit CostoTotale}}</h5>
             </div>
+<<<<<<< HEAD
 
 
 
@@ -93,6 +94,8 @@
 
             </select>
 
+=======
+>>>>>>> a8bd7229d926775db684893b956b9d4a2b9273cd
             <div class="cart-name cart-empty-button">
                 <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
                 <button class="button mybutton floatright" id="checkout">Checkout</button>
@@ -101,7 +104,11 @@
 
     </div>
 
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> a8bd7229d926775db684893b956b9d4a2b9273cd
     <!-- <div class="cart-table">
       <table>
         <thead>
@@ -149,6 +156,7 @@
 <td>
   <div class="cart-quty">
     <input type="number" value="">
+<<<<<<< HEAD
   </div>
 </td>
 <td>
@@ -161,6 +169,20 @@
     <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
   </div>
 </td>
+=======
+  </div>
+</td>
+<td>
+  <div class="subtotal">
+    <p>€{{multiply quantity attributes.product.price}}</p>
+  </div>
+</td>
+<td>
+  <div class="cartpage-delete-item">
+    <a title="Remove item" href="#"><i class="fa fa-trash-o"></i></a>
+  </div>
+</td>
+>>>>>>> a8bd7229d926775db684893b956b9d4a2b9273cd
 </tr>
 {{/each}}
 </tbody>

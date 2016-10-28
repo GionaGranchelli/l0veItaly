@@ -4,7 +4,10 @@
             <h2><i class="fa fa-history"></i> I Miei Ordini</h2>
         </div>
         <div class="check-contenttext">
+            {{#exists Ordini}}
             <div class="list-block accordion-list">
+
+
                 <ul>
                     {{#each Ordini}}
                     <li class="accordion-item">
@@ -29,8 +32,6 @@
                                     <td>
                                         <h4>Prezzo</h4>
                                     </td>
-
-
                                 </tr>
                                 {{#each associations.order_rows}}
 
@@ -60,9 +61,17 @@
 
 
 
-                        {{/each}}   
+                        {{/each}}
                 </ul>
+
+
+
             </div>
+            {{/exists}}
+            {{#isEmpty Ordini}}
+            <h3> Lo storico ordini non ha prodotto alcun risultato!</h3>
+            <h3> Che aspetti ad Ordinare qualcosa?!</h3>
+            {{/isEmpty}}
         </div>
     </div>
 </div>

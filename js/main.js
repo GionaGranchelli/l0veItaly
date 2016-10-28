@@ -44,6 +44,7 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
 //        cordova plugin add cordova-plugin-network-information
 //      cordova plugin add cordova-plugin-dialogs
 //        document.addEventListener("offline", onOffline, false);
+//        cordova plugin add cordova - plugin - inappbrowser
         document.addEventListener("deviceready", run, false);
 //
 //        function onOffline(){
