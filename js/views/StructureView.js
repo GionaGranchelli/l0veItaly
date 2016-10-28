@@ -102,7 +102,7 @@ define(function (require) {
                                 window.customer.address2 = model.get("address2");
                                 window.localStorage.setItem('customer', JSON.stringify(window.customer));
                                 window.localStorage.setItem('flag', JSON.stringify(true));
-                              
+
                                 //console.log(JSON.stringify(window.customer));
                                 //console.log(window.customer);
                                 window.location.href = "";
@@ -199,6 +199,14 @@ define(function (require) {
 
             productItem = $(ev.currentTarget).data('id');
             window.cart.addOne(productItem);
+            $("#overlayDiv").attr('class', 'visibleOverlay');
+            this.changeOverlay();
+        },
+        changeOverlay: function () {
+            setTimeout(function () {
+                $("#overlayDiv").attr('class', 'overlay');
+            }, 2000);
+            clearTimeout();
         },
         fireMeDown: function (ev) {
             productItem = $(ev.currentTarget).data('id');

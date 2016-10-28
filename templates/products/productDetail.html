@@ -33,21 +33,22 @@
                         <div class="left">
                             <p>Aggiungi al Carrello</p>
                             <div class="quantity quantity-detail-product">
-                                <div class="detail-product-addbutton">
+                                <!--class="detail-product-addbutton"-->
 
-                                    <div id="firemeDown" class="compare-button" data-id="{{id}}">
-                                        <i class="fa fa-minus" style="color: black"></i>
-                                    </div>
-                                    <div id="firemeUp" class="add-to-wishlist" data-id="{{id}}">
-                                        <i class="fa fa-plus" style="color: black"></i>
-                                    </div>
+                                <div id="firemeDown" class="removeButton" data-id="{{id}}">
+
                                 </div>
+                                <div id="firemeUp" class="addButton"  data-id="{{id}}">
 
+                                </div>
+                                <!-- Div in Overlay*/ -->
+
+                                <!-- Fine Div in Overlay*/ -->
                             </div>
                         </div>
                         <div class="right">
                             <p>Quantità Disponibile</p>
-                            <input type="number" value="{{product.quantity}}" disabled>
+                            <input type="number" value="{{product.quantity}}" disabled/>
                         </div>
 
 
@@ -60,6 +61,7 @@
     </div>
 
 </div>
+
 <script>
 
     var mySwiper = new Swiper('.swiper-container', {
