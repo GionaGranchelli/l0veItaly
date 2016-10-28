@@ -746,16 +746,16 @@ float: left;
     color : #ec4445;
 }
 .addButton{
-    height: 46px;
-    width: 35%;
+    height: 45px;
+    width: 45px;
     background-image: url('../img/add_button.png') !important;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50px;
 }
 .removeButton{
-    height: 46px;
-    width: 35%;
+    height: 45px;
+    width: 45px;
     background-image: url('../img/remove_button.png') !important;
     background-repeat: no-repeat;
     background-position: center;
