@@ -17,8 +17,10 @@ define(function(require) {
     events: {
     },
     render: function() {
+         console.log(JSON.parse(window.localStorage.getItem('order')));
       $(this.el).html(this.template({
-        Ordini: this.collection.toJSON()
+        Ordini: this.collection.toJSON(),
+        Pending: JSON.parse(window.localStorage.getItem('order'))
       }));
       return this;
     }

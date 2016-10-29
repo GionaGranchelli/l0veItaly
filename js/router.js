@@ -120,7 +120,7 @@ define(function (require) {
                     return temp.substring(0, temp.indexOf(".") + 2);
                 } else {
 
-                    return "stocazzo";
+                    return variable;
                 }
             });
             Handlebars.registerHelper('multiply', function (variable, variable2, options) {

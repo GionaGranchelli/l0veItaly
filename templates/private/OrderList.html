@@ -1,7 +1,74 @@
 <div class="content-block-inner">
     <div class="cartbox">
         <div class="cart-heading-1 ">
-            <h2><i class="fa fa-history"></i> I Miei Ordini</h2>
+            <h2><i class="fa fa-history"></i> </h2>
+        </div>
+         <div class="check-contenttext">
+            {{#exists Pending}}
+            <div class="list-block accordion-list">
+
+
+                <ul>
+                    {{#each Pending}}
+                    <li class="accordion-item">
+                        <a class=" item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title"><span>Ordine del {{invoicedate}} </span> Spedizione: {{spedizione}}</div>
+                            </div>
+                        </a> 
+
+                        <div class="accorodinbox">
+                            <h2>Dettaglio</h2>
+                            <p>Prodotti:</p>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h4>Nome</h4>
+                                    </td>
+                                    <td>
+                                        <h4>Quantit&agrave;</h4>
+                                    </td>
+                                    <td>
+                                      <h4>Prezzo</h4>
+                                    </td>
+                                </tr>
+                                {{#each prodotti}}
+
+                                <tr>
+                                    <td>
+                                        <h4>{{prodotto.product.name}}</h4>
+                                    </td>
+                                    <td>
+                                        <h4>{{quantity}}</h4>
+                                    </td>
+                                    <td>
+                                        <h4>{{twodigit prodotto.product.product_price}}</h4>
+                                    </td>
+
+
+                                </tr>
+
+
+
+
+
+                                {{/each}}
+                            </table>  
+                            <span>Totale Pagato: {{totale}}</span>
+
+                        </div>											
+
+
+
+                        {{/each}}
+                </ul>
+
+
+
+            </div>
+            {{/exists}}
+         
         </div>
         <div class="check-contenttext">
             {{#exists Ordini}}

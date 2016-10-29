@@ -21,20 +21,45 @@ define(function (require) {
         },
         conferma: function () {
 
-            console.log(window.localStorage.getItem('order'));
-            
+//            console.log(window.localStorage.getItem('order'));
+            console.log(window.cart.models);
             if (window.localStorage.getItem('order')) {
                 prec = JSON.parse(window.localStorage.getItem('order'));
-                prec[prec.length] = window.cart.models;
+                var obj = {
+                    totale : window.cart.totale() + 2,
+                    invoicedate : new Date().toJSON().slice(0, 10),
+                    spedizione : window.customer.spedizionelocale,
+                    prodotti : new Array()
+                }
+                
+                for (i = 0; i < window.cart.models.length; i++) {
+                    obj.prodotti[i] = {
+                        prodotto: window.cart.models[i],
+                        quantity: window.cart.models[i].quantity,
+                    };
+                }
+                prec[prec.length] = obj;
                 window.localStorage.setItem('order', JSON.stringify(prec));
             } else {
                 var list = new Array();
-                list[0] = window.cart.models;
+                 var obj = {
+                    totale : window.cart.totale() + 2,
+                    invoicedate : new Date().toJSON().slice(0, 10),
+                    spedizione : window.customer.spedizionelocale,
+                    prodotti : new Array()
+                }
+                for (i = 0; i < window.cart.models.length; i++) {
+                    obj.prodotti[i] = {
+                        prodotto: window.cart.models[i],
+                        quantity: window.cart.models[i].quantity,
+                    };
+                }
+                list[0] = obj;
                 window.localStorage.setItem('order', JSON.stringify(list));
             }
             window.cart.resettami();
             alert("ordine confermato in attesa di elaborazione");
-             console.log(window.localStorage.getItem('order'));
+            console.log(window.localStorage.getItem('order'));
             Backbone.history.navigate("myview", {
                 trigger: true
             });
