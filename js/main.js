@@ -13,7 +13,8 @@ require.config({
         preloader: '../lib/preloader/pre-loader',
         utils: '../lib/utils/utils',
         slideout: './slideout',
-        framework7: '../lib/template/framework7.min'
+        framework7: '../lib/template/framework7.min',
+        validate : '../lib/validate/validate'
         // swiper: '../lib/template/jquery.swipebox'
 //    myapp: '../lib/template/my-app'
     },
@@ -43,8 +44,9 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
         //CORDOVA PLUGIN ADDED
 //        cordova plugin add cordova-plugin-network-information
 //      cordova plugin add cordova-plugin-dialogs
-//        document.addEventListener("offline", onOffline, false);
 //        cordova plugin add cordova - plugin - inappbrowser
+//        document.addEventListener("offline", onOffline, false);
+
         document.addEventListener("deviceready", run, false);
 //
 //        function onOffline(){

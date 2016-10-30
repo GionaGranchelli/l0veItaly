@@ -49,6 +49,72 @@ define(function (require) {
             console.log(window.customer);
            window.location.href = "";
 
+        },defaults: {
+            // valori di controllo
+            firstname: 'name-unknown',
+            lastname: 'surname-unknown',
+            email: 'user@example.com',
+            passwd: 'no-one',
+            active: 1, // si suppone che l'utente sia attivo
+            id_default_group: 3 // è un customer
+        },
+        validationparameters:  {
+            firstname: {
+                length: {
+                    maximum: 32,
+                    tooLong : 'Massimo 32 caratteri'
+                },
+                format: {
+                    pattern: /^[^0-9!<>,;?=+()@#"°{}_$%:]*$/u,
+                    message: function (value, attribute, validatorOptions, attributes, globalOptions) {
+                        return 'firstname-format-error'
+                    }
+                }
+            },
+            lastname: {
+                length: {
+                    maximum: 32,
+                    tooLong: 'Massimo 32 caratteri'
+                },
+                format: {
+                    pattern: /^[^0-9!<>,;?=+()@#"°{}_$%:]*$/u,
+                    message: function (value, attribute, validatorOptions, attributes, globalOptions) {
+                        return 'lastname-format-error'
+                    }
+                }
+            },
+            passwd: {
+                length: {
+                    maximum: 32,
+                    tooLong: 'Massimo 32 caratteri'
+                },
+                format: {
+                    pattern: /^[.a-zA-Z_0-9-!@#$%\^&*()]{5,32}$/,
+                    message: function (value, attribute, validatorOptions, attributes, globalOptions) {
+                        return 'passwd-format-error'
+                    }
+                }
+            },
+            email: {
+                length: {
+                    maximum: 128,
+                    tooLong: 'Massimo 128 caratteri'
+                },
+                format: {
+                    pattern: /^[a-z0-9_-]+[.a-z0-9_-]*@[a-z0-9]+[._a-z0-9-]*\.[a-z0-9]+$/ui,
+                    message: function (value, attribute, validatorOptions, attributes, globalOptions) {
+                        return 'email-format-error'
+                    }
+                }
+            },
+            birthday: {
+                format: {
+                    pattern: /^([0-9]{4})-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2][0-9])|(3[01]))( [0-9]{2}:[0-9]{2}:[0-9]{2})?$/,
+                    message: function (value, attribute, validatorOptions, attributes, globalOptions) {
+                        return 'email-format-error'
+                    }
+                }
+            }
         }
     });
 
