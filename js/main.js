@@ -38,7 +38,7 @@ require.config({
 
 // We launch the App
 require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) {
-    require(['preloader', 'router' ,'../lib/template/jquery.swipebox',  'collections/Cart', 'models/Customer'], function (PreLoader, AppRouter, Swiper,  Cart, Customer) {
+    require(['preloader', 'router' ,'../lib/template/jquery.swipebox',  'collections/Cart', 'models/Customer', '../lib/handlebars/handlebarsHelper.js'], function (PreLoader, AppRouter, Swiper,  Cart, Customer, Helpers) {
 
         //CORDOVA PLUGIN ADDED
 //        cordova plugin add cordova-plugin-network-information

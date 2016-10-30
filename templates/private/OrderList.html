@@ -13,7 +13,7 @@
                     <li class="accordion-item">
                         <a class=" item-link item-content">
                             <div class="item-inner">
-                                <div class="item-title"><span>Ordine del {{invoicedate}} </span> Spedizione: {{spedizione}}</div>
+                                <div class="item-title"><span>Ordine del {{dataformatter invoicedate}}</span>  Spedizione: {{shipaddress spedizione}}</div>
                             </div>
                         </a> 
 
@@ -43,7 +43,7 @@
                                         <h4>{{quantity}}</h4>
                                     </td>
                                     <td>
-                                        <h4>{{twodigit prodotto.product.product_price}}</h4>
+                                        <h4>{{twodigit prodotto.product.price}}</h4>
                                     </td>
 
 
