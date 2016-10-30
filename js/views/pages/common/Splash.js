@@ -16,7 +16,7 @@ define(function (require) {
         className: "splashscren",
         events: {
             "redirect": "redirect",
-            "#registrati" : "registrati"
+            "tap #registrati" : "registrati"
         },
         render: function (flag) {
             if (flag) {

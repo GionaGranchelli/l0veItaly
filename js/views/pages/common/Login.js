@@ -17,7 +17,8 @@ define(function (require) {
         className: "i-g page",
         events: {
             "tap #goToMap": "goToMap",
-            "redirect": "redirect"
+            "redirect": "redirect",
+            "tap #registrati" : "registrati"
         },
         render: function (flag) {
             if(flag){
@@ -27,6 +28,11 @@ define(function (require) {
         },
         redirect: function (e) {
             Backbone.history.navigate("myview", {
+                trigger: true
+            });
+        },
+        registrati : function (){
+            Backbone.history.navigate("gotoregistration", {
                 trigger: true
             });
         }
