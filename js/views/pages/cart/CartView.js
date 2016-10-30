@@ -18,7 +18,7 @@ define(function (require) {
 
 
 
-            $('#back-button').css('display', 'block');
+            
             //$('#toggle-button').css('display','none');
             //this.collection.on('sync', this.render, this);
             // here we can register to inTheDOM or removing events
@@ -61,6 +61,8 @@ define(function (require) {
                 CostoTotale: costoTotale,
                 spedizione: window.customer.spedizionelocale
             }));
+            $('#back-button').css('display', 'block');
+            $('#toggle-button').css('display', 'none');
             //      this.model.toJSON()
             return this;
         },

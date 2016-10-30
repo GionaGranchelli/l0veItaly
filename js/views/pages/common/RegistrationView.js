@@ -1,5 +1,5 @@
 define(function (require) {
-
+    var validate = require("validate");
     var Backbone = require("backbone");
     var Utils = require("utils");
     var Addresses = require("models/Addresses");
@@ -49,7 +49,8 @@ define(function (require) {
             console.log(window.customer);
            window.location.href = "";
 
-        },defaults: {
+        },
+        defaults: {
             // valori di controllo
             firstname: 'name-unknown',
             lastname: 'surname-unknown',

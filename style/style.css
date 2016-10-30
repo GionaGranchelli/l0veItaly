@@ -836,3 +836,15 @@ p.MessageAddCart {
 .cart-description .cart-quantity{
     font-weight: bold;
 }
+.inputbox{
+    float: left !important;
+    height: 70px !important;
+}
+.inputtype{
+    border: 1px solid #ccc;
+    float: left;
+    height: 33px !important;
+    margin-right: 5px;
+    padding: 5px;
+    width: 100% !important;
+}

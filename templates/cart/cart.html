@@ -26,12 +26,12 @@
                 <h5 class="cart-name-p">{{attributes.product.name}}</h5>
                 <h5 class="cart-description">{{isnullo attributes.product.unity "Descrizione:"}}</h5>
 
-                    <div id="firemeDown" class="removeButton removeButtonCart" data-id="{{id}}">
+                <div id="firemeDown" class="removeButton removeButtonCart" data-id="{{id}}">
 
-                    </div>
-                    <div id="firemeUp" class="addButton addButtonCart"  data-id="{{id}}">
+                </div>
+                <div id="firemeUp" class="addButton addButtonCart"  data-id="{{id}}">
 
-                    </div>
+                </div>
 
 
             </div>
@@ -73,28 +73,22 @@
                 <h5>Costo Totale</h5>
                 <h5>€&nbsp;{{twodigit CostoTotale}}</h5>
             </div>
-
-
-
-
-              
-            <select  id="luoghiConsegna" name="luoghiConsegnaa" >
-                <option value="0">Dove vuoi ricevere i tuoi acquisti?</option>
-                <option value="1">Castel Frentano (CH)</option>
-                <option value="2">Fossacesia (CH)</option>
-                <option value="3">Frisa (CH)</option>
-                <option value="4">Lanciano (CH)</option>
-                <option value="5">Mozzagrogna (CH)</option>
-                <option value="6">Ortona (CH)</option>
-                <option value="7">Rocca San Giovanni (CH)</option>
-                <option value="8">Santa Maria Imbaro (CH)</option>
-                <option value="9">San Vito Chietino (CH)</option>
-                <option value="10">Treglio (CH)</option>
-
-
-            </select>
-
-
+            <div class="inputbox">
+                <label>Scegli la Destinazione</label> 
+                <select  id="luoghiConsegna" name="luoghiConsegnaa" class="inputtype" >
+                    <option value="0">Dove vuoi ricevere i tuoi acquisti?</option>
+                    <option value="1">Castel Frentano (CH)</option>
+                    <option value="2">Fossacesia (CH)</option>
+                    <option value="3">Frisa (CH)</option>
+                    <option value="4">Lanciano (CH)</option>
+                    <option value="5">Mozzagrogna (CH)</option>
+                    <option value="6">Ortona (CH)</option>
+                    <option value="7">Rocca San Giovanni (CH)</option>
+                    <option value="8">Santa Maria Imbaro (CH)</option>
+                    <option value="9">San Vito Chietino (CH)</option>
+                    <option value="10">Treglio (CH)</option>
+                </select>
+            </div>
             <div class="cart-name cart-empty-button">
                 <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
                 <button class="button mybutton floatright" id="checkout">Checkout</button>
