@@ -2,14 +2,13 @@ define(function (require) {
 
     var $ = require("jquery");
     var Backbone = require("backbone");
-
     //VIEW
     var StructureView = require("views/StructureView");
     var MyView = require("views/pages/MyView");
     var Framework7 = require('framework7');
     var myApp = new Framework7();
     var Handlebars = require('handlebars');
-
+//    var HandlebarsHelper = require('handlebarshelper');
     //Product
     var ProductListView = require("views/pages/products/ProductListView");
     var ProductDetailView = require("views/pages/products/ProductDetailView");
@@ -36,6 +35,8 @@ define(function (require) {
     var RegistrationView = require('views/pages/common/RegistrationView');
     //genericError
     var GenericError = require('views/pages/common/GenericErrorView');
+    //checkout
+    var CheckOut = require('views/pages/private/CheckOut');
     //Backbone.emulateHTTP = true; // Use _method parameter rather than using DELETE and PUT methods
     //Backbone.emulateJSON = true; // Send data to server via parameter rather than via request content
     var AppRouter = Backbone.Router.extend({
@@ -58,89 +59,15 @@ define(function (require) {
             "gotoorderlist": "goToOrderList",
             "orderdetail": "goToOrderDetail",
             "gotoprofile": "goToProfile",
-            "gotoregistration" : "goToRegistration",
+            "gotoregistration": "goToRegistration",
             "gotoupdateprofile": "goToUpdateProfile",
-            "gotogenericerror": "goToGenericError"
+            "gotogenericerror": "goToGenericError",
+            "gotocheckout": "goToCheckOut"
         },
         firstView: "splashscreen",
         initialize: function (options) {
             this.currentView = undefined;
-            Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
-                switch (operator) {
-                    case '==':
-                        return (v1 == v2) ? options.fn(this) : options.inverse(this);
-                    case '===':
-                        return (v1 === v2) ? options.fn(this) : options.inverse(this);
-                    case '<':
-                        return (v1 < v2) ? options.fn(this) : options.inverse(this);
-                    case '<=':
-                        return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-                    case '>':
-                        return (v1 > v2) ? options.fn(this) : options.inverse(this);
-                    case '>=':
-                        return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-                    case '&&':
-                        return (v1 && v2) ? options.fn(this) : options.inverse(this);
-                    case '||':
-                        return (v1 || v2) ? options.fn(this) : options.inverse(this);
-                    default:
-                        return options.inverse(this);
-                }
-            });
-            /**
-             * The {{#exists}} helper checks if a variable is defined.
-             */
-            Handlebars.registerHelper('exists', function (variable, options) {
-                if (typeof variable !== 'undefined' && variable !== null && variable !== '') {
-                    return options.fn(this);
-                } else {
-                    return options.inverse(this);
-                }
-            });
-            Handlebars.registerHelper('notExists', function (variable, options) {
-                if (typeof variable === 'undefined' || variable === null || variable === '') {
-                    return options.fn(this);
-                } else {
-                    return options.inverse(this);
-                }
-            });
-            Handlebars.registerHelper('isEmpty', function (variable, options) {
-                if (variable.length === 0) {
-                    return options.fn(this);
-                } else {
-                    return options.inverse(this);
-                }
-            });
-            Handlebars.registerHelper('twodigit', function (variable, options) {
-                if (typeof variable != 'undefined') {
-                    var temp = variable.toString();
-                    return temp.substring(0, temp.indexOf(".") + 2);
-                } else {
-
-                    return "stocazzo";
-                }
-            });
-            Handlebars.registerHelper('multiply', function (variable, variable2, options) {
-                if ((typeof variable !== 'undefined') & (typeof variable2 !== 'undefined')) {
-                    var temp1 = variable * variable2;
-                    var temp = temp1.toString();
-                    if (((temp.length - 1) - temp.indexOf(".")) > 3) {
-                        return temp.substring(0, temp.indexOf(".") + 3);
-                    } else {
-                        return temp;
-                    }
-                } else {
-                    return "";
-                }
-            });
-            Handlebars.registerHelper('isnullo', function (variable, variable2, options) {
-                if ((variable != null) & (variable != undefined) & (variable != "")) {
-                    return variable2.toString() + variable.toString();
-                } else {
-                    return "";
-                }
-            });
-        },
+           },
         splashScreen: function () {
             var page = new Splash({
             });
@@ -196,7 +123,6 @@ define(function (require) {
         goToSearchResult: function (query) {
             var page = new SearchListView(query);
             this.changePage(page);
-
         },
         goToSearchResultCategory: function (query, category) {
             var page = new SearchListView(query, category);
@@ -223,11 +149,11 @@ define(function (require) {
             // show the view
             this.changePage(page);
         },
-        goToRegistration : function (){
+        goToRegistration: function () {
             var page = new RegistrationView();
             this.changePage(page);
         },
-        goToUpdateProfile : function (){
+        goToUpdateProfile: function () {
             var page = new UpdateProfileView();
             // show the view
             this.changePage(page);
@@ -235,9 +161,12 @@ define(function (require) {
         goToGenericError: function () {
             var page = new GenericError();
             this.changePage(page);
+        },
+        goToCheckOut: function () {
+            var page = new CheckOut();
+            this.changePage(page);
         }
 
     });
     return AppRouter;
-
 });
