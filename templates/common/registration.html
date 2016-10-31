@@ -1,14 +1,53 @@
+<!--<script>
+    var validator = new FormValidator('registration', [
+                {
+                    name: 'firstname',
+                    display: 'required',
+                    rules: 'required'
+                },
+                {
+                    name: 'lastname',
+                    rules: 'alpha_numeric'
+                },
+                {
+                    name: 'password',
+                    rules: 'required'
+                },
+                {
+                    name: 'password2',
+                    display: 'password confirmation',
+                    rules: 'required|matches[password]'
+                },
+                {
+                    name: 'email',
+                    rules: 'valid_email',
+                    depends: function () {
+                        return Math.random() > .5;
+                    }
+                }
+            ], function (errors, event) {
+                var SELECTOR_ERRORS = $('.error_box');
+                if (errors.length > 0) {
+                    SELECTOR_ERRORS.empty();
+                    for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+                        SELECTOR_ERRORS.append(errors[i].message + '<br />');
+                    }
+                    SELECTOR_ERRORS.fadeIn(200);
+                    // Show the errors
+                }
+            });
+</script>-->
 <div class="profile-container">
     <!--  <h1> Riepilogo Profilo </h1>-->
     <div class="cart-heading-1 ">
         <h2><i class="fa fa-user"></i> Registrazione</h2>
     </div>
-
+    <div class="error_box" style="display: block;"></div>
     <div class="register-content register-content-profile">
-        <form >
+        <form name="registration">
             <div class="inputbox-profile">
                 <span>Nome:</span><br>
-                <input type="text"  id="firstname"  name="firstname" placeholder="Firstname" required/>
+                <input type="text"  id="firstname"  name="firstname" placeholder="Firstname" required />
                 <span id="firstnameError" class="formError"></span>
             </div>
             <div class="inputbox-profile">
@@ -19,7 +58,7 @@
             <div class="inputbox-profile">
                 <span>Email:</span><br>
                 <input type="email" name="email"  id="email" placeholder="Email" required/>
-                <span id="emailrror" class="formError"></span>
+                <span id="emailError" class="formError"></span>
             </div>
             <div class="inputbox-profile">
                 <span>Password</span><br>
@@ -28,7 +67,7 @@
             </div>
             <div class="inputbox-profile">
                 <span>Riperti Password</span><br>
-                <input type="password" name="password2" required/>
+                <input type="password" name="password2" id="password2" required/>
                 <span id="password2Error" class="formError"></span>
             </div>
 
@@ -52,21 +91,6 @@
                 <input type="text" name="city" id="city"  placeholder="City" />
                 <span id="cityError" class="formError"></span>
             </div>
-<!--            <div class="inputbox-profile" >
-                <span>CAP:</span><br>
-                <input type="text" name="postcode" id="postcode" placeholder="Postcode" />
-            </div>-->
-<!--            <div class="inputbox-profile" >
-                <span>Telefono Casa:</span><br>
-                <input type="text" name="phone" id="phone" placeholder="Phone" />
-            </div>
-            <div class="inputbox-profile" >
-                <span>Telefono Mobile:</span><br>
-                <input type="text" name="phone_mobile" id="phone_mobile" placeholder="Phone Mobile" />
-            </div>-->
-            <!--            <div id="update" class="updateButton inputbox-profile" >
-                            <span>Registrati</span><br>
-                        </div>-->
             <div id="update" class="cart-heading-1 ">
                 <h2 class="updateButton" style="text-align: center;">Registrati!</h2>
 

@@ -848,3 +848,14 @@ p.MessageAddCart {
     padding: 5px;
     width: 100% !important;
 }
+.formError{
+    display: none;
+}
+.nascosto{
+    display: none;
+}
+.mostra{
+    display : block;
+    color: #c61424 !important;
+    
+}

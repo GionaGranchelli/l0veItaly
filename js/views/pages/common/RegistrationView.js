@@ -1,5 +1,5 @@
 define(function (require) {
-//    var validate = require("validate");
+    var Validate = require("validate");
     var Backbone = require("backbone");
     var Utils = require("utils");
     var Addresses = require("models/Addresses");
@@ -33,6 +33,8 @@ define(function (require) {
                 id: $("#idCostumer").val(),
                 firstname: $("#firstname").val(),
                 lastname: $("#lastname").val(),
+                password: $("#password").val(),
+                password2: $("#password2").val(),
                 city: $("#city").val(),
                 birthday: $("#birthday").val(),
                 address1: $("#address1").val(),
@@ -42,19 +44,58 @@ define(function (require) {
                 phone: $("#phone").val(),
                 phone_mobile: $("#phone_mobile").val()
             };
-            this.validate(data);
-            window.customer = data;
-            window.customer.logged = true;
-            window.localStorage.setItem('customer', JSON.stringify(window.customer));
-            window.localStorage.setItem('flag', JSON.stringify(true));
-            console.log(window.customer);
-            window.location.href = "";
+            if (this.validate(data)) {
+                window.customer = data;
+                window.customer.logged = true;
+                window.localStorage.setItem('customer', JSON.stringify(window.customer));
+                window.localStorage.setItem('flag', JSON.stringify(true));
+                console.log(window.customer);
+                window.location.href = "";
+            }
+
 
         },
         validate: function (data) {
-            if(data.firstname.lenght > this.validationparameters.firstname.length.maximum || data.firstname === "" || data.firstname == null){
+            var validity = 0;
+            if (data.firstname.lenght > this.validationparameters.firstname.length.maximum || data.firstname === "" || data.firstname === null) {
                 $('#firstnameError').attr('class', 'mostra');
-                $('#firstnameError').val("Firstname Richiesto e lunghezza deve essere inferiore di 32 caratteri");
+                $('#firstnameError').text("Nome obligatorio, lunghezza deve essere inferiore di 32 caratteri");
+                validity++;
+            }else{
+                $('#firstnameError').attr('class', 'nascosto');
+            }
+            if (data.lastname.lenght > this.validationparameters.lastname.length.maximum || data.lastname === "" || data.lastname === null) {
+                $('#lastnameError').attr('class', 'mostra');
+                $('#lastnameError').text("Cognome obligatorio e lunghezza deve essere inferiore di 32 caratteri");
+                validity++;
+            }else{
+                $('#lastnameError').attr('class', 'nascosto');
+            }
+            if (data.password.lenght > this.validationparameters.password.length.maximum || data.password === "" || data.password === null) {
+                $('#passwordError').attr('class', 'mostra');
+                $('#passwordError').text("password Richiesta e lunghezza deve essere inferiore di 32 caratteri");
+                validity++;
+            }else{
+                $('#passwordError').attr('class', 'nascosto');
+            }
+            if (!this.isEmail(data.email)) {
+                $('#emailError').attr('class', 'mostra');
+                $('#emailError').text("Inserisci un email corretta");
+                validity++;
+            }else{
+                $('#emailError').attr('class', 'nascosto');
+            }
+            if (data.password2 != data.password) {
+                $('#password2Error').attr('class', 'mostra');
+                $('#password2Error').text("Password Differenti");
+                validity++;
+            }else{
+                $('#password2Error').attr('class', 'nascosto');
+            }
+            if (validity === 0) {
+                return true;
+            } else {
+                return false;
             }
         },
         validationparameters: {
@@ -70,7 +111,7 @@ define(function (require) {
                     tooLong: 'Massimo 32 caratteri'
                 }
             },
-            passwd: {
+            password: {
                 length: {
                     maximum: 32,
                     tooLong: 'Massimo 32 caratteri'
@@ -82,9 +123,11 @@ define(function (require) {
                     tooLong: 'Massimo 128 caratteri'
                 }
             }
+        },
+        isEmail: function (email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
         }
     });
-
     return RegistrationView;
-
 });
