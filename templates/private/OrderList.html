@@ -1,9 +1,9 @@
 <div class="content-block-inner">
     <div class="cartbox">
         <div class="cart-heading-1 ">
-            <h2><i class="fa fa-history"></i> </h2>
+            <h2><i class="fa fa-history"></i> Ordini richiesti</h2>
         </div>
-         <div class="check-contenttext">
+        <div class="check-contenttext">
             {{#exists Pending}}
             <div class="list-block accordion-list">
 
@@ -30,7 +30,7 @@
                                         <h4>Quantit&agrave;</h4>
                                     </td>
                                     <td>
-                                      <h4>Prezzo</h4>
+                                        <h4>Prezzo</h4>
                                     </td>
                                 </tr>
                                 {{#each prodotti}}
@@ -55,7 +55,7 @@
 
                                 {{/each}}
                             </table>  
-                            <span>Totale Pagato: {{totale}}</span>
+                            <span>Totale Pagato: {{totale}} &euro;</span>
 
                         </div>											
 
@@ -68,7 +68,10 @@
 
             </div>
             {{/exists}}
-         
+
+        </div>
+        <div class="cart-heading-1 ">
+            <h2><i class="fa fa-history"></i> Ordini evasi</h2>
         </div>
         <div class="check-contenttext">
             {{#exists Ordini}}
@@ -83,11 +86,9 @@
                                 <div class="item-title"><span></span> {{reference}} del {{invoice_date}}</div>
                             </div>
                         </a> 
-
                         <div class="accorodinbox">
                             <h2>Dettaglio</h2>
                             <p>Prodotti:</p>
-
                             <table>
                                 <tr>
                                     <td>
@@ -101,7 +102,6 @@
                                     </td>
                                 </tr>
                                 {{#each associations.order_rows}}
-
                                 <tr>
                                     <td>
                                         <h4>{{product_name}}</h4>
@@ -112,15 +112,8 @@
                                     <td>
                                         <h4>{{twodigit product_price}}</h4>
                                     </td>
-
-
                                 </tr>
-
-
-
-
-
-                                {{/each}}
+                            {{/each}}
                             </table>  
                             <span>Totale Pagato: {{total_paid}}</span>
 
@@ -135,9 +128,10 @@
 
             </div>
             {{/exists}}
+
             {{#isEmpty Ordini}}
-            <h3> Lo storico ordini non ha prodotto alcun risultato!</h3>
-            <h3> Che aspetti ad Ordinare qualcosa?!</h3>
+            <h3> Al momento non sono stati ancora evasi i tuoi ordini </h3>
+            <h3> Al piu presto saranno evasi, un po di pazienza</h3>
             {{/isEmpty}}
         </div>
     </div>
