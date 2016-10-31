@@ -53,7 +53,8 @@ define(function (require) {
         },
         validate: function (data) {
             if(data.firstname.lenght > this.validationparameters.firstname.length.maximum || data.firstname === "" || data.firstname == null){
-                console.log("firstanme male");
+                $('#firstnameError').attr('class', 'mostra');
+                $('#firstnameError').val("Firstname Richiesto e lunghezza deve essere inferiore di 32 caratteri");
             }
         },
         validationparameters: {
