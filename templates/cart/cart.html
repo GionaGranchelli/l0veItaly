@@ -75,7 +75,7 @@
             </div>
             <div class="inputbox2">
                 <label>Scegli la Destinazione</label> 
-                <select  id="luoghiConsegna" name="luoghiConsegnaa" class="inputtype" >
+                <select  id="luoghiConsegna" name="{{selectit spedizione}}" class="inputtype" >
                     <option value="0">Dove vuoi ricevere i tuoi acquisti?</option>
                     <option value="1">Castel Frentano (CH)</option>
                     <option value="2">Fossacesia (CH)</option>
@@ -87,19 +87,20 @@
                     <option value="8">Santa Maria Imbaro (CH)</option>
                     <option value="9">San Vito Chietino (CH)</option>
                     <option value="10">Treglio (CH)</option>
+                    
                 </select>
+                <input type="hidden" id="quiolo" value="{{spedizione}}"/>
             </div>
             <div class="cart-name cart-empty-button">
                 <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
                 <button class="button mybutton floatright" id="checkout">Checkout</button>
-                <input type="hidden" id="quiolo" value="{{spedizione}}">
+                
             </div>
         </div>
 
     </div>
     <script>
         $(document).ready(function () {
-            console.log($("#quiolo").val());
-            $("luoghiConsegna").val($("#quiolo").val());
+       
         });
     </script>

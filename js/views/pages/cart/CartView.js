@@ -10,6 +10,13 @@ define(function (require) {
             this.template = Utils.templates.cart;
             window.cart.on('itemSubtraction', this.render, this);
             window.cart.on('itemAddiction', this.render, this);
+            _.bindAll(this, 'render', 'afterRender');
+            var _this = this;
+            this.render = _.wrap(this.render, function (render) {
+                render();
+                _this.afterRender();
+                return _this;
+            });
         },
         id: "productcategory",
         className: "i-g page cart-result",
@@ -18,7 +25,9 @@ define(function (require) {
             "tap #goToCategory": "category",
             "tap #resetButton": "svuotaCarrello",
             "change #luoghiConsegna": "cambiaSpedizione",
-            "tap #checkout": "gotocheckout"},
+            "tap #checkout": "gotocheckout",
+            "shipment": "changeit"
+        },
         redirectQui: function () {
             Backbone.history.navigate("carrello", {
                 trigger: true
@@ -58,19 +67,19 @@ define(function (require) {
         gotocheckout: function () {
             console.log(window.cart.length);
             if (window.cart.length <= 0) {
-                 navigator.notification.alert(
-                    'il carrello è vuoto :/ Fatti tentare dalla genuinità di loveitaly!! ', // message
-                    null,
-                    'cart', // title
-                    'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
-                    );
+                navigator.notification.alert(
+                        'il carrello è vuoto :/ Fatti tentare dalla genuinità di loveitaly!! ', // message
+                        null,
+                        'cart', // title
+                        'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
+                        );
             } else if (!window.customer.logged) {
                 navigator.notification.alert(
-                    'devi essere registrato per accedere al cibo a km 0', // message
-                    null,
-                    'registration', // title
-                    'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
-                    );
+                        'devi essere registrato per accedere al cibo a km 0', // message
+                        null,
+                        'registration', // title
+                        'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
+                        );
                 Backbone.history.navigate("splashscreen", {
                     trigger: true
                 });
@@ -79,14 +88,21 @@ define(function (require) {
                     trigger: true
                 });
             } else
-                 navigator.notification.alert(
-                    'seleziona il paese per la spedizione', // message
-                    null,
-                    'shipment', // title
-                    'Grazie'                  // buttonName
-                    );
+                navigator.notification.alert(
+                        'seleziona il paese per la spedizione', // message
+                        null,
+                        'shipment', // title
+                        'Grazie'                  // buttonName
+                        );
+        },
+        afterRender: function () {
+            console.log('afterRender');
+            if (window.customer.spedizionelocale) {
+//                $("#luoghiConsegna").val(window.customer.spedizionelocale);
+                
+            }
         }
-       
+
 
 
     });
