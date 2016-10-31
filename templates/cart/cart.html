@@ -92,8 +92,14 @@
             <div class="cart-name cart-empty-button">
                 <button class="button mybutton floatleft" id="resetButton">Svuota carrello</button>
                 <button class="button mybutton floatright" id="checkout">Checkout</button>
+                <input type="hidden" id="quiolo" value="{{spedizione}}">
             </div>
         </div>
 
     </div>
-
+    <script>
+        $(document).ready(function () {
+            console.log($("#quiolo").val());
+            $("luoghiConsegna").val($("#quiolo").val());
+        });
+    </script>

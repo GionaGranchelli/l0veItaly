@@ -1,35 +1,15 @@
 define(function (require) {
-
     var Backbone = require("backbone");
-    //  var MyModel = require("models/MyModel");
     var Utils = require("utils");
     var Cart = require("collections/Cart");
     var Products = require("collections/Products");
-
     var CartView = Utils.Page.extend({
         constructorName: "CartView",
         collection: Products,
         initialize: function () {
-            // load the precompiled template
             this.template = Utils.templates.cart;
             window.cart.on('itemSubtraction', this.render, this);
             window.cart.on('itemAddiction', this.render, this);
-
-
-
-
-            
-            //$('#toggle-button').css('display','none');
-            //this.collection.on('sync', this.render, this);
-            // here we can register to inTheDOM or removing events
-            // this.listenTo(this, "inTheDOM", function() {
-            //   $('#content').on("swipe", function(data){
-            //     console.log(data);
-            //   });
-            // });
-            // this.listenTo(this, "removing", functionName);
-
-            // by convention, all the inner views of a view must be stored in this.subViews
         },
         id: "productcategory",
         className: "i-g page cart-result",
@@ -45,15 +25,6 @@ define(function (require) {
             });
         },
         render: function () {
-//            
-//            if (typeof window.cart.spedizione != 'undefined') {
-////                
-//                console.log(window.cart.spedizione);
-//                query = '#spanid select option[value=' + window.cart.spedizione + ']';
-//                console.log(query);
-//               
-////
-//            }
             var costoTotale = window.cart.totale() + 2;
             $(this.el).html(this.template({articoli: window.cart.models,
                 totale: window.cart.totale(),
@@ -63,7 +34,6 @@ define(function (require) {
             }));
             $('#back-button').css('display', 'block');
             $('#toggle-button').css('display', 'none');
-            //      this.model.toJSON()
             return this;
         },
         svuotaCarrello: function () {
@@ -76,7 +46,6 @@ define(function (require) {
             });
         },
         category: function (ev) {
-            //        console.log("category qui");
             Backbone.history.navigate("gotocategory/" + $(ev.currentTarget).data('id'), {
                 trigger: true
             });
@@ -87,22 +56,37 @@ define(function (require) {
             window.localStorage.setItem('customer', JSON.stringify(window.customer));
         },
         gotocheckout: function () {
-           console.log(window.cart.length);
-            if (window.cart.length>0 && window.customer.logged){
-                
+            console.log(window.cart.length);
+            if (window.cart.length <= 0) {
+                 navigator.notification.alert(
+                    'il carrello è vuoto :/ Fatti tentare dalla genuinità di loveitaly!! ', // message
+                    null,
+                    'cart', // title
+                    'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
+                    );
+            } else if (!window.customer.logged) {
+                navigator.notification.alert(
+                    'devi essere registrato per accedere al cibo a km 0', // message
+                    null,
+                    'registration', // title
+                    'Fatti tentare dalla genuinità di loveitaly'                  // buttonName
+                    );
+                Backbone.history.navigate("splashscreen", {
+                    trigger: true
+                });
+            } else if (window.customer.spedizionelocale) {
                 Backbone.history.navigate("gotocheckout", {
                     trigger: true
                 });
-
-            }else if(!window.customer.logged){
-                
-               Backbone.history.navigate("splashscreen", {
-                    trigger: true
-                }); 
-                
-            };
-
+            } else
+                 navigator.notification.alert(
+                    'seleziona il paese per la spedizione', // message
+                    null,
+                    'shipment', // title
+                    'Grazie'                  // buttonName
+                    );
         }
+       
 
 
     });
