@@ -9,7 +9,7 @@ define(function (require) {
         model: Order,
         initialize: function () {
             this.template = Utils.templates.checkout;
-            this.model = new Order();
+            //this.model = new Order();
             this.model.list = window.cart.models;
             this.model.totale = window.cart.totale();
             this.model.totaleColli = window.cart.totaleColli();

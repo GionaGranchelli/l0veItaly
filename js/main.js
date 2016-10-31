@@ -14,8 +14,8 @@ require.config({
         utils: '../lib/utils/utils',
         slideout: './slideout',
         framework7: '../lib/template/framework7.min',
-        validate : '../lib/validate/validate'
-        // swiper: '../lib/template/jquery.swipebox'
+        validate: '../lib/validate/validate'
+                // swiper: '../lib/template/jquery.swipebox'
 //    myapp: '../lib/template/my-app'
     },
     shim: {
@@ -39,7 +39,7 @@ require.config({
 
 // We launch the App
 require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) {
-    require(['preloader', 'router' ,'../lib/template/jquery.swipebox',  'collections/Cart', 'models/Customer', '../lib/handlebars/handlebarsHelper.js'], function (PreLoader, AppRouter, Swiper,  Cart, Customer, Helpers) {
+    require(['preloader', 'router', '../lib/template/jquery.swipebox', 'collections/Cart', 'models/Customer'], function (PreLoader, AppRouter, Swiper, Cart, Customer) {
 
         //CORDOVA PLUGIN ADDED
 //        cordova plugin add cordova-plugin-network-information
@@ -85,41 +85,41 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
 //                                       );
 //            }
             window.cart = new Cart();
-            
+
             var customer = JSON.parse(window.localStorage.getItem('customer'));
 //            console.log(customer);
-            if(customer !== null){
-                if(customer.logged !== false && customer.logged !== undefined){
+            if (customer !== null) {
+                if (customer.logged !== false && customer.logged !== undefined) {
 //                    console.log('ci sta');
-                    window.customer =  customer;
-                }else{
+                    window.customer = customer;
+                } else {
 //                    console.log('non ci sta');
                     window.customer = new Customer();
                     window.customer.logged = false;
                     window.localStorage.setItem('customer', JSON.stringify(window.customer));
                 }
-            }else{
+            } else {
 //                console.log('non ci sta');
                 window.customer = new Customer();
                 window.customer.logged = false;
                 window.localStorage.setItem('customer', JSON.stringify(window.customer));
             }
-           
+
 
             // Here we precompile ALL the templates so that the app will be quickier when switching views
             // see utils.js
             Utils.loadTemplates().once("templatesLoaded", function () {
 
                 var preloadedImages = ['img/farms/1.jpg',
-                              'img/farms/tempodi.jpg',
-                              'img/farms/2.jpg',
-                              'img/farms/3.jpg',
-                              'img/farms/4.jpg',
-                              'img/farms/5.jpg',
-                              'img/farms/home1.jpg',
-                              'img/farms/home2.jpg',
-                              'img/farms/home3.jpg'
-                            ]; // here the developer can add the paths to the images that he would like to be preloaded
+                    'img/farms/tempodi.jpg',
+                    'img/farms/2.jpg',
+                    'img/farms/3.jpg',
+                    'img/farms/4.jpg',
+                    'img/farms/5.jpg',
+                    'img/farms/home1.jpg',
+                    'img/farms/home2.jpg',
+                    'img/farms/home3.jpg'
+                ]; // here the developer can add the paths to the images that he would like to be preloaded
 
                 if (preloadedImages.length) {
                     new PreLoader(preloadedImages, {
@@ -137,7 +137,7 @@ require(['backbone', 'utils', 'slideout'], function (Backbone, Utils, Slideout) 
                     var slideoutt = new Slideout({
                         'panel': document.getElementById('panel'),
                         'menu': document.getElementById('menu'),
-                        'padding':250,
+                        'padding': 250,
                         'tolerance': 0,
                         'swipeRegion': 25
                     });
